@@ -15,38 +15,7 @@
   <body>
 
     <style>
-      @font-face {
-        font-family: GreatVibes;
-        src: url('/static_files/fonts/gv.ttf');
-      }
 
-      .greatVibesFont {
-        font-family: GreatVibes;
-      }
-
-      .navbar-brand img {
-        width: 100%;
-        max-width: 640px;
-        position: absolute;
-        transition: all 300ms linear;
-        transform-origin: 0% 0%;
-      }
-
-      @media screen and (max-width:956px) {
-        .navbar-brand img {
-          width: 100%;
-          max-width: 240px;
-          position: relative;
-        }
-      }
-
-      img.consize {
-        transform: translateY(-20px) scale(0.25);
-      }
-
-      #mainNav {
-        transition: background 300ms linear;
-      }
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark p-3 fixed-top" id="mainNav">
       <div class="container-fluid">
@@ -85,37 +54,11 @@
       </div>
     </nav>
 
-    <div id="hero"
-         style="background:url('/static_files/images/html/adventure.jpg') no-repeat;background-size:cover;background-position:top center">
-      <h1 class="display-3 text-center text-white greatVibesFont"
-          style="padding-top:45vh;padding-bottom:85vh;text-shadow : 0px 3px 4px rgba(0,0,0,0.8)">
-        Adventure Unlimited. Explore the West
-      </h1>
-    </div>
+
     <div class="vh-100"></div>
 
     <script>
-      var mainNav = document.getElementById('mainNav')
-      var logoImg = document.getElementById('logoImg')
-      var hero = document.getElementById('hero')
-      var heroActive = false // To enhance performance, I chose this global variable to track the navbar changes.
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 200) {
-          if (!heroActive) {
-            heroActive = true
-            mainNav.classList.add('bg-dark')
-            if (window.innerWidth < 956) return;
-            logoImg.className = 'consize'
-          }
-        } else {
-          if (heroActive) {
-            heroActive = false
-            mainNav.classList.remove('bg-dark')
-            if (window.innerWidth < 956) return;
-            logoImg.className = ''
-          }
-        }
-      })
+
     </script>
 
   </body>

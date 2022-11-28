@@ -1,0 +1,29 @@
+.navbar-div{
+  height: 70px;
+  align-items: center;
+  border-bottom: 0.7px solid grey;
+  position: absolute;
+  top: 0;
+
+}
+.navbar{
+  color: white;
+  list-style-type: none;
+  margin: 0 20px;
+
+}
+.navbar>li{
+  margin: 0 20px;
+}
+
+.nav_item:hover{
+  border-bottom: 2px solid white;
+  transition: 300ms linear;
+  
+  cursor: pointer;
+  padding: 0 10px;
+  padding-bottom: 5px;
+}
+.active{
+  border-bottom: 4px solid white;
+}
