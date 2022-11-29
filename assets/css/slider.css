@@ -8,9 +8,15 @@
   object-fit: cover;
   height: 100vh;
 }
-
 @media (max-width:567px) {
   .slider-img{
     height: 75vh;
   }
+}
+
+.text{
+  position: absolute;
+  top: 100px;
+  left: 50%;
+
 }

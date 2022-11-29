@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://insanelygoodrecipes.com/wp-content/uploads/2021/07/Homemade-Belgian-Waffles-with-Ice-Cream-and-Strawberries-800x530.jpg"
 
   ]
-    let img = document.querySelector('.slider-img');
+  let img = document.querySelector('.slider-img');
+  
   setInterval(() => {
-    console.log('ran')
+    console.log('heshar')
     changeSlides(imgages,img)
   }, 3000);
   

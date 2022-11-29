@@ -1,5 +1,7 @@
-document.addEventListener('DOMContentLoaded',()=>{
-  let navbarIconBtns=document.querySelectorAll('.icon-btn')
+document.addEventListener('DOMContentLoaded', () => {
+  
+  let navbarIconBtns = document.querySelectorAll('.icon-btn')
+  
   window.onresize=()=>{
     if(window.screen.width>576){
       let popup=document.querySelector('.navbar_popup')
@@ -16,8 +18,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
 
   navbarIconBtns.forEach(btn=>{
-    btn.addEventListener('click',e=>{
-      let navbox=document.querySelector('#navbar')
+    btn.addEventListener('click', e => {
+      
+      let navbox = document.querySelector('#navbar')
+      
       if(e.target.classList.contains("popup")){
         navbox.classList.remove('d-none')
         navbox.classList.remove('navbar')
