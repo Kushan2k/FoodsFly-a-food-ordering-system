@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
   let navbarIconBtns=document.querySelectorAll('.icon-btn')
-
-
   window.onresize=()=>{
     if(window.screen.width>576){
       let popup=document.querySelector('.navbar_popup')
