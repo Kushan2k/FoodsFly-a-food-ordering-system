@@ -24,6 +24,12 @@
   margin: 0 20px;
   
 }
+.nav_item>a{
+  text-decoration: none;
+  color: white;
+  font-size: 0.9em;
+  
+}
 
 .nav_item:hover{
   border-bottom: 2px solid white;
@@ -33,13 +39,27 @@
   padding: 0 10px;
   padding-bottom: 5px;
 }
-.active{
-  border-bottom: 4px solid white;
+.active-tab{
+  padding: 0 10px;
+  border-bottom: 2px solid white;
+  transform: scale(1.2);
+  font-weight: 600;
 }
 
 .icon-btn{
   transform: scale(1.8);
 }
+
+.profile{
+  color: white;
+  text-decoration: none;
+
+}
+.fa-user{
+  transform: scale(1.7);
+  
+}
+
 
 .float-box{
   z-index: 100;

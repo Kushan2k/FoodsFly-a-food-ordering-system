@@ -13,13 +13,24 @@
     <h1 class="brand-name text-danger">FoodsFly</h1>
 
     <ul id="navbar" class="navbar d-none   d-sm-flex "> <!-- put navbar class -->
-      <li class="nav_item " ><i class="fa-solid fa-house d-sm-none me-2"></i>Home</li>
-      <li class="nav_item"><i class="fa-solid fa-bars-sort d-sm-none me-2"></i>Menu</li>
-      <li class="nav_item">Orders</li>
-      <li class="nav_item">About us</li>
+      <li class="nav_item active-tab" ><a href=""><i class="fa-solid fa-house d-sm-none me-2"></i>Home</a></li>
+
+      <li class="nav_item"><a href=""><i class="fa-solid fa-bars-sort d-sm-none me-2"></i>Menu</a></li>
+
+      <li class="nav_item"><a href="">Orders</a></li>
+      <li class="nav_item"><a href="./pages/aboutus.php"> About us</a></li>
       <li class="nav_item">Contact us</li>
+      <li class=" d-none d-sm-flex">
+        <a href="./pages/profile.php" class="profile">
+          <i class="fa-solid fa-user text-white">
+
+          </i>
+        </a>
+      </li>
       
     </ul>
+
+    
 
     <button class="d-sm-none bg-transparent border-0 icon-btn popup fa-solid fa-bars text-white"></button>
 
@@ -144,8 +155,7 @@
   </main>
 
 
-  <script src="./assets/js/navbar.js"></script>
-  <script src="./assets/js/slider.js"></script>
+  
   <?php include './includes/scripts.php'?>
 </body>
 </html>
