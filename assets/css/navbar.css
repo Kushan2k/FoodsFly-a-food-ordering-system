@@ -1,7 +1,6 @@
 .navbar-div{
   height: 70px;
   align-items: center;
-  border-bottom: 0.7px solid grey;
   top: 0;
   z-index: 1000;
   background-color: black;
@@ -71,9 +70,7 @@
   animation-timing-function: linear;
   animation-duration: 0.5s;
   
-  
 }
-
 
 @keyframes popup_navbar {
   from{

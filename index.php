@@ -6,9 +6,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
 </head>
+
 <body class=" position-relative">
  
-
   <nav class="container-fluid  px-4 d-flex flex-row navbar-div justify-content-between ">
     <h1 class="brand-name text-danger">FoodsFly</h1>
 
@@ -25,9 +25,6 @@
 
     <button class="d-sm-none bg-transparent border-0 icon-btn d-none hide fa-solid fa-xmark text-white"></button>
   </nav>
-
-
-
 
   <section class="hero slider">
 
@@ -48,7 +45,7 @@
         <div class="row">
           <div class="col-md-6 gx-5 mb-4">
             <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx91Nc_22BSjBDXwhq__Nr1BVnyBQFxUNCjQ&usqp=CAU" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
@@ -146,10 +143,7 @@
     </div>
   </main>
 
-  
 
-
-  
   <script src="./assets/js/navbar.js"></script>
   <script src="./assets/js/slider.js"></script>
   <?php include './includes/scripts.php'?>
