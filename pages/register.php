@@ -53,10 +53,10 @@
             <div class="col-md-5 py-5 bg-primary text-white text-center img-box">
                 <img class="side-img" src="https://www.epos.com.sg/wp-content/uploads/2022/08/KoreanBBQcoverimageopt-1024x624.jpg" >
             </div>
-            <div class="col-md-7 py-5">
+            <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
               <h4 class="pb-4">Please fill with your details</h4>
               <form>
-                  <div class="row my-2">
+                  <div class="row my-2 ">
                     <div class="col-12 col-md-6">
                       <input id="Full Name" name="Full Name" placeholder="Full Name" class="form-control" type="text">
                     </div>
