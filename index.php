@@ -39,10 +39,37 @@
 
   <section class="hero slider">
 
+  <style>
+    .next-icons{
+      position: absolute; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      margin: 0;
+      padding: 0;
+      bottom: 10px;
+      justify-content: space-around;
+    }
+  </style>
+
     <div class="container-fluid m-0 p-0">
       <div class="row p-0 m-0 position-relative">
         <div class="col-12 m-0 p-0">
-          <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/06/belgian-waffles-cover-image.jpg" class=" w-100 slider-img" alt="img">
+          <img src="./assets/images/image-1.jpg" class=" w-100 slider-img" alt="img">
+        </div>
+        <div class="next-icons">
+          <button class="text-white fa-solid fa-forward bg-transparent border-0" style="transform:scale(1.7) ;"></button>
+        </div>
+
+        <div class="hero-text container">
+          <div class="row">
+            <div class="col-md-7 mx-auto col-10 hero-container">
+              <h1 class="featurette-heading fw-normal lh-1 mb-5">Afordable, Delicious. All in one place <span class="text-muted">FoodsFly.</span></h1>
+              <p class="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate adipisci placeat corporis dicta vel ipsa dolore aliquam sint! Aliquam magni inventore qui error tenetur ducimus minus natus reiciendis.</p>
+              <button class="btn btn-success">View Menu</button>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -155,7 +182,7 @@
   </main>
 
 
-  
+  <script src="./assets/js/index.js"></script>
   <?php include './includes/scripts.php'?>
 </body>
 </html>

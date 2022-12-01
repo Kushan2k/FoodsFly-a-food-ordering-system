@@ -1,20 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const imgages = [
-
-    "https://img.traveltriangle.com/blog/wp-content/uploads/2018/06/belgian-waffles-cover-image.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXfNzFub-yoLh9a8k6i8HcBu_ZrG5dXPdoeCer0masr6RRxuDQEdgtTQtqhHRnp3IIabk&usqp=CAU",
-    "https://www.willflyforfood.net/wp-content/uploads/2022/06/belgian-food-waffles2.jpg",
-    "https://insanelygoodrecipes.com/wp-content/uploads/2021/07/Homemade-Belgian-Waffles-with-Ice-Cream-and-Strawberries-800x530.jpg",
-    
+    "./assets/images/image-1.jpg",
+    "./assets/images/image-3.jpg",
+    "./assets/images/image-4.jpg",
+    "./assets/images/image-5.jpg",
+    "./assets/images/image-6.jpg",
+    "./assets/images/image-7.jpg",
 
 
   ]
-
   let img = document.querySelector('.slider-img');
+
+  let nextbtn = document.querySelector(".fa-forward")
+  nextbtn.addEventListener('click', (e) => {
+    changeSlides(imgages,img)
+  })
+
+
   
   setInterval(() => {
-    console.log('heshar')
     changeSlides(imgages,img)
   }, 3000);
   
@@ -24,9 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function changeSlides(pictures,element) {
 
   let index = Math.floor(Math.random() * 10)
-  
   if (index > 0 && index <= pictures.length-1) {
     element.src=pictures[index]
+  } else {
+    element.src=pictures[0]
   }
 
   
