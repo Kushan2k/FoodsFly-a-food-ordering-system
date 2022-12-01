@@ -47,6 +47,7 @@
       min-height: 30vh;
     }
   </style>
+  <p class="text-center display-6 mt-3">We are <span class="text-danger">glad,</span> that you are here.</p>
   <section class="testimonial py-md-4 py-1" id="testimonial">
     <div class="container">
         <div class="row ">
@@ -54,7 +55,7 @@
                 <img class="side-img" src="https://www.epos.com.sg/wp-content/uploads/2022/08/KoreanBBQcoverimageopt-1024x624.jpg" >
             </div>
             <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
-              <h4 class="pb-4">Please fill with your details</h4>
+              <h4 class="pb-4">Please fill with your details.</h4>
               <form>
                   <div class="row my-2 ">
                     <div class="col-12 col-md-6">
@@ -70,17 +71,10 @@
                         <input id="Mobile No." name="Mobile No." placeholder="Mobile No." class="form-control" required="required" type="text">
                     </div>
                     <div class="col-12 col-md-6">
-                              
-                      <select id="inputState" class="form-control">
-                        <option selected>Choose ...</option>
-                        <option> New Buyer</option>
-                        <option> Auction</option>
-                        <option> Complaint</option>
-                        <option> Feedback</option>
-                      </select>
+                      <input id="address" name="address" placeholder="Residentail Address" class="form-control" required="required" type="text">
                     </div>
-                    <div class="form-group col-md-12 my-2">
-                      <textarea id="comment" name="comment" cols="40" rows="5" class="form-control"></textarea>
+                    <div class="form-group col-md-12 my-3">
+                      <p class="alert alert-warning text-center">some other filed</p>
                     </div>
                   </div>
                   <div class="row my-2">
