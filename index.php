@@ -1,9 +1,21 @@
+<?php
+include_once './utils/check_logedin_status.php';
+
+CheckLogedin();
+$logedin=false;
+if(isset($_SESSION['login'])){
+  $logedin=true;
+}
+
+
+?>
+
 <html lang="en">
 <head>
   <?php include './includes/header.php'?>
   <title>FoodsFly-Home</title>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
   
 </head>
 
@@ -20,13 +32,20 @@
       <li class="nav_item"><a href="">Orders</a></li>
       <li class="nav_item"><a href="./pages/aboutus.php"> About us</a></li>
       <li class="nav_item">Contact us</li>
-      <li class=" d-none d-sm-flex">
-        <a href="./pages/profile.php" class="profile">
-          <i class="fa-solid fa-user text-white">
+      
+      <?php
+      if($logedin){?>
+        <li class=" d-none d-sm-flex">
+          <a href="./pages/profile.php" class="profile">
+            <i class="fa-solid fa-user text-white">
 
-          </i>
-        </a>
-      </li>
+            </i>
+          </a>
+        </li>
+      <?php }else {?>
+        <li class="nav_item"><a href="./pages/register.php">Register</a></li>
+        <li class="nav_item"><a href="./pages/login.php">Login</a></li>
+      <?php }?>
       
     </ul>
 
