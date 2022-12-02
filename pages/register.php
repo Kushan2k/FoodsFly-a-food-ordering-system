@@ -67,36 +67,47 @@
     }
   </style>
   <p class="text-center display-6 mt-3">We are <span class="text-danger">glad,</span> that you are here.</p>
+
+  <?php
+
+  if(isset($_COOKIE['error'])){
+
+    echo "<p class='alert alert-danger text-center'>{$_COOKIE['error']}</p>";
+  }
+
+  ?>
+
   <section class="testimonial py-md-4 py-1" id="testimonial">
     <div class="container">
         <div class="row ">
             <div class="col-md-5 py-5 bg-primary text-white text-center img-box">
                 <img class="side-img" src="https://www.epos.com.sg/wp-content/uploads/2022/08/KoreanBBQcoverimageopt-1024x624.jpg" >
             </div>
+
             <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
               <h4 class="pb-4">Please fill with your details.</h4>
-              <form>
+              <form action="../actions/registerAction.php" method="POST" >
                   <div class="row my-2 ">
                     <div class="col-12 col-md-6">
-                      <input id="Full Name" name="Full Name" placeholder="Full Name" class="form-control" type="text" required="required">
+                      <input id="Full Name" name="fullname" placeholder="Full Name" class="form-control" type="text" required="required">
                     </div>
                     <div class="col-12 col-md-6">
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required="required">
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="Email" required="required" name="email">
                     </div>
                   </div>
 
                   <div class="row my-2">
                     <div class="col-12 col-md-6">
-                        <input id="Mobile No." name="Mobile No." placeholder="Mobile No." class="form-control" required="required" type="text">
+                        <input id="Mobile No." name="mobile" placeholder="Mobile No." class="form-control" required="required" type="number">
                     </div>
                     <div class="col-12 col-md-6">
                       <input id="address" name="address" placeholder="Residentail Address" class="form-control" required="required" type="text">
                     </div>
                     <div class="form-group col-12 col-md-6 my-2">
-                    <input id="Password" name="Password" placeholder="Password" class="form-control" required="required" type="text">
+                    <input id="Password" name="password" placeholder="Password" class="form-control" required="required" type="text">
                     </div>
                     <div class="col-12 col-md-6 my-2">
-                    <input id="Password" name="Password" placeholder="Confirm Password" class="form-control" required="required" type="text">
+                    <input id="Password" name="cpassword" placeholder="Confirm Password" class="form-control" required="required" type="text">
                     </div>
                   <div class="row my-2">
                       <div class="form-group">
@@ -112,7 +123,7 @@
                   </div>
                   
                   <div class="form-row">
-                      <button type="button" class="btn btn-danger">Submit</button>
+                      <button type="submit" name="register" class="btn btn-danger">Submit</button>
                   </div>
               </form>
             </div>
@@ -133,6 +144,20 @@
       <p class="text-center text-muted">© 2022 FoodsFly, Org</p>
     </footer>
   </div>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded",()=>{
+
+      setTimeout(() => {
+        let error=document.querySelector('.alert-danger');
+        if(error){
+          error.remove()
+        }
+      }, 2000);
+
+    })
+  </script>
 
 
   
