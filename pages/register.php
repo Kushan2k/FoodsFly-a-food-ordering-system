@@ -63,6 +63,7 @@
       position: relative;
       overflow: hidden;
       min-height: 30vh;
+      border-radius: 1%;
     }
   </style>
   <p class="text-center display-6 mt-3">We are <span class="text-danger">glad,</span> that you are here.</p>
@@ -77,10 +78,10 @@
               <form>
                   <div class="row my-2 ">
                     <div class="col-12 col-md-6">
-                      <input id="Full Name" name="Full Name" placeholder="Full Name" class="form-control" type="text">
+                      <input id="Full Name" name="Full Name" placeholder="Full Name" class="form-control" type="text" required="required">
                     </div>
                     <div class="col-12 col-md-6">
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required="required">
                     </div>
                   </div>
 
@@ -91,10 +92,12 @@
                     <div class="col-12 col-md-6">
                       <input id="address" name="address" placeholder="Residentail Address" class="form-control" required="required" type="text">
                     </div>
-                    <div class="form-group col-md-12 my-3">
-                      <p class="alert alert-warning text-center">some other filed</p>
+                    <div class="form-group col-12 col-md-6 my-2">
+                    <input id="Password" name="Password" placeholder="Password" class="form-control" required="required" type="text">
                     </div>
-                  </div>
+                    <div class="col-12 col-md-6 my-2">
+                    <input id="Password" name="Password" placeholder="Confirm Password" class="form-control" required="required" type="text">
+                    </div>
                   <div class="row my-2">
                       <div class="form-group">
                         <div class="form-group">
