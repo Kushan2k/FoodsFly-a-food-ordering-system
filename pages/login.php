@@ -23,31 +23,17 @@
   <nav class="container-fluid  px-4 d-flex flex-row navbar-div justify-content-between ">
     <h1 class="brand-name text-danger">FoodsFly</h1>
 
-    <ul id="navbar" class="navbar d-none   d-sm-flex "> <!-- put navbar class -->
+    <ul id="navbar" class="navbar d-sm-flex "> <!-- put navbar class -->
       <li class="nav_item " >
         <a href="../index.php">
-          <i class="fa-solid fa-house d-sm-none me-2">
-
-          </i>Home
+          Home
         </a>
       </li>
-
-      <li class="nav_item ">
-        <a href="">
-          <i class="fa-solid fa-bars-sort d-sm-none me-2">
-
-          </i>Menu
-        </a>
-      </li>
-      <li class="nav_item "><a href="">Orders</a></li>
-      <li class="nav_item"><a href="./aboutus.php"> About us</a></li>
       <li class="nav_item"><a href="./contacts.php">Contact us</a></li>
       
     </ul>
 
-    <button class="d-sm-none bg-transparent border-0 icon-btn popup fa-solid fa-bars text-white"></button>
-
-    <button class="d-sm-none bg-transparent border-0 icon-btn d-none hide fa-solid fa-xmark text-white"></button>
+    
   </nav>
 
   <style>
