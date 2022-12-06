@@ -1,3 +1,4 @@
+<?php session_start();?>
 <html lang="en">
 <head>
   <?php include '../includes/header.php'?>
@@ -17,6 +18,21 @@
   <style>
     .navbar-div{
       position: static;
+    }
+    .custom-alert{
+      
+      padding: 15px;
+      text-transform: capitalize;
+      
+
+    }
+    .suc-error{
+      border: 0.8px solid green;
+      background-color: rgba(32, 125, 58, 0.3);
+    }
+    .error{
+      border: 0.8px solid red;
+      background-color: rgba(255, 0, 0, 0.09);
     }
   </style>
  
@@ -74,6 +90,21 @@
     }
   </style>
   <p class="text-center display-6 mt-3">Login to<span class="text-danger"> Get Started</span></p>
+<?php
+
+  if(isset($_SESSION['error'])){?>
+    <div class="container error-div">
+      <div class="row">
+        <div class="col-10 col-md-6 mx-auto">
+          <p class="custom-alert text-center error"><?= $_SESSION['error']?></p>
+        </div>
+      </div>
+    </div>
+
+    
+  <?php }
+    $_SESSION['error']=null;
+?>
   <section class="testimonial py-md-4 py-1" id="testimonial">
     <div class="container">
         <div class="row ">
@@ -82,29 +113,23 @@
             </div>
             <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
               <h4 class="pb-4">Enter Your Details.</h4>
-              <form>
+              <form action="../actions/loginAction.php" method="POST">
                   <div class="row my-2 ">
                     <div class="col-md-7 my-4">
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required="required">
+                      <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email" required="required">
                     </div>
                     <div class="col-md-7">
-                        <input id="Password" name="Password" placeholder="Password" class="form-control" required="required" type="text">
+                        <input id="Password" name="password"  placeholder="Password" class="form-control" required="required" type="text">
                     </div>
                     <div class="col-12 col-md-6">
                     </div>
                     <div class="form-group col-md-12 my-3">
                     </div>
                   </div>
-                  <div class="row my-2">
-                      <div class="form-group">
-                        <div class="form-group">
-
-                        </div>
-                      </div>
-                  </div>
+                 
                   
                   <div class="form-row">
-                      <button type="button" class="btn btn-primary">Login</button>
+                      <button type="submit" name="login" class="btn btn-primary">Login</button>
                   </div>
               </form>
             </div>
@@ -125,6 +150,20 @@
       <p class="text-center text-muted">© 2022 FoodsFly, Org</p>
     </footer>
   </div>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded",()=>{
+
+      setTimeout(() => {
+        let error=document.querySelector('.error-div');
+        if(error){
+          error.remove()
+        }
+      }, 2000);
+
+    })
+  </script>
 
 
   
