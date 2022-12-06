@@ -25,13 +25,37 @@ function valiatePassword($password,$compass){
 
 function validMobile($mobile){
 
-  if(filter_var($mobile,FILTER_VALIDATE_INT)){
-    if(strlen($mobile)==10){
-      return true;
-    }else{
-      return false;
-    }
+  if(strlen($mobile)==10){
+    return true;
   }else{
     return false;
   }
+  
+}
+
+function checkRecordExistsinDatabase($conn,$testEmail,$testMobile){
+
+  $SQL=$conn->prepare("SELECT user_id FROM users WHERE email=? OR mobile=? LIMIT 1");
+  $SQL->bind_param("ss",$testEmail,$testMobile);
+  $SQL->execute();
+  $result = $SQL->get_result();
+  $user = $result->fetch_assoc();
+
+  if($user==null){
+    return false;
+  }
+  $SQL->close();
+  return $user['user_id'];
+
+
+  
+  
+
+  
+
+}
+
+function redirectWithError($to,$msg){
+  $_SESSION['error']=$msg;
+  header("Location:{$to}");
 }

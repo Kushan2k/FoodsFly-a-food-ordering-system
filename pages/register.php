@@ -1,3 +1,4 @@
+<?php session_start();?>
 <html lang="en">
 <head>
   <?php include '../includes/header.php'?>
@@ -65,23 +66,48 @@
       min-height: 30vh;
       border-radius: 1%;
     }
+    .custom-alert{
+      
+      padding: 15px;
+      text-transform: capitalize;
+      
+
+    }
+    .suc-error{
+      border: 0.8px solid green;
+      background-color: rgba(32, 125, 58, 0.3);
+    }
+    .error{
+      border: 0.8px solid red;
+      background-color: rgba(255, 0, 0, 0.09);
+    }
   </style>
   <p class="text-center display-6 mt-3">We are <span class="text-danger">glad,</span> that you are here.</p>
 
   <?php
 
-  if(isset($_COOKIE['error'])){
+  if(isset($_SESSION['error'])){?>
+    <div class="container error-div">
+      <div class="row">
+        <div class="col-10 col-md-6 mx-auto">
+          <p class="custom-alert text-center error"><?= $_SESSION['error']?></p>
+        </div>
+      </div>
+    </div>
 
-    echo "<p class='alert alert-danger text-center'>{$_COOKIE['error']}</p>";
-  }
-
+    
+  <?php }
+    $_SESSION['error']=null;
   ?>
+
+
+ 
 
   <section class="testimonial py-md-4 py-1" id="testimonial">
     <div class="container">
         <div class="row ">
             <div class="col-md-5 py-5 bg-primary text-white text-center img-box">
-                <img class="side-img" src="https://www.epos.com.sg/wp-content/uploads/2022/08/KoreanBBQcoverimageopt-1024x624.jpg" >
+                <img class="side-img" src="../assets/images/register.background.jpg" >
             </div>
 
             <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
@@ -98,7 +124,7 @@
 
                   <div class="row my-2">
                     <div class="col-12 col-md-6">
-                        <input id="Mobile No." name="mobile" placeholder="Mobile No." class="form-control" required="required" type="number">
+                        <input id="Mobile No." name="mobile" placeholder="Mobile No." class="form-control" required="required" type="text">
                     </div>
                     <div class="col-12 col-md-6">
                       <input id="address" name="address" placeholder="Residentail Address" class="form-control" required="required" type="text">
@@ -150,7 +176,7 @@
     document.addEventListener("DOMContentLoaded",()=>{
 
       setTimeout(() => {
-        let error=document.querySelector('.alert-danger');
+        let error=document.querySelector('.error-div');
         if(error){
           error.remove()
         }
