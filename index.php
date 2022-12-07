@@ -1,11 +1,9 @@
 <?php
-include_once './utils/check_logedin_status.php';
-
-CheckLogedin();
 $logedin=false;
-if(isset($_SESSION['login'])){
+if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
   $logedin=true;
 }
+
 
 
 ?>
@@ -68,7 +66,9 @@ if(isset($_SESSION['login'])){
           <img src="./assets/images/image-1.jpg" class=" w-100 slider-img" alt="img">
         </div>
         <div class="next-icons">
-          <button class="text-white fa-solid fa-forward bg-transparent border-0" style="transform:scale(1.7) ;"></button>
+          <button class="text-white fa-solid fa-backward next-back-btns bg-transparent border-0" data-type='back' style="transform:scale(1.5) ;"></button>
+          <button class="text-white fa-solid fa-forward next-back-btns bg-transparent border-0" data-type='forward' style="transform:scale(1.5) ;"></button>
+
         </div>
 
         <div class="hero-text container">

@@ -1,4 +1,13 @@
-<?php session_start();?>
+<?php 
+session_start();
+
+include_once '../utils/jwt-auth.php';
+
+if(checkIsLogedIn()){
+  header("Location:../index.php");
+}
+
+?>
 <html lang="en">
 <head>
   <?php include '../includes/header.php'?>

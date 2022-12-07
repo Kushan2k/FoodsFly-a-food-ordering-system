@@ -12,13 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   ]
   let img = document.querySelector('.slider-img');
 
-  let nextbtn = document.querySelector(".fa-forward")
-  nextbtn.addEventListener('click', (e) => {
-    changeSlides(imgages,img)
+  let nextbtn = document.querySelectorAll(".next-back-btns")
+  nextbtn.forEach(btn => {
+    console.log('click')
+    btn.addEventListener('click', (e) => {
+      changeSlides(imgages,img)
+    })
   })
 
-
-  
   setInterval(() => {
     changeSlides(imgages,img)
   }, 3000);
