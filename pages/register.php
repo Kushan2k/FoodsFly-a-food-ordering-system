@@ -139,10 +139,10 @@ if(checkIsLogedIn()){
                       <input id="address" name="address" placeholder="Residentail Address" class="form-control" required="required" type="text">
                     </div>
                     <div class="form-group col-12 col-md-6 my-2">
-                    <input id="Password" name="password" placeholder="Password" class="form-control" required="required" type="text">
+                    <input id="Password" name="password" placeholder="Password" class="form-control" required="required" type="password">
                     </div>
                     <div class="col-12 col-md-6 my-2">
-                    <input id="Password" name="cpassword" placeholder="Confirm Password" class="form-control" required="required" type="text">
+                    <input id="Password" name="cpassword" placeholder="Confirm Password" class="form-control" required="required" type="password">
                     </div>
                   <div class="row my-2">
                       <div class="form-group">

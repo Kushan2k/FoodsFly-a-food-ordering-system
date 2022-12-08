@@ -128,7 +128,7 @@ if(checkIsLogedIn()){
                       <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email" required="required">
                     </div>
                     <div class="col-md-7">
-                        <input id="Password" name="password"  placeholder="Password" class="form-control" required="required" type="text">
+                        <input id="Password" name="password"  placeholder="Password" class="form-control" required="required" type="password">
                     </div>
                     <div class="col-12 col-md-6">
                     </div>
