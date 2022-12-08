@@ -154,7 +154,6 @@
               </ul>
             </div>
           </div>
-          <!-- <div class="row text-center">
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
@@ -172,7 +171,6 @@
               </ul>
             </div>
           </div>
-          <div class="row text-center">
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
@@ -190,7 +188,6 @@
               </ul>
             </div>
           </div>
-          <div class="row text-center">
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
@@ -207,8 +204,7 @@
                   <i class="fa-solid fa-envelope"></i></a></li>
               </ul>
             </div>
-          </div> 
-          <div class="row text-center">
+          </div>
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
@@ -225,12 +221,13 @@
                   <i class="fa-solid fa-envelope"></i></a></li>
               </ul>
             </div>
-          </div> -->
+          </div>
+         
 
           
         </div>
 
-          
+        </div>
       </div>
     </div>
   </section>
