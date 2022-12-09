@@ -181,79 +181,44 @@ if(checkIsLogedIn()){
         </div>
         <div class="col-lg-9 col-md-9 col-9">
 
-          <div class="row"> 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                  <a href="#!" class="btn btn-primary">Button</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                  <a href="#!" class="btn btn-primary">Button</a>
+          <div class="row">
+
+            <?php
+
+            for($i=0;$i<10;$i++){?>
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="https://media.istockphoto.com/id/1280158821/photo/diverse-keto-dishes.jpg?s=170667a&w=0&k=20&c=ag-PetVCq5UBmF8PWBznD3FCzNHzqXQgYpPTB_eptRs=" class="img-fluid" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Item name</h5>
+                    <h6 class="card-subtitle text-muted">Lunch</h6>
+                    <h4 class="text-success mt-2">Rs 600.00</h4>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <a href="#!" class="btn btn-primary border-0 bg-transparent">
+                        <i class="fa-sharp text-dark fa-solid fa-cart-shopping"></i>
+                      </a>
+                      <h1 class="text-warning">
+                        <i class="fa-solid h6 text-warning fa-star"></i>
+                        <i class="fa-solid h6 text-warning fa-star"></i>
+                        <i class="fa-solid h6 text-warning fa-star"></i>
+                        <i class="fa-solid h6 text-warning fa-star"></i>
+                      </h1>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                  <a href="#!" class="btn btn-primary">Button</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
-                  </p>
-                  <a href="#!" class="btn btn-primary">Button</a>
-                </div>
-              </div>
-            </div>
+
+            <?php }
+
+
+            ?>
+
+            
           </div>
 
         </div>
@@ -269,7 +234,7 @@ if(checkIsLogedIn()){
       
       types.forEach((item)=>{
         item.addEventListener('click',(e)=>{
-          alert(e.target.innerHTML)
+          
         })
       })
 
