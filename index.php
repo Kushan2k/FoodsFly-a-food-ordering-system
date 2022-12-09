@@ -12,6 +12,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
 <head>
   <?php include './includes/header.php'?>
   <title>FoodsFly-Home</title>
+  <link rel="stylesheet" href="../assets/css/slider.css">
   
   
   
@@ -25,7 +26,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
     <ul id="navbar" class="navbar d-none   d-sm-flex "> <!-- put navbar class -->
       <li class="nav_item active-tab" ><a href=""><i class="fa-solid fa-house d-sm-none me-2"></i>Home</a></li>
 
-      <li class="nav_item"><a href=""><i class="fa-solid fa-bars-sort d-sm-none me-2"></i>Menu</a></li>
+      <li class="nav_item"><a href="./pages/menu.php"><i class="fa-solid fa-bars-sort d-sm-none me-2"></i>Menu</a></li>
 
       <li class="nav_item"><a href="">Orders</a></li>
       <li class="nav_item"><a href="./pages/aboutus.php"> About us</a></li>
@@ -205,6 +206,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
   </main>
 
   <script src="./assets/js/index.js"></script>
+  <script src="../assets/js/slider.js"></script>
   <?php include './includes/scripts.php'?>
 </body>
 </html>
