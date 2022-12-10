@@ -1,0 +1,30 @@
+.card-header{
+  font-weight: 700;
+}
+.list-group{
+  margin-left: 10px;
+}
+.list-group-item:hover{
+  cursor: pointer;
+  background-color: #dedede;
+}
+.menu_item{
+  animation-name: popup;
+  animation-timing-function: linear;
+  animation-duration: 300ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  
+  transition: 400ms linear;
+
+}
+
+@keyframes popup {
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
