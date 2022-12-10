@@ -227,10 +227,56 @@ if(checkIsLogedIn()){
         </div>
       </div>
     </div>
+    <style>
+      .cart{
+        position: fixed;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        right: 20px;
+        bottom: 20px;
 
+      }
+      .cart>a>i{
+        transform: scale(1.5);
+        position: relative;
+      }
+      .cart-btn:hover{
+        cursor: pointer;
+      }
+      .cart-count{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        border-radius: 50%;
+        background-color: gold;
+        width: auto;
+        height: 30px;
+        padding: 5px;
+      }
+    </style>
+    
+    <div class="cart bg-dark" style="border-radius: 50%;">
+      
+      <a class="bg-transparent cart-btn border-0">
+        <h3 class="text-danger cart-count">10</h3>  
+      <i class="fa-solid fa-cart-shopping text-white"></i></a>
+    </div>
     
   </section>
-<script src="../assets/js/menu.js"></script>
+  <script>
+    let cartBTN=document.querySelector('.cart-btn')
+    cartBTN.addEventListener('click',(e)=>{
+      let ele=document.querySelector('.cart-count')
+      ele.innerHTML=parseInt(ele.innerHTML)+1
+    })
+  </script>
+  <script src="../assets/js/menu.js"></script>
  <?php include '../includes/scripts.php'?>
 </body>
 </html>
