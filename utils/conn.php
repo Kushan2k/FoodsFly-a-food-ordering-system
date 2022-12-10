@@ -1,9 +1,4 @@
 <?php
-
-if(session_status()!=PHP_SESSION_ACTIVE){
-  session_start();
-}
-
 $username='root';
 $password='';
 $host='localhost';

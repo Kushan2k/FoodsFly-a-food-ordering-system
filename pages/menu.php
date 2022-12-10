@@ -7,8 +7,6 @@ if(checkIsLogedIn()){
   $logedin=true;
 }
 
-
-
 ?>
 
 <html lang="en">
@@ -137,17 +135,19 @@ if(checkIsLogedIn()){
         cursor: pointer;
         background-color: #dedede;
       }
+      
     </style>
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-3 ">
+        <div class="col-5 col-lg-3 col-md-3">
 
           <div class="card" style="border: none;">
             <div class="card-header">
-              Catogory
+              Category
             </div>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush" data-parent="category">
+              <li class="list-group-item">All</li>
               <li class="list-group-item">Breakfirst</li>
               <li class="list-group-item">Lunch</li>
               <li class="list-group-item">Dinner</li>
@@ -159,7 +159,7 @@ if(checkIsLogedIn()){
             <div class="card-header">
               Price Range(LKR)
             </div>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush" data-parent="price">
               <li class="list-group-item">400-700</li>
               <li class="list-group-item">700-1500</li>
               <li class="list-group-item">1500-Up</li>
@@ -170,7 +170,7 @@ if(checkIsLogedIn()){
             <div class="card-header">
               something else
             </div>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush" data-parent="something">
               <li class="list-group-item">An item</li>
               <li class="list-group-item">A second item</li>
               <li class="list-group-item">A third item</li>
@@ -179,46 +179,56 @@ if(checkIsLogedIn()){
 
       
         </div>
-        <div class="col-lg-9 col-md-9 col-9">
+        <div class="col-7 col-lg-9 col-md-9 ">
 
           <div class="row">
-
             <?php
+            include_once '../utils/select_data.php';
+            include_once '../utils/conn.php';
+            $data=getMenuItemData($conn);
 
-            for($i=0;$i<10;$i++){?>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                    <img src="https://media.istockphoto.com/id/1280158821/photo/diverse-keto-dishes.jpg?s=170667a&w=0&k=20&c=ag-PetVCq5UBmF8PWBznD3FCzNHzqXQgYpPTB_eptRs=" class="img-fluid" />
-                    <a href="#!">
-                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                    </a>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Item name</h5>
-                    <h6 class="card-subtitle text-muted">Lunch</h6>
-                    <h4 class="text-success mt-2">Rs 600.00</h4>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <a href="#!" class="btn btn-primary border-0 bg-transparent">
-                        <i class="fa-sharp text-dark fa-solid fa-cart-shopping"></i>
+            if($data==null){
+
+            }else{
+              for($i=0;$i<count($data);$i++){?>
+                <div class="col-sm-6 col-lg-4 col-md-6 mb-4 menu_item" data-cat="<?= ucfirst($data[$i]['category']) ?>" data-price="<?= $data[$i]['price']?> " >
+                  <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                      <img src="<?= $data[$i]['img_url']?>" class="img-fluid" />
+                      <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                       </a>
-                      <h1 class="text-warning">
-                        <i class="fa-solid h6 text-warning fa-star"></i>
-                        <i class="fa-solid h6 text-warning fa-star"></i>
-                        <i class="fa-solid h6 text-warning fa-star"></i>
-                        <i class="fa-solid h6 text-warning fa-star"></i>
-                      </h1>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title"><?= ucfirst($data[$i]['name'])?></h5>
+                      <h6 class="card-subtitle text-muted"><?= ucfirst($data[$i]['category'])?></h6>
+                      <h4 class="text-success mt-2">Rs <?= number_format($data[$i]['price'],2,'.',',') ?></h4>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <a href="#!" class="btn btn-primary border-0 bg-transparent">
+                          <i class="fa-sharp text-dark fa-solid fa-cart-shopping"></i>
+                        </a>
+                        <h1 class="text-warning">
+                          <?php
+                          
+                          $rating=$data[$i]['rating'];
+                          $count=$data[$i]['rate_count'];
+                          $total=(int)$rating/$count;
+                          for($j=0;$j<$total;$j++){
+                           
+                            echo '<i class="fa-solid h6 text-warning fa-star"></i>';
+                          }
+                          
+                          ?>
+                        </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-            <?php }
-
-
-            ?>
-
+              <?php }
+            }
             
+            ?>
           </div>
 
         </div>
@@ -230,15 +240,60 @@ if(checkIsLogedIn()){
 
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
+      let menu_items=document.querySelectorAll('.menu_item')
       let types=document.querySelectorAll('.list-group-item');
       
       types.forEach((item)=>{
         item.addEventListener('click',(e)=>{
           
+          switch(e.target.parentElement.dataset.parent){
+            case 'category':
+              
+              sortMenuItems(menu_items,'category',0,0,cat=e.target.innerHTML)
+              break;
+            case 'price': 
+              console.log('you selectefd price');
+              break;
+            case 'something': 
+              console.log('you selected something');
+              break;
+            default:
+              console.log('not a option')
+          }
         })
       })
 
     })
+
+    function sortMenuItems(items,sortType,minValue,maxValue,cat){
+
+      console.log(cat)
+      switch(sortType){
+        case 'category':
+          items.forEach(item=>{
+            if(cat=='All'){
+              displayItems(item)
+              return
+            }
+            if(item.dataset.cat!=cat){
+              
+              item.classList.add('d-none')
+            }else{
+              displayItems(item)
+            }
+          })
+
+          break;
+      }
+
+    }
+
+    function displayItems(item){
+      console.log('runing')
+      if(item.classList.contains('d-none')){
+        item.classList.remove('d-none')
+      }
+    }
   </script>
 
  <?php include '../includes/scripts.php'?>
