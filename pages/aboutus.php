@@ -1,3 +1,13 @@
+<?php
+include_once '../utils/jwt-auth.php';
+
+$logedin=false;
+if(checkIsLogedIn()){
+  $logedin=true;
+  
+}
+?>
+
 <html lang="en">
 <head>
   <?php include '../includes/header.php'?>
@@ -44,15 +54,17 @@
       </li>
 
       <li class="nav_item ">
-        <a href="">
+        <a href="./menu.php">
           <i class="fa-solid fa-bars-sort d-sm-none me-2">
 
           </i>Menu
         </a>
       </li>
-      <li class="nav_item "><a href="">Orders</a></li>
+      <?php
+      if($logedin){
+        echo '<li class="nav_item"><a href="">Orders</a></li>';
+      }?>
       <li class="nav_item active-tab"><a href=""> About us</a></li>
-      <li class="nav_item"><a href="./contacts.php">Contact us</a></li>
       <li class=" d-none d-sm-flex">
         <a href="./profile.php" class="profile">
           <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
@@ -120,6 +132,70 @@
         text-decoration: none;
       }
     </style>
+    <div class="container mb-4">
+      <style>
+        .bg-image {
+          background-image: url('../assets/images/about-us.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      </style>
+      <div class="row">
+        <div class="col-11 mx-auto">
+          
+          <div class="card border-0 rounded-3 shadow-lg overflow-hidden">
+            <div class="card-body p-0">
+              <div class="row g-0">
+                <div class="col-sm-6 d-none d-sm-block bg-image"></div>
+                <div class="col-sm-6 p-4">
+                  <div class="text-center">
+                    <div class="h3 fw-light">Contact Us Now</div>
+                    
+                  </div>
+                  <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                    <!-- Name Input -->
+                    <div class="form-floating mb-3">
+                      <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                      <label for="name">Name</label>
+                      
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="form-floating mb-3">
+                      <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                      <label for="emailAddress">Email Address</label>
+                      
+                      
+                    </div>
+
+                    <!-- Message Input -->
+                    <div class="form-floating mb-3">
+                      <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                      <label for="message">Message</label>
+                      
+                    </div>
+
+                    
+
+                    <!-- Submit button -->
+                    <div class="d-grid">
+                      <button class="btn btn-outline-primary btn-lg " id="submitButton" type="submit">Submit</button>
+                    </div>
+                  </form>
+                  <!-- End of contact form -->
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
 
     <div class="bg-light py-5">
       <div class="container py-5">
@@ -220,18 +296,13 @@
               </ul>
             </div>
           </div>
-         
-
-          
         </div>
-
         </div>
       </div>
     </div>
   </section>
 
-
-  
+  <?php include_once '../includes/footer.php'?>
   <?php include '../includes/scripts.php'?>
 </body>
 </html>

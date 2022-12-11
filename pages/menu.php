@@ -37,9 +37,11 @@ if(checkIsLogedIn()){
 
       <li class="nav_item active-tab"><a href=""><i class="fa-solid fa-bars-sort d-sm-none me-2"></i>Menu</a></li>
 
-      <li class="nav_item"><a href="">Orders</a></li>
-      <li class="nav_item"><a href=".aboutus.php"> About us</a></li>
-      <li class="nav_item"><a href=".contacts.php">Contact us</a></li>
+      <?php
+      if($logedin){
+        echo '<li class="nav_item"><a href="">Orders</a></li>';
+      }?>
+      <li class="nav_item"><a href="./aboutus.php"> About us</a></li>
       
       <?php
       if($logedin){?>
@@ -76,7 +78,10 @@ if(checkIsLogedIn()){
               <li class="list-group-item">Breakfirst</li>
               <li class="list-group-item">Lunch</li>
               <li class="list-group-item">Dinner</li>
-              <li class="list-group-item">Snacks</li>
+              <li class="list-group-item">Desert</li>
+              <li class="list-group-item">Drink</li>
+              <li class="list-group-item">Sweets</li>
+              <li class="list-group-item">Short eats</li>
             </ul>
           </div>
 
@@ -90,19 +95,6 @@ if(checkIsLogedIn()){
               <li class="list-group-item">1500-Up</li>
             </ul>
           </div>
-
-          <div class="card mt-3" style="border: none;">
-            <div class="card-header">
-              something else
-            </div>
-            <ul class="list-group list-group-flush" data-parent="something">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul>
-          </div>
-
-      
         </div>
         <div class="col-7 col-lg-9 col-md-9 ">
 
@@ -176,6 +168,7 @@ if(checkIsLogedIn()){
     <?php }?>
     
   </section>
+  <?php include_once '../includes/footer.php'?>
 
   <script>
     document.addEventListener('DOMContentLoaded',()=>{

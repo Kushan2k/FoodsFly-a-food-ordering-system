@@ -34,7 +34,6 @@ if(checkIsLogedIn()){
         </a>
       </li>
       <li class="nav_item"><a href="./aboutus.php"> About us</a></li>
-      <li class="nav_item d-none d-sm-flex"><a href="./contacts.php">Contact us</a></li>
       
     </ul>
   </nav>

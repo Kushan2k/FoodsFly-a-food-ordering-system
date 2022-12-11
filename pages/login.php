@@ -54,7 +54,7 @@ if(checkIsLogedIn()){
           Home
         </a>
       </li>
-      <li class="nav_item"><a href="./contacts.php">Contact us</a></li>
+      <li class="nav_item"><a href="./aboutus.php">About Us</a></li>
       
     </ul>
 
