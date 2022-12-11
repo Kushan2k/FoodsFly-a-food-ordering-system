@@ -160,7 +160,7 @@ if(checkIsLogedIn()){
     if($logedin){?>
       <div class="cart bg-dark" style="border-radius: 50%;">
       
-        <a class="bg-transparent cart-btn border-0">
+        <a class="bg-transparent cart-btn border-0" href="./cart.php?action=view-cart">
           <h3 class="text-danger cart-count"><?= $cart_count ?></h3>  
         <i class="fa-solid fa-cart-shopping text-white"></i></a>
       </div>
