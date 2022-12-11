@@ -22,3 +22,14 @@ function getMenuItemData($conn){
     return null;
   }
 }
+
+function getCartItemCount($conn,$user_id){
+  $SQL="SELECT COUNT(id) AS item_count FROM user_cart WHERE user_id={$user_id}";
+  
+  $res=$conn->query($SQL);
+  if($res==TRUE){
+    return $res->fetch_assoc()['item_count'];
+  }else{
+    return 0;
+  }
+}

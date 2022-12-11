@@ -1,11 +1,21 @@
 <?php
 
 include_once '../utils/jwt-auth.php';
-header("Connection:Keep-Alive");
+include_once '../utils/select_data.php';
+include_once '../utils/conn.php';
+
+
+
 
 $logedin=false;
+$cart_count=0;
+
 if(checkIsLogedIn()){
   $logedin=true;
+  $user=verifyJWT($_COOKIE['jwt-token']);
+  if($user!=null){
+    $cart_count=getCartItemCount($conn,$user['user_id']);
+  }
 }
 
 ?>
@@ -19,7 +29,6 @@ if(checkIsLogedIn()){
 </head>
 
 <body class=" position-relative">
- 
   <nav class="container-fluid  px-4 d-flex flex-row navbar-div justify-content-between ">
     <h1 class="brand-name text-danger">FoodsFly</h1>
 
@@ -55,82 +64,7 @@ if(checkIsLogedIn()){
     <button class="d-sm-none bg-transparent border-0 icon-btn d-none hide fa-solid fa-xmark text-white"></button>
   </nav>
 
-  <section class="menu_page mt-3">
-    <!-- <div class="container py-5 my-5">
-      <div class="row text-center pb-4">
-        <div class="col-md-12">
-            <h2>explore foods and ..</h2>
-        </div>
-      </div>   
-      <div class="row">
-          <div class="col-md-12">
-              <div class="card" style="border: none;">
-                  <div class="card-body" >
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group ">
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group ">
-                          <select id="inputState" class="form-control" >
-                            <option selected>Sort by </option>
-                            <option>BMW</option>
-                            <option>Audi</option>
-                            <option>Maruti</option>
-                            <option>Tesla</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group ">
-                          <select id="inputState" class="form-control" >
-                            <option selected>... Select Model...</option>
-                            <option>City</option>
-                            <option>Jazz</option>
-                            <option>Brio</option>
-                            
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group ">
-                          <select id="inputState" class="form-control" >
-                            <option selected>... Select Location...</option>
-                            <option>New Delhi</option>
-                            <option>Banglore</option>
-                            <option>Chennai</option>
-                            <option>Jaipur</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group ">
-                          <select id="inputState" class="form-control" >
-                            <option selected>... Select Budget...</option>
-                            <option>1 Lac-5 Lac</option>
-                            <option>5 Lac-10 Lac</option>
-                            <option>10 Lac-15 Lac</option>
-                            <option>15 Lac-20 Lac</option>
-                            <option>20 Lac-25 Lac</option>
-                            <option>25 Lac & Above</option>
-                          </select>
-                        </div>
-                      </div>
-                    
-                    </div>
-                  </div>
-              </div> 
-          </div>
-      </div>
-    </div> -->
-
-    <style>
-      
-      
-    </style>
-
+  <section class="menu_page mt-5">
     <div class="container-fluid">
       <div class="row">
         <div class="col-5 col-lg-3 col-md-3">
@@ -176,8 +110,7 @@ if(checkIsLogedIn()){
 
           <div class="row">
             <?php
-            include_once '../utils/select_data.php';
-            include_once '../utils/conn.php';
+            
             $data=getMenuItemData($conn);
 
             if($data==null){
@@ -197,9 +130,8 @@ if(checkIsLogedIn()){
                       <h6 class="card-subtitle text-muted"><?= ucfirst($data[$i]['category'])?></h6>
                       <h4 class="text-success mt-2">Rs <?= number_format($data[$i]['price'],2,'.',',') ?></h4>
                       <div class="d-flex justify-content-between align-items-center">
-                        <a href="#!" class="btn btn-primary border-0 bg-transparent">
-                          <i class="fa-sharp text-dark fa-solid fa-cart-shopping"></i>
-                        </a>
+                        <button data-itemID=<?= $data[$i]['menu_id'] ?>
+                        class="btn btn-primary border-0 bg-transparent fa-sharp text-dark fa-solid fa-cart-shopping"></button>
                         <h1 class="text-warning">
                           <?php
                           
@@ -227,55 +159,51 @@ if(checkIsLogedIn()){
         </div>
       </div>
     </div>
-    <style>
-      .cart{
-        position: fixed;
-        width: 70px;
-        height: 70px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        right: 20px;
-        bottom: 20px;
-
-      }
-      .cart>a>i{
-        transform: scale(1.5);
-        position: relative;
-      }
-      .cart-btn:hover{
-        cursor: pointer;
-      }
-      .cart-count{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: absolute;
-        top: -5px;
-        right: -10px;
-        border-radius: 50%;
-        background-color: gold;
-        width: auto;
-        height: 30px;
-        padding: 5px;
-      }
-    </style>
     
-    <div class="cart bg-dark" style="border-radius: 50%;">
+    
+    <?php
+
+    if($logedin){?>
+      <div class="cart bg-dark" style="border-radius: 50%;">
       
-      <a class="bg-transparent cart-btn border-0">
-        <h3 class="text-danger cart-count">10</h3>  
-      <i class="fa-solid fa-cart-shopping text-white"></i></a>
-    </div>
+        <a class="bg-transparent cart-btn border-0">
+          <h3 class="text-danger cart-count"><?= $cart_count ?></h3>  
+        <i class="fa-solid fa-cart-shopping text-white"></i></a>
+      </div>
+
+    <?php }?>
     
   </section>
+
   <script>
-    let cartBTN=document.querySelector('.cart-btn')
-    cartBTN.addEventListener('click',(e)=>{
-      let ele=document.querySelector('.cart-count')
-      ele.innerHTML=parseInt(ele.innerHTML)+1
+    document.addEventListener('DOMContentLoaded',()=>{
+      let cartBTNS=document.querySelectorAll('.fa-cart-shopping')
+
+      cartBTNS.forEach(btn=>{
+        btn.addEventListener('click',(e)=>{
+          let itemid=parseInt(e.target.dataset.itemid)
+
+          let req=new XMLHttpRequest()
+          
+          
+          req.open('POST','../actions/menuAction.php')
+          req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+          req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              let res=JSON.parse(this.responseText)
+              
+            }
+          };
+          req.send(`item_id=${itemid}&addToCart=true`)
+
+
+        })  
+      })
     })
   </script>
+  
+
   <script src="../assets/js/menu.js"></script>
  <?php include '../includes/scripts.php'?>
 </body>

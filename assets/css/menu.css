@@ -19,6 +19,37 @@
   transition: 400ms linear;
 
 }
+.cart{
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  right: 20px;
+  bottom: 20px;
+
+}
+.cart>a>i{
+  transform: scale(1.5);
+  position: relative;
+}
+.cart-btn:hover{
+  cursor: pointer;
+}
+.cart-count{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  border-radius: 50%;
+  background-color: gold;
+  width: auto;
+  height: 30px;
+  padding: 5px;
+}
 
 @keyframes popup {
   from{
