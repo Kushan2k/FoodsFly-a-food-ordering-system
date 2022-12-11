@@ -44,15 +44,13 @@ if(checkIsLogedIn()){
       <?php
       if($logedin){?>
         <li class=" d-none d-sm-flex">
-          <a href="./pages/profile.php" class="profile">
-            <i class="fa-solid fa-user text-white">
-
-            </i>
+          <a href="./profile.php" class="profile">
+            <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
           </a>
         </li>
       <?php }else {?>
-        <li class="nav_item"><a href="./pages/register.php">Register</a></li>
-        <li class="nav_item"><a href="./pages/login.php">Login</a></li>
+        <li class="nav_item"><a href="./register.php">Register</a></li>
+        <li class="nav_item"><a href="./login.php">Login</a></li>
       <?php }?>
       
     </ul>
@@ -130,8 +128,12 @@ if(checkIsLogedIn()){
                       <h6 class="card-subtitle text-muted"><?= ucfirst($data[$i]['category'])?></h6>
                       <h4 class="text-success mt-2">Rs <?= number_format($data[$i]['price'],2,'.',',') ?></h4>
                       <div class="d-flex justify-content-between align-items-center">
-                        <button data-itemID=<?= $data[$i]['menu_id'] ?>
-                        class="btn btn-primary border-0 bg-transparent fa-sharp text-dark fa-solid fa-cart-shopping"></button>
+                        <?php
+
+                        if($logedin){?>
+                            <button data-itemID=<?= $data[$i]['menu_id'] ?>
+                             class="btn btn-primary border-0 bg-transparent fa-sharp text-dark fa-solid fa-cart-shopping"></button>
+                        <?php }?>
                         <h1 class="text-warning">
                           <?php
                           
@@ -185,14 +187,16 @@ if(checkIsLogedIn()){
 
           let req=new XMLHttpRequest()
           
-          
           req.open('POST','../actions/menuAction.php')
           req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
           req.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
               let res=JSON.parse(this.responseText)
+              let newcount=res.newCount
+              document.querySelector('.cart-count').innerHTML=newcount
               
+
             }
           };
           req.send(`item_id=${itemid}&addToCart=true`)

@@ -26,6 +26,10 @@
           
         </a>
       </li>
+      <li class="nav_item">
+        <a href="../actions/logoutAction.php?action=logout" class="profile">Logout
+        </a>
+      </li>
       
       
     </ul>

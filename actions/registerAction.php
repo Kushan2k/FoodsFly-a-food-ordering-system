@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // $_POST=array('name'=>'kushan','email'=>'k@gmail.com','password'=>'dgdfg','register'=>true)
 if($_SERVER['REQUEST_METHOD']=='GET'){
   header("Location:../index.php");

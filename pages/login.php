@@ -118,7 +118,7 @@ if(checkIsLogedIn()){
     <div class="container">
         <div class="row ">
             <div class="col-md-5 py-5 bg-primary text-white text-center img-box">
-                <img class="side-img" src="https://www.epos.com.sg/wp-content/uploads/2022/08/KoreanBBQcoverimageopt-1024x624.jpg" >
+                <img class="side-img" src="../assets/images/register.background.jpg" >
             </div>
             <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
               <h4 class="pb-4">Enter Your Details.</h4>

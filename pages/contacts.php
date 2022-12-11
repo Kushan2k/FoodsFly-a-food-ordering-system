@@ -33,9 +33,7 @@
       <li class="nav_item active-tab"> <a href="">Contact us</a></li>
       <li class=" d-none d-sm-flex">
         <a href="./profile.php" class="profile">
-          <i class="fa-solid fa-user text-white">
-
-          </i>
+          <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
         </a>
       </li>
       

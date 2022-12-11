@@ -51,7 +51,6 @@ function sortMenuItems(items,sortType,cat,range){
         console.log(max)
         
         if(max===0){
-          console.log('max ran')
           if(item.dataset.price>= min){
           
             displayItems(item)
@@ -60,7 +59,6 @@ function sortMenuItems(items,sortType,cat,range){
             item.classList.add('d-none')
           }
         }else{
-          console.log('max found')
           if(item.dataset.price>= min && item.dataset.price<= max){
           
             displayItems(item)
