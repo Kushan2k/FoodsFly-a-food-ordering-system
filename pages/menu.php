@@ -4,9 +4,6 @@ include_once '../utils/jwt-auth.php';
 include_once '../utils/select_data.php';
 include_once '../utils/conn.php';
 
-
-
-
 $logedin=false;
 $cart_count=0;
 
@@ -153,8 +150,11 @@ if(checkIsLogedIn()){
         </div>
       </div>
     </div>
-    
-    
+
+    <div class="msg d-none">
+      <h4 class="text-center">added to the cart</h4>
+    </div>
+
     <?php
 
     if($logedin){?>
@@ -169,38 +169,6 @@ if(checkIsLogedIn()){
     
   </section>
   <?php include_once '../includes/footer.php'?>
-
-  <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      let cartBTNS=document.querySelectorAll('.fa-cart-shopping')
-
-      cartBTNS.forEach(btn=>{
-        btn.addEventListener('click',(e)=>{
-          let itemid=parseInt(e.target.dataset.itemid)
-
-          let req=new XMLHttpRequest()
-          
-          req.open('POST','../actions/menuAction.php')
-          req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-          req.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              let res=JSON.parse(this.responseText)
-              let newcount=res.newCount
-              document.querySelector('.cart-count').innerHTML=newcount
-              
-
-            }
-          };
-          req.send(`item_id=${itemid}&addToCart=true`)
-
-
-        })  
-      })
-    })
-  </script>
-  
-
   <script src="../assets/js/menu.js"></script>
  <?php include '../includes/scripts.php'?>
 </body>

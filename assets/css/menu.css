@@ -50,6 +50,41 @@
   height: 30px;
   padding: 5px;
 }
+.msg{
+  background-color: black;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+
+  animation-name: slideup;
+  animation-timing-function: linear;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 0;
+  
+}
+.msg>h4{
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #62bd71;
+}
+
+@keyframes slideup {
+  from{
+    transform: translateY(1000px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+  
+}
 
 @keyframes popup {
   from{

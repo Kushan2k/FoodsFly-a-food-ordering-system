@@ -1,6 +1,39 @@
 document.addEventListener('DOMContentLoaded',()=>{
   let menu_items=document.querySelectorAll('.menu_item')
-  let types=document.querySelectorAll('.list-group-item');
+  let types = document.querySelectorAll('.list-group-item');
+  
+  let cartBTNS=document.querySelectorAll('.fa-cart-shopping')
+
+  cartBTNS.forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+      let itemid=parseInt(e.target.dataset.itemid)
+
+      let req=new XMLHttpRequest()
+      
+      req.open('POST','../actions/menuAction.php')
+      req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      req.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let popup = document.querySelector('.msg')
+          popup.classList.remove('d-none')
+
+          let res=JSON.parse(this.responseText)
+          let newcount=res.newCount
+          document.querySelector('.cart-count').innerHTML = newcount
+          
+          setTimeout(() => {
+            popup.classList.add('d-none')
+          }, 1500);
+          
+
+        }
+      };
+      req.send(`item_id=${itemid}&addToCart=true`)
+
+
+    })  
+  })
   
   types.forEach((item)=>{
     item.addEventListener('click',(e)=>{
