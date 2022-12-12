@@ -113,7 +113,7 @@ if(checkIsLogedIn()){
           <div class="col-lg-5 px-5 mx-auto"><img src="https://bootstrapious.com/i/snippets/sn-about/img-1.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
           <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
             <h2 class="font-weight-light">Our journey</h2>
-            <p class="font-italic text-muted mb-4">We started this restaurant with a small team of three people and now we have expanded upto 25 people working and we provide a wide variety of dishes ranging from traditional Sri Lankan Cuisine, Japanese Cuisine, Italian Cuisine and Chinese cuisine. We have decided to expand our buisiness further and have a website where customers can order online and enjoy their meal</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
+            <p class="font-italic text-muted mb-4">We started this restaurant with a small team of three people and now we have expanded upto 25 people working and we provide a wide variety of dishes ranging from traditional Sri Lankan Cuisine, Japanese Cuisine, Italian Cuisine and Chinese cuisine. We have decided to expand our buisiness further and have a website where customers can order online and enjoy their meal</p>
           </div>
         </div>
       </div>
@@ -153,10 +153,11 @@ if(checkIsLogedIn()){
           <div class="card border-0 rounded-3 shadow-lg overflow-hidden">
             <div class="card-body p-0">
               <div class="row g-0">
-                <div class="col-sm-6 d-none d-sm-block bg-image"></div>
+                <div class="col-sm-6 bg-image"></div>
                 <div class="col-sm-6 p-4">
                   <div class="text-center">
                     <div class="h3 fw-light">Contact Us Now</div>
+                    <p class=" text-start">Reach Out to Us for More Information or to Request a Private Dining Experience</p>
                     
                   </div>
                   <form id="contactForm" data-sb-form-api-token="API_TOKEN">

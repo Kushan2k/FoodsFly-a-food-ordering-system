@@ -74,7 +74,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           <div class="row">
             <div class="col-md-7 mx-auto col-10 hero-container">
               <h1 class="featurette-heading fw-normal lh-1 mb-5">Affordable, Delicious. All in one place <span class="text-muted">FoodsFly.</span></h1>
-              <p class="lead d-none d-sm-block" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate adipisci placeat corporis dicta vel ipsa dolore aliquam sint! Aliquam magni inventore qui error tenetur ducimus minus natus reiciendis.</p>
+              <p class="lead d-none d-sm-block" >Discover the Best-Kept Secret in Town: Our Restaurant's Exceptional Menu. we provide you with our best food made by the best chefs in the feild present</p>
               <a href="./pages/menu.php?view=all" class="btn btn-success">View Menu</a>
             </div>
           </div>
