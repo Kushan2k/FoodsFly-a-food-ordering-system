@@ -15,14 +15,20 @@ if(!isAdmin()){
 </head>
   <body>
 
+  <style>
+    .nav_item{
+      padding-bottom: 10px;
+    }
+  </style>
+
     <nav class="container-fluid  px-4 d-flex flex-row navbar-div justify-content-between ">
       <h1 class="brand-name text-danger">FoodsFly</h1>
 
       <ul id="navbar" class="navbar "> <!-- put navbar class  d-none   d-sm-flex -->
-        <li class="nav_item active-tab" ><a href="" class="d-flex"><i class="fa-solid fa-house me-2"></i> <span class="d-none d-sm-block">Dashboard</span></a></li>
+        <li class="nav_item active-tab" ><a href="" class="d-flex"><i class="fa-solid fa-house "></i></a></li>
 
-        <li class="nav_item" ><a href="./menu-items.php"><i class="fa-solid fa-list me-2"></i></a></li>
-        <li class="nav_item" ><a href="./menu-items.php"><i class="fa-solid fa-arrow-down-big-small me-2"></i></a></li>
+        <li class="nav_item" ><a href="./menu-items.php"><i class="fa-solid fa-list "></i></a></li>
+        <li class="nav_item" ><a href="./users.php"><i class="fa-solid fa-users "></i></a></li>
       </ul>
 
       <!-- <button class="d-sm-none bg-transparent border-0 icon-btn popup fa-solid fa-bars text-white"></button>

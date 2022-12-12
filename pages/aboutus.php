@@ -65,11 +65,17 @@ if(checkIsLogedIn()){
         echo '<li class="nav_item"><a href="">Orders</a></li>';
       }?>
       <li class="nav_item active-tab"><a href=""> About us</a></li>
-      <li class=" d-none d-sm-flex">
-        <a href="./profile.php" class="profile">
-          <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
-        </a>
-      </li>
+      <?php 
+      
+      if($logedin){?>
+        <li class=" d-none d-sm-flex">
+          <a href="./profile.php" class="profile">
+            <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
+          </a>
+        </li>
+      <?php }
+      
+      ?>
       
     </ul>
 

@@ -36,7 +36,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
       
       <?php
       if($logedin){?>
-        <li class=" d-none d-sm-flex">
+        <li class="nav_item">
           <a href="./pages/profile.php" class="profile">
             <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
           </a>

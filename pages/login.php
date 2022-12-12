@@ -140,6 +140,8 @@ if(checkIsLogedIn()){
                   <div class="form-row">
                       <button type="submit" name="login" class="btn btn-primary">Login</button>
                   </div>
+                  <p class="text-center">Or</p>
+                  <p>Need an account? Register <a href="./register.php">Here</a> </p>
               </form>
             </div>
         </div>
