@@ -1,0 +1,5 @@
+<?php
+
+include './jwt-auth.php';
+
+print_r(verifyJWT('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJleHAiOjE2NzM0MTU1NzgsImRhdGEiOnsidXNlcl9pZCI6NCwiZW1haWwiOiJrdXNoYW5nYXlhbnRoYXBlcmN5QGdtYWlsLmNvbSIsInR5cGUiOiJhZG1pbiJ9fQ.jHPGFvrbOYqrbTMTfRQa-ldby2SE4vYTxgl13UpBYBs'));
