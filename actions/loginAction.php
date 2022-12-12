@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once '../utils/conn.php';
 include_once '../utils/jwt-auth.php';
 include '../utils/input_validate.php';

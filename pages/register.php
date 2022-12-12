@@ -14,6 +14,7 @@ if(checkIsLogedIn()){
   <title>FoodsFly-About us</title>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/register.css">
   
 </head>
 
@@ -39,41 +40,7 @@ if(checkIsLogedIn()){
   </nav>
 
   <style>
-    .side-img{
-      position: absolute;
-      object-fit: cover;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      transition: 200ms linear;
-      transition: 300ms linear;
-
-      animation-name: popup-img;
-      animation-timing-function: linear;
-      animation-duration: 0.5s;
-      animation-delay: 0s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: 1;
-      
-    }
-    @keyframes popup-img {
-      from{
-        transform: scale(0) rotate(250deg);
-      }
-      to{
-        transform: scale(1) rotate(0deg);
-      }
-    }
-    .side-img:hover{
-      transform: scale(1.4);
-      cursor: pointer;
-    }
-    .img-box{
-      position: relative;
-      overflow: hidden;
-      min-height: 30vh;
-      border-radius: 1%;
-    }
+    
     .custom-alert{
       
       padding: 15px;
@@ -121,20 +88,20 @@ if(checkIsLogedIn()){
             <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
               <h4 class="pb-4">Please fill with your details.</h4>
               <form action="../actions/registerAction.php" method="POST" >
-                  <div class="row my-2 ">
+                  <div class="row my-2">
                     <div class="col-12 col-md-6">
                       <input id="Full Name" name="fullname" placeholder="Full Name" class="form-control" type="text" required="required">
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 mt-2 mt-md-0">
                       <input type="text" class="form-control" id="inputEmail4" placeholder="Email" required="required" name="email">
                     </div>
                   </div>
 
-                  <div class="row my-2">
+                  <div class="row my-2 ">
                     <div class="col-12 col-md-6">
                         <input id="Mobile No." name="mobile" placeholder="Mobile No." class="form-control" required="required" type="text">
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 mt-2 mt-md-0">
                       <input id="address" name="address" placeholder="Residentail Address" class="form-control" required="required" type="text">
                     </div>
                     <div class="form-group col-12 col-md-6 my-2">
@@ -159,26 +126,16 @@ if(checkIsLogedIn()){
                   <div class="form-row">
                       <button type="submit" name="register" class="btn btn-danger">Submit</button>
                   </div>
+                  <p class="text-center">Or</p>
+                  <p>Login <a href="./login.php">Here</a> </p>
+
               </form>
             </div>
         </div>
     </div>
   </section>
 
-  <div class="container">
-    <hr>
-    <footer class="py-3 my-4">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">About</a></li>
-      </ul>
-      <p class="text-center text-muted">© 2022 FoodsFly, Org</p>
-    </footer>
-  </div>
-
+  <?php include '../includes/footer.php'?>
   <script>
 
     document.addEventListener("DOMContentLoaded",()=>{

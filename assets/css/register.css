@@ -1,0 +1,35 @@
+.side-img{
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transition: 200ms linear;
+  transition: 300ms linear;
+
+  animation-name: popup-img;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  
+}
+@keyframes popup-img {
+  from{
+    transform: scale(0) rotate(250deg);
+  }
+  to{
+    transform: scale(1) rotate(0deg);
+  }
+}
+.side-img:hover{
+  transform: scale(1.4);
+  cursor: pointer;
+}
+.img-box{
+  position: relative;
+  overflow: hidden;
+  min-height: 30vh;
+  border-radius: 1%;
+}
