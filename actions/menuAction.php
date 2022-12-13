@@ -38,3 +38,14 @@ if(isset($_POST['addToCart'])){
     echo json_encode($res);
   }
 }
+
+if(isset($_POST['removeFromCart'])){
+  $cartid=$_POST['cart_id'];
+
+  $sql="DELETE FROM user_cart WHERE id={$cartid}";
+  if($conn->query($sql)==TRUE){
+    echo 1;
+  }else{
+    echo 0;
+  }
+}
