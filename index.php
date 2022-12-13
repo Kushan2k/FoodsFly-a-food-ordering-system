@@ -102,7 +102,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           <div class="col-md-6 gx-5 mb-4">
             <h4><strong>Budget friendly</strong></h4>
             <p class="text-muted">
-              Even though we use premium ingredients for our food we keep our prices low to anybody can enjoy a good meal.
+              Even though we use premium ingredients for our food we keep our prices low so anybody can enjoy a good meal.
             </p>
             <p><strong>Professional Team</strong></p>
             <p class="text-muted">
