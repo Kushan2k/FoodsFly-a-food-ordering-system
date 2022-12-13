@@ -74,7 +74,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           <div class="row">
             <div class="col-md-7 mx-auto col-10 hero-container">
               <h1 class="featurette-heading fw-normal lh-1 mb-5">Affordable, Delicious. All in one place <span class="text-muted">FoodsFly.</span></h1>
-              <p class="lead d-none d-sm-block" >Discover the Best-Kept Secret in Town: Our Restaurant's Exceptional Menu. we provide you with our best food made by the best chefs in the feild present</p>
+              <p class="lead d-none d-sm-block" >Discover the Best-Kept Secret in Town: Our Restaurant's Exceptional Menu. we provide you with our best food made by the best chefs in the field</p>
               <a href="./pages/menu.php?view=all" class="btn btn-success">View Menu</a>
             </div>
           </div>
@@ -100,17 +100,13 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           </div>
 
           <div class="col-md-6 gx-5 mb-4">
-            <h4><strong>Facilis consequatur eligendi</strong></h4>
+            <h4><strong>Budget friendly</strong></h4>
             <p class="text-muted">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-              eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-              sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+              Even though we use premium ingredients for our food we keep our prices low to anybody can enjoy a good meal.
             </p>
-            <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+            <p><strong>Professional Team</strong></p>
             <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
-              nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
-              alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+              Team of highly experienced chefs, who started this restaurant with customer satisfaction in mind. 
             </p>
           </div>
         </div>
@@ -121,24 +117,24 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
 
       <!--Section: Content-->
       <section class="text-center">
-        <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+        <h4 class="mb-5"><strong>Some Inside Photos</strong></h4>
 
         <div class="row">
           <div class="col-lg-4 col-md-12 mb-4">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                <img src="https://thumbs.dreamstime.com/b/restaurant-interior-design-brown-wooden-tables-beige-orange-chairs-56905982.jpg" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
+                <h5 class="card-title">Interior</h5>
+                <!-- <p class="card-text">
                   Some quick example text to build on the card title and make up the bulk of the
                   card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a>
+                </p> -->
+                <!-- <a href="#!" class="btn btn-primary">Button</a> -->
               </div>
             </div>
           </div>
@@ -146,18 +142,18 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
+                <img src="https://commercialkitchens.co.uk/wp-content/uploads/2020/08/empty_kitchen_wide_1.jpg" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
+                <h5 class="card-title">Kitchen</h5>
+                <!-- <p class="card-text">
                   Some quick example text to build on the card title and make up the bulk of the
                   card's content.
                 </p>
-                <a href="#!" class="btn btn-primary">Button</a>
+                <a href="#!" class="btn btn-primary">Button</a> -->
               </div>
             </div>
           </div>
@@ -165,18 +161,18 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/04/7a/5c/b8/hotel-sandy-s-tower.jpg" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
+                <h5 class="card-title">Our Chefs</h5>
+                <!-- <p class="card-text">
                   Some quick example text to build on the card title and make up the bulk of the
                   card's content.
                 </p>
-                <a href="#!" class="btn btn-primary">Button</a>
+                <a href="#!" class="btn btn-primary">Button</a> -->
               </div>
             </div>
           </div>

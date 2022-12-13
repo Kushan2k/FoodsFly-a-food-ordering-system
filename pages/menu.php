@@ -72,12 +72,10 @@ if(checkIsLogedIn()){
             </div>
             <ul class="list-group list-group-flush" data-parent="category">
               <li class="list-group-item">All</li>
-              <li class="list-group-item">Breakfirst</li>
-              <li class="list-group-item">Lunch</li>
-              <li class="list-group-item">Dinner</li>
-              <li class="list-group-item">Desert</li>
-              <li class="list-group-item">Drink</li>
-              <li class="list-group-item">Sweets</li>
+              <li class="list-group-item">Mains</li>
+              <li class="list-group-item">Sides</li>
+              <li class="list-group-item">Dessert</li>
+              <li class="list-group-item">Beverages</li>
               <li class="list-group-item">Short eats</li>
             </ul>
           </div>
@@ -87,6 +85,7 @@ if(checkIsLogedIn()){
               Price Range(LKR)
             </div>
             <ul class="list-group list-group-flush" data-parent="price">
+            <li class="list-group-item">0-400</li>
               <li class="list-group-item">400-700</li>
               <li class="list-group-item">700-1500</li>
               <li class="list-group-item">1500-Up</li>
