@@ -1,10 +1,10 @@
 <?php
 
 include_once '../utils/jwt-auth.php';
-
-if(!isAdmin()){
-  header("Location:../index.php",true,401);
-}
+echo $_COOKIE['jwt-token'];
+// if(!isAdmin()){
+//   header("Location:../index.php",true,401);
+// }
 ?>
 
 <html lang="en">

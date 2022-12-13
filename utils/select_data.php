@@ -52,6 +52,22 @@ function getAllCustomres($conn){
   }
 }
 
+function getCartItemsByUserID($conn,$userid){
+  $data=[];
+  $SQL="SELECT * FROM user_cart INNER JOIN menu_item ON user_cart.item_id =menu_item.menu_id WHERE user_id={$userid} ORDER BY user_cart.id DESC";
+  $res=$conn->query($SQL);
+  if($res==TRUE && $res->num_rows>0){
+
+    while($row=$res->fetch_assoc()){
+      array_push($data,$row);
+    }
+    return $data;
+
+  }else{
+    return null;
+  }
+}
+
 function getMenuItemByID($conn,$menuID){
   $SQL="SELECT * FROM menu_item WHERE menu_id=?";
   $STM=$conn->prepare($SQL);

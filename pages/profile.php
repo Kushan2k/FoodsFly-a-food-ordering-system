@@ -15,14 +15,14 @@
     <ul id="navbar" class="navbar   d-sm-flex "> <!-- put navbar class -->
       <li class="nav_item " >
         <a href="../index.php">
-          <i class="fa-solid fa-house d-sm-none me-2">
+          <i class="fa-solid fa-house" style="transform:scale(1.7) ;">
 
-          </i>Home
+          </i>
         </a>
       </li>
       <li class="nav_item">
         <a href="" class="profile">
-          <i class="fa-sharp fa-solid fa-cart-shopping text-white me-2 me-sm-0" style="transform:scale(1.7) ;"></i>
+          <i class="fa-sharp fa-solid fa-cart-shopping text-white me-2 me-sm-0" style="transform:scale(1.7) ;" ></i>
           
         </a>
       </li>
