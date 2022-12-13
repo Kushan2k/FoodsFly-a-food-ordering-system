@@ -92,7 +92,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         <div class="row">
           <div class="col-md-6 gx-5 mb-4">
             <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx91Nc_22BSjBDXwhq__Nr1BVnyBQFxUNCjQ&usqp=CAU" class="img-fluid" />
+              <img src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?w=740&t=st=1670959491~exp=1670960091~hmac=e032ee5f29206c856363cf6d6075c1541bbe95b5497ba8851232a513de39b626" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
