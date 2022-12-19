@@ -13,13 +13,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       req.open('POST','../actions/menuAction.php')
       req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-      req.onreadystatechange = function() {
+      req.onreadystatechange = function () {
+        
         if (this.readyState == 4 && this.status == 200) {
+          
           let popup = document.querySelector('.msg')
           popup.classList.remove('d-none')
 
           let res=JSON.parse(this.responseText)
-          let newcount=res.newCount
+          let newcount = res.newCount
+          
           document.querySelector('.cart-count').innerHTML = newcount
           
           setTimeout(() => {

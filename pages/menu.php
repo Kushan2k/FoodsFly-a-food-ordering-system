@@ -88,7 +88,7 @@ if(checkIsLogedIn()){
             <li class="list-group-item">0-400</li>
               <li class="list-group-item">400-700</li>
               <li class="list-group-item">700-1500</li>
-              <li class="list-group-item">1500-Up</li>
+              <li class="list-group-item">1500-9000</li>
             </ul>
           </div>
         </div>

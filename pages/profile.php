@@ -21,7 +21,7 @@
         </a>
       </li>
       <li class="nav_item">
-        <a href="" class="profile">
+        <a href="./cart.php" class="profile">
           <i class="fa-sharp fa-solid fa-cart-shopping text-white me-2 me-sm-0" style="transform:scale(1.7) ;" ></i>
           
         </a>
