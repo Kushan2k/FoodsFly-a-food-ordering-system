@@ -3,7 +3,7 @@
 include_once '../utils/jwt-auth.php';
 
 if(!isAdmin()){
-  header("Location:../index.php",true,401);
+  header("Location:../index.php",401);
 }
 ?>
 
