@@ -17,17 +17,30 @@ document.addEventListener('DOMContentLoaded',()=>{
         
         if (this.readyState == 4 && this.status == 200) {
           
-          let popup = document.querySelector('.msg')
-          popup.classList.remove('d-none')
+          let popup = document.querySelector('.msg-suc')
+          let erro=document.querySelector('.error-msg')
+          
 
           let res=JSON.parse(this.responseText)
           let newcount = res.newCount
           
+          if (!res.status) {
+            if (res?.msg) {
+              erro.classList.remove('d-none')
+
+              setTimeout(() => {
+                erro.classList.add('d-none')
+              }, 2000);
+              return
+            }
+          }
+          popup.classList.remove('d-none')
           document.querySelector('.cart-count').innerHTML = newcount
           
           setTimeout(() => {
             popup.classList.add('d-none')
-          }, 1500);
+            
+          }, 2000);
           
 
         }

@@ -163,9 +163,11 @@ if (checkIsLogedIn()) {
                             </div>
                           </div>
                           <div class="d-flex flex-row align-items-center">
-                            <span class="d-block mx-2 mx-md-0">2</span>
-                            <span class="d-block mx-1 mx-md-3  font-weight-bold">
-                              Rs.<?=number_format($item['price'], 2, '.', ',')?>
+                            <span class="d-block mx-2 mx-md-0">
+                              <input data-target='price-<?=$item['id']?>' type="number" value="1" id="inp-<?=$item['id']?>" onchange="updatecount(this)" name="count" class=" form-control form-control-sm">
+                            </span>
+                            <span  class="d-block mx-1 mx-md-3  font-weight-bold">
+                              Rs.<span id="price-<?=$item['id']?>" data-ogprice='<?= $item['price']?>'> <?=number_format($item['price'], 2, '.', ',')?></span>
                             </span>
                             <button data-itemprice='<?=$item['price']?>' data-itemid="<?=$item['id']?>" class="fa fa-trash mx-1 mx-md-3 text-danger bg-transparent border-0"></button>
                           </div>
@@ -174,22 +176,7 @@ if (checkIsLogedIn()) {
                     
 
                 
-                <!-- <div class="card" id="div-<?=$item['id']?>">
-                  <h5 class="card-header"><?=ucfirst($item['category'])?></h5>
-                  <div class="card-body">
-                    <h5 class="card-title"><?=ucfirst($item['name'])?></h5>
-                    <div class="row my-2">
-                      <div class="d-none col-md-8 d-md-flex">
-                        <p class="card-text"><?=ucfirst($item['description'])?></p>
-                      </div>
-                      <div class="col-8 col-md-4 mx-auto">
-                        <img src="<?= $item['img_url']?>" class=" img-fluid" alt="">
-                      </div>
-                    </div>
-                    <h6 class="card-title">Rs.<?=number_format($item['price'], 2, '.', ',')?></h6>
-                    <button data-itemid="<?=$item['id']?>"  class=" mt-2 bg-transparent border-0 fa-solid fa-trash text-danger"></button>
-                  </div>
-                </div> -->
+                
 
         <?php }?>
         <!-- </div>
@@ -239,6 +226,21 @@ if (checkIsLogedIn()) {
     </div>
 
   </section>
+
+  <script>
+    function updatecount(e){
+      let prev=document.getElementById(e.id)
+      if(e.value<1){
+        e.value=1
+      }else{
+        let itemid=e.dataset.target
+        let price=document.getElementById(itemid)
+        let inc=parseFloat(price.dataset.ogprice)*e.value
+        price.innerHTML=inc
+        
+      }
+    }
+  </script>
 
 
   <script src="../assets/js/cart.js"></script>

@@ -150,8 +150,11 @@ if(checkIsLogedIn()){
       </div>
     </div>
 
-    <div class="msg d-none">
+    <div class="msg d-none msg-suc">
       <h4 class="text-center">added to the cart</h4>
+    </div>
+    <div class="msg d-none error-msg">
+      <h4 class="text-center text-warning">item already in the cart</h4>
     </div>
 
     <?php

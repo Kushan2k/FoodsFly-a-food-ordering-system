@@ -95,8 +95,8 @@ if(!isAdmin()){
                   ?>
                 </td>
                 <td>
-                  <button class="bg-transparent border-0 fa-solid fa-pen text-success" data-id=<?= $data[$i]['menu_id'] ?>></button>
-                  <button class="bg-transparent border-0 fa-solid fa-trash text-danger" data-id=<?= $data[$i]['menu_id'] ?>></button>
+                  <button data-action='edit' class="bg-transparent border-0 fa-solid fa-pen text-success" data-id=<?= $data[$i]['menu_id'] ?>></button>
+                  <button data-action="delete" class="bg-transparent border-0 fa-solid fa-trash text-danger" data-id=<?= $data[$i]['menu_id'] ?>></button>
                 </td>
                 
               </tr>
@@ -128,20 +128,27 @@ if(!isAdmin()){
       });
 
       document.addEventListener("DOMContentLoaded",()=>{
-        let delbtns=document.querySelectorAll('.fa-trash')
-        let editbtns=document.querySelectorAll('.fa-pen')
+        
 
-        delbtns.forEach(btn=>{
-          btn.addEventListener('click',(e)=>{
-            alert(e.target.dataset.id)
-          })
-        })
+        let btns=document.querySelectorAll('.fa-solid')
 
-        editbtns.forEach(btn=>{
+        btns.forEach(btn=>{
           btn.addEventListener('click',(e)=>{
-            alert(e.target.dataset.id)
+            const TYPES={
+              EDIT:'edit',
+              DELETE:'delete'
+            }
+            
+            switch(e.target.dataset.action){
+              case TYPES.EDIT:
+                console.log(e.target.dataset.id)
+                break
+              case TYPES.DELETE:  
+                console.log(e.target.dataset.id)
+                break  
+            }
           })
-        })
+        }) 
       })
     </script>
     
