@@ -7,6 +7,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
 
 include_once '../utils/conn.php';
 include_once '../utils/input_validate.php';
+header('Access-Control-Allow-Methods: POST');
 
 
 if(isset($_POST['register'])){

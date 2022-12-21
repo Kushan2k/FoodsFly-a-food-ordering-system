@@ -6,19 +6,21 @@ include_once '../utils/select_data.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     header("Location:../index.php");
 }
-
+header('Access-Control-Allow-Origin: http://localhost:9090');
+header('Access-Control-Allow-Methods: POST');
+header("Content-Type:application/json");
 
 if (isset($_POST['addToCart'])) {
     $itemid = $_POST['item_id'];
     $userId = verifyJWT($_COOKIE['jwt-token'])['user_id'];
     $count = getCartItemCount($conn, $userId);
-
     if(checkItemInTheCart($conn,$itemid,$userId)){
         $res = [
                 "status" => false,
                 "newCount" => $count,
                 "msg"=>"item already in the cart"
             ];
+        
         echo json_encode($res);
         return;
     }

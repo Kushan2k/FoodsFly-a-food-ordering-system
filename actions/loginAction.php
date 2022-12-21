@@ -7,6 +7,7 @@ include '../utils/input_validate.php';
 if($_SERVER['REQUEST_METHOD']=='GET'){
   header("Location:../index.php");
 }
+header('Access-Control-Allow-Methods: POST');
 
 
 if(isset($_POST['login'])){
@@ -28,9 +29,9 @@ if(isset($_POST['login'])){
 
       if(password_verify($passwrod,$passHash)){
         $_SESSION['msg']='login successful';
-        setcookie("login",true,time()+3600*24*30,"/");
+        setcookie("login",true,time()+3600*24*30,"/","",false,$httponly=true);
         $jwt=createJWTLogin($email,$id,$type);
-        setcookie("jwt-token",$jwt,time()+3600*24*30,"/");
+        setcookie("jwt-token",$jwt,time()+3600*24*30,"/","",false,$httponly=true);
 
         header("Location:../index.php");
 

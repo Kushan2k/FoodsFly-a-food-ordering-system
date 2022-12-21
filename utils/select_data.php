@@ -68,6 +68,7 @@ function getCartItemsByUserID($conn,$userid){
   }
 }
 
+
 function getMenuItemByID($conn,$menuID){
   $SQL="SELECT * FROM menu_item WHERE menu_id=?";
   $STM=$conn->prepare($SQL);
@@ -81,6 +82,16 @@ function getMenuItemByID($conn,$menuID){
     }else{
       return null;
     }
+  }else{
+    return null;
+  }
+}
+
+function getUserData($conn,$userID){
+  $sql = "SELECT * FROM users WHERE user_id={$userID}";
+  $res = $conn->query($sql);
+  if($res==TRUE && $res->num_rows>0){
+    return $res->fetch_assoc();
   }else{
     return null;
   }
