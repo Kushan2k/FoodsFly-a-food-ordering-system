@@ -99,21 +99,30 @@ if(checkIsLogedIn()){
     }
   </style>
   <p class="text-center display-6 mt-3">Login to<span class="text-danger"> Get Started</span></p>
-<?php
+        <?php
 
-  if(isset($_SESSION['error'])){?>
-    <div class="container error-div">
-      <div class="row">
-        <div class="col-10 col-md-6 mx-auto">
-          <p class="custom-alert text-center error"><?= $_SESSION['error']?></p>
-        </div>
-      </div>
-    </div>
+            if(isset($_SESSION['error'])){?>
+              <div class="container error-div my-2">
+                <div class="row">
+                  <div class="col-10 col-md-6 mx-auto">
+                    <p class="custom-alert text-center error"><?= $_SESSION['error']?></p>
+                  </div>
+                </div>
+              </div>
 
-    
-  <?php }
-    $_SESSION['error']=null;
-?>
+              
+            <?php $_SESSION['error']=null; }else if(isset($_SESSION['suc'])){?>
+              <div class="container error-div my-2">
+                <div class="row">
+                  <div class="col-10 col-md-6 mx-auto">
+                    <p class="custom-alert text-center suc-error"><?= $_SESSION['suc']?></p>
+                  </div>
+                </div>
+              </div>
+
+            <?php $_SESSION['suc']=null;}
+          
+        ?>
   <section class="testimonial py-md-4 py-1" id="testimonial">
     <div class="container">
         <div class="row ">

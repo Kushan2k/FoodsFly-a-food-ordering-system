@@ -59,3 +59,8 @@ function redirectWithError($to,$msg){
   $_SESSION['error']=$msg;
   header("Location:{$to}");
 }
+
+function redirectWithSuccess($to,$msg){
+  $_SESSION['suc']=$msg;
+  header("Location:{$to}");
+}
