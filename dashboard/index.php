@@ -39,12 +39,76 @@ if(!isAdmin()){
 
       <button class="d-sm-none bg-transparent border-0 icon-btn d-none hide fa-solid fa-xmark text-white"></button> -->
     </nav>
-    
 
+    <div class="container my-3">
+      <div class="row ">
+        <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">View Menu Items</h5>
+              <p class="card-text my-4">
+                Create/Read/Edit/Delete Menu Items
+              </p>
+              <a href="./menu-items.php?view=all" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">View Chefs</h5>
+              <p class="card-text my-4">
+                you can Add/Remove Chefs here.
+              </p>
+              <a href="#" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">User Summery</h5>
+              <p class="card-text my-4">
+                View User Activities on the site.
+              </p>
+              <a href="#" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 col-md-5 col-lg-4 mx-auto mx-lg-0  my-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Review Orders</h5>
+              <p class="card-text">
+                You can view/Approve or Decline orders from here.
+              </p>
+              <a href="#" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="my-5 container">
+      
+    </div>
+
+
+    <div class="my-5">
+
+    </div>
 
     
     <?php 
-    // include_once '../includes/footer.php';
+    include_once '../includes/footer.php';
     include_once '../includes/scripts.php'?>
   </body>
 </html>
