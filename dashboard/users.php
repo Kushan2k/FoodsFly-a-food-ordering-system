@@ -25,7 +25,10 @@ if(!isAdmin()){
       <h1 class="brand-name text-danger">FoodsFly</h1>
 
       <ul id="navbar" class="navbar "> <!-- put navbar class  d-none   d-sm-flex -->
-        <li class="nav_item " ><a href="./index.php" class="d-flex"><i class="fa-solid fa-house "></i></a></li>
+        <li class="nav_item " ><a href="../index.php" class="d-flex">
+          <i class="fa-solid fa-house"></i>
+        </a></li>
+        <li class="nav_item " ><a href="./index.php" class="d-flex"><i class="fa-solid fa-chalkboard-user"></i></a></li>
 
         <li class="nav_item " ><a href="./menu-items.php"><i class="fa-solid fa-list "></i></a></li>
         <li class="nav_item active-tab" ><a href=""><i class="fa-solid fa-users "></i></a></li>

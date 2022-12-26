@@ -17,7 +17,7 @@ function createJWTLogin($email,$user_id,$type){
     'data'=>[
       'user_id'=>$user_id,
       'email'=>$email,
-      'type'=>$type=='customer'?'customer':'admin'
+      'type'=>$type==1918?1918:1290
     ]
   ];
 
@@ -56,7 +56,7 @@ function isAdmin(){
   if(checkIsLogedIn()){
     $user=verifyJWT($_COOKIE['jwt-token']);
     if($user!=null){
-      if($user['type']=='admin'){
+      if($user['type']==1290){
         return true;
       }else{
         return false;

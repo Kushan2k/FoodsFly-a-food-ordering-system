@@ -65,9 +65,7 @@ document.addEventListener('DOMContentLoaded',()=>{
           
           sortMenuItems(menu_items,'price',cat=e.target.innerHTML,range=e.target.innerHTML.split('-').map(i=>parseInt(i)))
           break;
-        case 'something': 
-          console.log('you selected something');
-          break;
+      
         default:
           console.log('not a option')
       }
