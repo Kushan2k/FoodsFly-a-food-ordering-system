@@ -27,6 +27,10 @@ if($data==null){
   </head>
   <body>
 
+  <div class="container-fluid bg-dark" style="height: 60px;">
+
+  </div>
+
   <style>
     .custom-alert{
       
@@ -74,9 +78,13 @@ if($data==null){
     ?>
     <div class="row">
       <div class="col-10 col-md-6 mx-auto">
+        <div class="card mx-auto w-100 my-3" style="width: 18rem;">
+          <img src="<?= $data['img_url']?>" class="card-img-top" alt="item img">
+          
+        </div>
         <form action="../actions/menuAction.php" method="POST" enctype="multipart/form-data">
           <div class="mb-3">
-            <label for="name" class="form-label">Item name</label>
+            <label for="name" class="form-label">Item Name</label>
             <input type="text" name="name" value="<?= $data['name']?>" class="form-control"  id="name" required>
           </div>
           <div class="mb-3">
@@ -85,9 +93,8 @@ if($data==null){
           </div>
           <div class="mb-3">
             <label for="des" class="form-label">Description</label>
-            <textarea rows="10"  name="description" id="des"  class="form-control"  required >
-              <?= trim($data['description'])?>
-            </textarea>
+            <textarea rows="5"  name="description" id="des"  class="form-control"  required >
+              <?= trim($data['description'])?></textarea>
           </div>
           <div class="mb-3">
             <style>
@@ -104,7 +111,8 @@ if($data==null){
           
 
           <div class="mb-3 gap-5">
-            <button class="btn btn-outline-warning">Back</button>
+            
+            <a href="<?=  $_SERVER['HTTP_REFERER'] ?>" class="btn btn-outline-warning">Back</a>
             <button type="submit" name="edit-item" class="btn btn-outline-success" >
               <i class="fa-sharp fa-solid fa-floppy-disk me-2"></i>
               
@@ -130,7 +138,10 @@ if($data==null){
   </script>
 
 
-  <?php include '../includes/scripts.php' ?>
+  <?php
+  include '../includes/footer.php';
+  
+  include '../includes/scripts.php' ?>
   </body>
 
 
