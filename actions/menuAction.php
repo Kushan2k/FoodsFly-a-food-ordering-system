@@ -167,8 +167,8 @@ if(isset($_POST['edit-item'])){
                 }
             }
         }else{
-            print_r($_FILES);
-            // redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'invalid file type!');
+            
+            redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'invalid file type!');
             return;
         }
     }
