@@ -140,6 +140,54 @@ if(isset($_POST['deleteMenuItem'])){
     }
 }
 
+if(isset($_POST['edit-item'])){
+    $id=$_POST['itemid'];
+    $name = htmlspecialchars($_POST['name']);
+    $price = filter_var(htmlspecialchars($_POST['price']), FILTER_VALIDATE_FLOAT);
+    $description = htmlspecialchars($_POST['description']);
+    $currentfile = $_POST['file'];
+
+    if($price==false){
+        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'Item price is not valid!');
+        return;
+    }
+
+    if(isset($_FILES['img']) && $_FILES['img']['error']==0){
+        $file = $_FILES['img'];
+        if(isValidFile($file)){
+            $uploadLocation = '../assets/images/uploads/'.$file['name'];
+            if(move_uploaded_file($file['tmp_name'],$uploadLocation)){
+                $sql = "UPDATE menu_item SET img_url=? WHERE menu_id=?";
+                $stm = $conn->prepare($sql);
+                $stm->bind_param('si', $uploadLocation, $id);
+                if($stm->execute()){
+                    if(file_exists($currentfile)){
+                        unlink($currentfile);
+                    }
+                }
+            }
+        }else{
+            print_r($_FILES);
+            // redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'invalid file type!');
+            return;
+        }
+    }
+
+    $sql = "UPDATE menu_item SET name=?,price=?,description=? WHERE menu_id=?";
+    $stm = $conn->prepare($sql);
+    $stm->bind_param('sisi', $name, $price, $description,$id);
+    if($stm->execute()){
+        redirectWithSuccess('../dashboard/menu-items.php?view=all', 'item updated!');
+        return;
+    }else{
+        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'update did not complete!');
+        return;
+    }
+    
+
+
+}
+
 function isValidFile($file){
     $ex = explode('.',$file['name']);
     $ext = end($ex);

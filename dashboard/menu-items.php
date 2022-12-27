@@ -141,7 +141,7 @@ if(!isAdmin()){
                   ?>
                 </td>
                 <td>
-                  <button data-action='edit' class="bg-transparent border-0 fa-solid fa-pen text-success" data-id=<?= $data[$i]['menu_id'] ?>></button>
+                  <a data-action='edit' href="./item-edit.php?itemid=<?= $data[$i]['menu_id'] ?>" class="bg-transparent border-0 fa-solid fa-pen text-success" data-id=<?= $data[$i]['menu_id'] ?>></a>
                   <button data-action="delete" class="bg-transparent border-0 fa-solid fa-trash text-danger" data-id=<?= $data[$i]['menu_id'] ?>></button>
                 </td>
                 
@@ -242,56 +242,10 @@ if(!isAdmin()){
         });
       });
 
-      document.addEventListener("DOMContentLoaded",()=>{
-        
-        setTimeout(() => {
-          let error=document.querySelector('.error-div');
-          if(error){
-            error.remove()
-          }
-        }, 2000);
-
-    
-
-        let btns=document.querySelectorAll('.fa-solid')
-
-        btns.forEach(btn=>{
-          btn.addEventListener('click',(e)=>{
-            const TYPES={
-              EDIT:'edit',
-              DELETE:'delete'
-            }
-            
-            switch(e.target.dataset.action){
-              case TYPES.EDIT:
-                console.log(e.target.dataset.id)
-                break
-              case TYPES.DELETE:  
-                
-                let itemid=parseInt(e.target.dataset.id)
-
-                let req=new XMLHttpRequest()
-                
-                req.open('POST','../actions/menuAction.php')
-                req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-                req.onreadystatechange = function () {
-                  
-                  if (this.readyState == 4 && this.status == 200) {
-                    
-                    document.getElementById(`row-${itemid}`).remove()
-                  
-                  }
-                };
-                req.send(`item_id=${itemid}&deleteMenuItem=true`)
-
-
-                break  
-            }
-          })
-        }) 
-      })
+      
     </script>
+
+    <script src="../assets/js/configMenu.js"></script>
     
 
 

@@ -75,7 +75,7 @@ if(!isAdmin()){
               <p class="card-text my-4">
                 View User Activities on the site.
               </p>
-              <a href="#" class="btn btn-outline-primary">
+              <a href="./users.php" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
