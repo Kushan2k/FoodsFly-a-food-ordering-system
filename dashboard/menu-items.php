@@ -141,7 +141,7 @@ if(!isAdmin()){
                   ?>
                 </td>
                 <td>
-                  <a data-action='edit' style="text-decoration: none;" href="./item-edit.php?itemid=<?= $data[$i]['menu_id'] ?>" class=" bg-transparent border-0 fa-solid fa-pen text-success" data-id=<?= $data[$i]['menu_id'] ?>></a>
+                  <a data-action='edit' href="./item-edit.php?itemid=<?= $data[$i]['menu_id'] ?>" class="bg-transparent border-0 fa-solid fa-pen text-success" data-id=<?= $data[$i]['menu_id'] ?>></a>
                   <button data-action="delete" class="bg-transparent border-0 fa-solid fa-trash text-danger" data-id=<?= $data[$i]['menu_id'] ?>></button>
                 </td>
                 
