@@ -164,10 +164,10 @@ if (checkIsLogedIn()) {
                           </div>
                           <div class="d-flex flex-row align-items-center">
                             <span class="d-block mx-2 mx-md-0">
-                              <input data-target='price-<?=$item['id']?>' type="number" value="1" id="inp-<?=$item['id']?>" onchange="updatecount(this)" name="count" class=" form-control form-control-sm">
+                              <input data-target='price-<?=$item['id']?>' type="number" value="1" id="inp-<?=$item['id']?>" onchange="updatecount(this);getTotalCost()" onkeyup="updatecount(this);getTotalCost()" name="count" class=" form-control form-control-sm">
                             </span>
                             <span  class="d-block mx-1 mx-md-3  font-weight-bold">
-                              Rs.<span id="price-<?=$item['id']?>" data-ogprice='<?= $item['price']?>'> <?=number_format($item['price'], 2, '.', ',')?></span>
+                              Rs.<span id="price-<?=$item['id']?>" class="price" data-ogprice='<?= $item['price']?>'> <?=number_format($item['price'], 2, '.', ',')?></span>
                             </span>
                             <button data-itemprice='<?=$item['price']?>' data-itemid="<?=$item['id']?>" class="fa fa-trash mx-1 mx-md-3 text-danger bg-transparent border-0"></button>
                           </div>
@@ -228,6 +228,11 @@ if (checkIsLogedIn()) {
   </section>
 
   <script>
+
+    document.addEventListener("DOMContentLoaded",()=>{
+      getTotalCost()
+    })
+
     function updatecount(e){
       let prev=document.getElementById(e.id)
       if(e.value<1){
@@ -240,6 +245,24 @@ if (checkIsLogedIn()) {
         
       }
     }
+
+    function getTotalCost(){
+      const prices=document.querySelectorAll('.price')
+
+      let total=document.querySelector('.total-price');
+
+      let t=0;
+
+      prices.forEach(price=>{
+        t+=parseFloat(price.innerHTML)
+      })
+
+      total.innerHTML=t
+
+      
+
+    }
+
   </script>
 
 
