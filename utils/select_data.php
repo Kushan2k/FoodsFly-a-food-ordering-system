@@ -96,3 +96,28 @@ function getUserData($conn,$userID){
     return null;
   }
 }
+
+
+function getChefData($conn){
+
+  $data = [];
+
+  $sql = "SELECT * FROM users WHERE type=1567";
+  $result = $conn->query($sql);
+
+  if($result==TRUE){
+    if($result->num_rows>0){
+
+      while($row=$result->fetch_assoc()){
+        array_push($data, $row);
+      }
+
+      return $data;
+    }else{
+      return null;
+    }
+  }else{
+    return null;
+  }
+
+}

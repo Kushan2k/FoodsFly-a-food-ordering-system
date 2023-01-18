@@ -32,7 +32,7 @@ if(!isAdmin()){
         </a></li>
 
         <li class="nav_item" ><a href="./menu-items.php"><i class="fa-solid fa-list "></i></a></li>
-        <li class="nav_item" ><a href="./users.php"><i class="fa-solid fa-users "></i></a></li>
+        <li class="nav_item" ><a href="./view-chef.php?view=all"><i class="fa-solid fa-users "></i></a></li>
       </ul>
 
       <!-- <button class="d-sm-none bg-transparent border-0 icon-btn popup fa-solid fa-bars text-white"></button>
@@ -62,7 +62,7 @@ if(!isAdmin()){
               <p class="card-text my-4">
                 you can Add/Remove Chefs here.
               </p>
-              <a href="#" class="btn btn-outline-primary">
+              <a href="./view-chef.php" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
