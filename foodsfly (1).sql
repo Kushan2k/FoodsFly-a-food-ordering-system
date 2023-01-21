@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 07:58 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jan 21, 2023 at 08:24 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,8 +32,8 @@ CREATE TABLE `menu_item` (
   `name` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `category` varchar(20) DEFAULT NULL,
-  `rating` float NOT NULL,
-  `rate_count` int(11) NOT NULL,
+  `rating` float NOT NULL DEFAULT 1,
+  `rate_count` int(11) DEFAULT 1,
   `description` varchar(255) DEFAULT NULL,
   `img_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -79,8 +79,34 @@ INSERT INTO `menu_item` (`menu_id`, `name`, `price`, `category`, `rating`, `rate
 (36, 'Tea', 80, 'beverages', 50, 15, 'Tea infused with cinnamon flavor.', 'https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
 (37, 'Lemon pepper wings', 550, 'sides', 50, 10, 'Chicken wings batter fried till crisp and coated with special lemon pepper sauce.', 'https://www.spendwithpennies.com/wp-content/uploads/2022/02/Lemon-Pepper-Wings-SpendWithPennies-13-1024x1536.jpg'),
 (38, 'Hoppers', 250, 'mains', 40, 12, 'Stack of 8 hoppers served with lunumiris.', 'https://st2.depositphotos.com/4404621/11594/i/950/depositphotos_115942104-stock-photo-sri-lankan-style-plain-hoppers.jpg'),
-(39, 'Parata', 340, 'mains', 45, 10, 'Paratas freshly made, cut and served with chicken curry or dhal curry.', 'https://i.ytimg.com/vi/nrNrrveiZjI/maxresdefault.jpg'),
-(40, 'Apple Pie', 250, 'dessert', 45, 10, 'A Classic Apple Pie made completely from scratch that’s buttery, flaky. Apple filling made with fresh fuji apples.', 'https://images.unsplash.com/photo-1562007908-17c67e878c88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+(39, 'Parata', 340, 'mains', 45, 10, 'Paratas freshly made, cut and served with chicken curry or dhal curry.', 'https://i.ytimg.com/vi/nrNrrveiZjI/maxresdefault.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `order_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `total` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_item`
+--
+
+CREATE TABLE `order_item` (
+  `id` int(11) NOT NULL,
+  `menu_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -95,7 +121,7 @@ CREATE TABLE `users` (
   `mobile` varchar(10) NOT NULL,
   `password` varchar(70) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `type` varchar(10) NOT NULL DEFAULT 'customer'
+  `type` int(10) NOT NULL DEFAULT 1918
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -103,9 +129,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `fullname`, `email`, `mobile`, `password`, `address`, `type`) VALUES
-(2, 'Kushan Gayantha', 'kushangayanthapercy@gmail.com', '0712720033', '$2y$10$5WLmN3eaRk4/qYkTuospaOQbq3UjQX7Q6d0FO.kiFpCg7CO0mauv2', '201/10 Colombo Road Kurunegala', 'customer'),
-(3, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0721021286', '$2y$10$eOU72.wPz8TDi/TzEEk46u812YE8MgTyOJA/jtCZcXq0Q86dvlP66', '201/10 Colombo Road Kurunegala', 'customer'),
-(4, 'Inula Chandira', 'inula@gmail.com', '0775606777', '$2y$10$xmkrikUOnfV2m90bg8u3wuC/hiep2BhUOV0c7tjP0TxGoIB0J76ci', '294,angampitiya,padukka', 'customer');
+(2, 'Kushan Gayantha', 'kushangayanthapercy@gmail.com', '0712720033', '$2y$10$5WLmN3eaRk4/qYkTuospaOQbq3UjQX7Q6d0FO.kiFpCg7CO0mauv2', '201/10 Colombo Road Kurunegala', 1918),
+(4, 'Inula Chandira', 'inula@gmail.com', '0775606777', '$2y$10$xmkrikUOnfV2m90bg8u3wuC/hiep2BhUOV0c7tjP0TxGoIB0J76ci', '294,angampitiya,padukka', 1918),
+(6, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0721021286', '$2y$10$KJnRIDUFs8CkORqMO6.Y7.r7Ji0EJmRYMcfHpd7L7y80Yde9kdyJu', '201/10 Colombo Road Kurunegala', 1290),
+(7, 'heshara', 'heshara@gmail.com', '1234567890', '$2y$10$jlBOy2JEpAKsBlY.A9R.tuYlQiaTh64t.IkSMGIfkXxHUDS866qcy', 'test', 1567);
 
 -- --------------------------------------------------------
 
@@ -120,20 +147,6 @@ CREATE TABLE `user_cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_cart`
---
-
-INSERT INTO `user_cart` (`id`, `user_id`, `item_id`) VALUES
-(1, 2, 13),
-(2, 2, 14),
-(3, 2, 11),
-(4, 2, 8),
-(5, 2, 7),
-(6, 2, 6),
-(7, 2, 5),
-(8, 3, 13);
-
---
 -- Indexes for dumped tables
 --
 
@@ -142,6 +155,21 @@ INSERT INTO `user_cart` (`id`, `user_id`, `item_id`) VALUES
 --
 ALTER TABLE `menu_item`
   ADD PRIMARY KEY (`menu_id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `orders_ibfk_1` (`user_id`);
+
+--
+-- Indexes for table `order_item`
+--
+ALTER TABLE `order_item`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_ODERID` (`order_id`),
+  ADD KEY `menu_id` (`menu_id`);
 
 --
 -- Indexes for table `users`
@@ -167,23 +195,42 @@ ALTER TABLE `user_cart`
 -- AUTO_INCREMENT for table `menu_item`
 --
 ALTER TABLE `menu_item`
-  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
+-- AUTO_INCREMENT for table `order_item`
+--
+ALTER TABLE `order_item`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user_cart`
 --
 ALTER TABLE `user_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `order_item`
+--
+ALTER TABLE `order_item`
+  ADD CONSTRAINT `FK_ODERID` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_item_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu_item` (`menu_id`);
 
 --
 -- Constraints for table `user_cart`
