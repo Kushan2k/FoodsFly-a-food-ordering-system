@@ -141,7 +141,9 @@ if (checkIsLogedIn()) {
         <div class='d-flex justify-content-between'>
           <span >You have <span id='cart-count'>{$itemcount}</span> items in your cart</span>
         </div>
+        <form action='../actions/placeOrderAction.php' method='POST' >
         ";
+        
 
       if ($cartItems != null) {
         $cost = 0;
@@ -164,12 +166,13 @@ if (checkIsLogedIn()) {
                           </div>
                           <div class="d-flex flex-row align-items-center">
                             <span class="d-block mx-2 mx-md-0">
-                              <input data-target='price-<?=$item['id']?>' type="number" value="1" id="inp-<?=$item['id']?>" onchange="updatecount(this);getTotalCost()" onkeyup="updatecount(this);getTotalCost()" name="count" class=" form-control form-control-sm">
+                              <input data-target='price-<?=$item['id']?>' type="number" value="1" id="inp-<?=$item['id']?>" onchange="updatecount(this);getTotalCost()" onkeyup="updatecount(this);getTotalCost()" name="count[]" class=" form-control form-control-sm">
                             </span>
                             <span  class="d-block mx-1 mx-md-3  font-weight-bold">
                               Rs.<span id="price-<?=$item['id']?>" class="price" data-ogprice='<?= $item['price']?>'> <?=number_format($item['price'], 2, '.', ',')?></span>
                             </span>
                             <button data-itemprice='<?=$item['price']?>' data-itemid="<?=$item['id']?>" class="fa fa-trash mx-1 mx-md-3 text-danger bg-transparent border-0"></button>
+                            <input type="hidden" name="item_id[]" value="<?= $item['item_id']?>">
                           </div>
                       </div>
                   </div>
@@ -203,12 +206,15 @@ if (checkIsLogedIn()) {
                 </div>
           </div>
         </div> -->
+        
         <div class="container my-4">
-          <h5 style="text-align: right;">Total Cost: Rs.<span class="total-price"><?=$cost?></span></h5>
+          <h5 style="text-align: right;" >Total Cost: Rs.<span class="total-price"><?=$cost?></span></h5>
+          <input type="hidden" id="total" name="total" value="<?=$cost?>">
         </div>
         <div class="container d-flex justify-content-end mt-3">
-          <button class="btn btn-outline-success btn-lg">Proceed to checkout</button>
+          <button type="submit" class="btn btn-outline-success btn-lg" name='add-order'>Proceed to checkout</button>
         </div>
+                  </form>
       <?php } else {
 
         echo
@@ -243,6 +249,7 @@ if (checkIsLogedIn()) {
         let inc=parseFloat(price.dataset.ogprice)*e.value
         price.innerHTML=inc
         
+        
       }
     }
 
@@ -258,6 +265,7 @@ if (checkIsLogedIn()) {
       })
 
       total.innerHTML=t
+      document.getElementById('total').value=t
 
       
 

@@ -64,3 +64,8 @@ function redirectWithSuccess($to,$msg){
   $_SESSION['suc']=$msg;
   header("Location:{$to}");
 }
+
+function redirectWithWarning($to,$msg){
+  $_SESSION['warning'] = $msg;
+  header("Location:{$to}");
+}
