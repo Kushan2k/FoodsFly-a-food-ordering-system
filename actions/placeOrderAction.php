@@ -61,7 +61,6 @@ if(isset($_POST['add-order'])){
     redirectWithError('../pages/cart.php', "could not add your order <br> please try again");
   }
 
-  echo $conn->error;
 
 
 

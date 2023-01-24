@@ -71,11 +71,11 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         </div>
 
         <div class="hero-text container">
-          <div class="row">
-            <div class="col-md-7 mx-auto col-10 hero-container">
-              <h3 class="featurette-heading fw-normal lh-1 mb-5">Hungry?!<p>Good,we are here to serve you.</p> </h3>
-              <p class="lead d-none d-sm-block" >Discover the Best-Kept Secret in Town: Our Restaurant's Exceptional Menu. we provide you with our best food made by the best chefs in the field</p>
-              <a href="./pages/menu.php?view=all" class="btn btn-success">View Menu</a>
+          <div class="row" style="justify-content: end;">
+            <div class="col-md-7 col-10 hero-container">
+              <h3 class="featurette-heading fw-normal lh-1 mb-5" style='text-align: right;' >Hungry?!<p style='text-align: right;'>Good,we are here to serve you.</p> </h3>
+              <p style='text-align: right;' class="lead d-none d-sm-block" >Discover the Best-Kept Secret in Town: Our Restaurant's Exceptional Menu. we provide you with our best food made by the best chefs in the field</p>
+              <a href="./pages/menu.php?view=all" style="float: right;margin-right: 1.7rem;" class="btn btn-outline-light">View Menu</a>
             </div>
           </div>
 
@@ -85,29 +85,25 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
     </div>
   </section>
 
-  <main class="mt-5">
-    <div class="container">
+  <main class='mt-0 mx-0'>
+    <div class="container-fluid mx-0">
       <!--Section: Content-->
-      <section>
-        <div class="row">
-          <div class="col-md-6 gx-5 mb-4">
-            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-              <img src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?w=740&t=st=1670959491~exp=1670960091~hmac=e032ee5f29206c856363cf6d6075c1541bbe95b5497ba8851232a513de39b626" class="img-fluid" />
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
+      <section style='background-color:rgb(201, 200, 197,0.6);height: 600px;overflow: hidden;'>
+        <div class="row p-3">
+          <div class="col-md-6 gx-5 mb-4 mt-3">
+            <h4 class="display-4">Welcome</h4>
+            <p class='fs-4  mt-5 fw-lighter '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum quasi eos delectus odit. Possimus illum cumque vero perspiciatis? Repudiandae quam dolorum nobis quasi deserunt sequi quod velit voluptas iste suscipit!</p>
+
+            <a href="" class='btn btn-outline-danger mt-3' >
+              <i class='fa fa-book me-2'>
+                </i>View Chefs</a>
           </div>
 
-          <div class="col-md-6 gx-5 mb-4">
-            <h4><strong>Budget friendly</strong></h4>
-            <p class="text-muted">
-              Even though we use premium ingredients for our food we keep our prices low so anybody can enjoy a good meal.
-            </p>
-            <p><strong>Professional Team</strong></p>
-            <p class="text-muted">
-              Team of highly experienced chefs, who started this restaurant with customer satisfaction in mind. 
-            </p>
+          <div class="d-none d-md-flex col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 mx-auto" data-mdb-ripple-color="light">
+              <img src="./assets/images/Chef.png" width="400px"  />
+              
+            </div>
           </div>
         </div>
       </section>
@@ -116,76 +112,129 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
       <hr class="my-5" />
 
       <!--Section: Content-->
-      <section class="text-center">
-        <h4 class="mb-5"><strong>Some Inside Photos</strong></h4>
+      <section class=" container">
+        <h4 class="mb-5 text-center"><strong>Latest Menu items</strong>
+        
+      </h4>
+        <div class="container " style="align-items: center;justify-content:start;" >
+          <p>View All ? <input type="checkbox" name="view" id="view" class="form-radio"></p>
+        </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://thumbs.dreamstime.com/b/restaurant-interior-design-brown-wooden-tables-beige-orange-chairs-56905982.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        <style>
+          .img-div-bottom{
+            height: 300px;
+            height: 200px;
+            object-fit: contain;
+            overflow: hidden;
+
+          }
+          .items{
+              flex-wrap: nowrap;
+              overflow-x: scroll;
+          }
+          .img-h:hover{
+            cursor: pointer;
+          }
+          .item-div{
+
+            animation-name:popup;
+            animation-duration:400ms;
+            animation-timing-function:linear;
+            animation-fill-mode:forwards;
+            animation-iteration-count:1;
+            transition:400ms linear;
+          }
+
+          
+
+          @keyframes popup{
+            from{
+              transform: scale(0);
+            }
+            to{
+              transform: scale(1);
+            }
+          }
+          
+        </style>
+
+        <div class="row items" >
+          <?php
+          include_once './utils/select_data.php';
+          include_once './utils/conn.php';
+          $data = getMenuItemData($conn);
+
+          if($data==null){?>
+
+            <p class="alert text-center p-3">No menu items found</p>
+
+          <?php }
+
+          $data = array_slice($data, 0, 6);
+
+          foreach($data as $item){?>
+            
+            <div class="col-6 col-lg-4 mb-4 item-div">
+              <div class="card" >
+                <div class="bg-image hover-overlay ripple img-div-bottom" data-mdb-ripple-color="light" >
+                <a href='./pages/menu.php?view=all' class="img-h" >  
+                  <img src="<?= $item['img_url'] ?>" class="img-fluid" />
                 </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Interior</h5>
-                <!-- <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p> -->
-                <!-- <a href="#!" class="btn btn-primary">Button</a> -->
+                  
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><?= ucfirst($item['name'])?></h5>
+                  <h1 class="text-warning mt-2 text-end">
+                    <?php
+                    
+                    $rating=$item['rating'];
+                    $count=$item['rate_count'];
+                    $total=(int)$rating/$count;
+                    for($j=0;$j<$total;$j++){
+                      
+                      echo '<i class="fa-solid h6 text-warning fa-star"></i>';
+                    }
+                    
+                    ?>
+                  </h1>
+                  
+                </div>
               </div>
             </div>
-          </div>
+            
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://commercialkitchens.co.uk/wp-content/uploads/2020/08/empty_kitchen_wide_1.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Kitchen</h5>
-                <!-- <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a> -->
-              </div>
-            </div>
-          </div>
+          <?php }
+          
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/04/7a/5c/b8/hotel-sandy-s-tower.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Our Chefs</h5>
-                <!-- <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Button</a> -->
-              </div>
-            </div>
-          </div>
+
+?>
+
+          
         </div>
       </section>
-      <!--Section: Content-->
-
-
       
     </div>
   
     <?php include_once './includes/footer.php'?>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      
+      const type=document.getElementById('view')
+      let contentView=document.querySelector('.items')
+
+      type.addEventListener('change',(e)=>{
+        if(e.target.checked){
+          contentView.style.overflowX='hidden'
+          contentView.style.flexWrap='wrap'
+        }else{
+          contentView.style.overflowX='scroll'
+          contentView.style.flexWrap='nowrap'
+        }
+      })
+    })
+  </script>
 
   <script src="./assets/js/index.js"></script>
   <script src="../assets/js/slider.js"></script>
