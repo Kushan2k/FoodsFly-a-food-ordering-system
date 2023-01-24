@@ -62,7 +62,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
     <div class="container-fluid m-0 p-0">
       <div class="row p-0 m-0 position-relative">
         <div class="col-12 m-0 p-0">
-          <img src="./assets/images/image-1.jpg" class=" w-100 slider-img" alt="img">
+          <img src="./assets/images/image-8.jpg" class=" w-100 slider-img" alt="img">
         </div>
         <div class="next-icons">
           <button class="text-white fa-solid fa-backward next-back-btns bg-transparent border-0" data-type='back' style="transform:scale(1.5) ;"></button>
@@ -73,7 +73,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         <div class="hero-text container">
           <div class="row">
             <div class="col-md-7 mx-auto col-10 hero-container">
-              <h1 class="featurette-heading fw-normal lh-1 mb-5">Affordable, Delicious. All in one place <span class="text-muted">FoodsFly.</span></h1>
+              <h3 class="featurette-heading fw-normal lh-1 mb-5">Hungry?!<p>Good,we are here to serve you.</p> </h3>
               <p class="lead d-none d-sm-block" >Discover the Best-Kept Secret in Town: Our Restaurant's Exceptional Menu. we provide you with our best food made by the best chefs in the field</p>
               <a href="./pages/menu.php?view=all" class="btn btn-success">View Menu</a>
             </div>

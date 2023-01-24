@@ -106,7 +106,10 @@ if(checkIsLogedIn()){
                     </div>
                     <div class="form-group col-12 col-md-6 my-2">
                     <input id="Password" name="password" placeholder="Password" class="form-control" required="required" type="password">
-                    </div>
+                    <small>You must enter the 8 characters</small>
+                    
+                  </div>
+
                     <div class="col-12 col-md-6 my-2">
                     <input id="Password" name="cpassword" placeholder="Confirm Password" class="form-control" required="required" type="password">
                     </div>
