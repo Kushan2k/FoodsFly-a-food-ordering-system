@@ -57,7 +57,7 @@ if(checkIsLogedIn()){
       background-color: rgba(255, 0, 0, 0.09);
     }
   </style>
-  <p class="text-center display-6 mt-3">We are <span class="text-danger">glad,</span> that you are here.</p>
+  <p class="text-center display-6 mt-3">We are <span class="text-danger">glad</span> to have you.</p>
 
   <?php
 
@@ -86,7 +86,7 @@ if(checkIsLogedIn()){
             </div>
 
             <div class="col-md-7 py-3 py-sm-5 px-4 px-sm-3">
-              <h4 class="pb-4">Please fill with your details.</h4>
+              <h4 class="pb-4">Please fill in your details.</h4>
               <form action="../actions/registerAction.php" method="POST" >
                   <div class="row my-2">
                     <div class="col-12 col-md-6">
@@ -106,7 +106,7 @@ if(checkIsLogedIn()){
                     </div>
                     <div class="form-group col-12 col-md-6 my-2">
                     <input id="Password" name="password" placeholder="Password" class="form-control" required="required" type="password">
-                    <small>You must enter the 8 characters</small>
+                    <small>Password must be atleast 8 characters long</small>
                     
                   </div>
 
@@ -127,13 +127,14 @@ if(checkIsLogedIn()){
                   </div>
                   
                   <div class="form-row">
-                      <button type="submit" name="register" class="btn btn-danger">Submit</button>
+                      <button type="submit" name="register" class="btn btn-danger">Register</button>
                   </div>
-                  <p class="text-center">Or</p>
-                  <p>Login <a href="./login.php">Here</a> </p>
+                  
 
               </form>
-            </div>
+              
+  </div>  
+                  <p>Already have an account? <a href="./login.php">Login now</a> </p>
         </div>
     </div>
   </section>

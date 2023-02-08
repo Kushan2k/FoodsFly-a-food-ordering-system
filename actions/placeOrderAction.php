@@ -22,7 +22,7 @@ if(isset($_POST['add-order'])){
   $total = $_POST['total'];
 
   if($user==null){
-    redirectWithError('../pages/cart.php','user not found!');
+    redirectWithError('../pages/cart.php','User not found!');
   }
 
   $user_id=$user['user_id'];
@@ -54,11 +54,11 @@ if(isset($_POST['add-order'])){
       redirectWithWarning('../pages/order.php', $msg);
 
     }else{
-      redirectWithSuccess("../pages/order.php", "your order has been submited for approvel!");
+      redirectWithSuccess("../pages/order.php", "Your order has been submited for approval!");
     }
 
   }else{
-    redirectWithError('../pages/cart.php', "could not add your order <br> please try again");
+    redirectWithError('../pages/cart.php', "Could not add your order <br> please try again");
   }
 
 

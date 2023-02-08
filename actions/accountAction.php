@@ -21,12 +21,12 @@ if(isset($_POST['save-changes'])){
 
   if(!validMobile($mobile)){
 
-    redirectWithError('../pages/profile.php', 'Mobile is invalid!');
+    redirectWithError('../pages/profile.php', 'Mobile number is invalid!');
     return ;
   }
   if(!validateEmail($email)){
 
-    redirectWithError('../pages/profile.php', 'Email is not valid!');
+    redirectWithError('../pages/profile.php', 'Email is invalid!');
     return;
   }
 
@@ -47,10 +47,10 @@ if(isset($_POST['save-changes'])){
         return;
       }
     }else{
-      redirectWithError('../pages/login.php', 'please login first!');
+      redirectWithError('../pages/login.php', 'Please login first!');
     }
   }else{
-    redirectWithError('../pages/profile.php', "error connecting to the database");
+    redirectWithError('../pages/profile.php', "Error connecting to the database");
   }
   $hash = password_hash($newpassword, PASSWORD_BCRYPT);
 
@@ -61,13 +61,13 @@ if(isset($_POST['save-changes'])){
     if($stm->execute()){
       setcookie("login",null,20,"/");
       setcookie("jwt-token",null,20,"/");
-      redirectWithSuccess('../pages/login.php', 'please login again!');
+      redirectWithSuccess('../pages/login.php', 'Please login again!');
     }else{
-      redirectWithError('../pages/profile.php', "error connecting...");
+      redirectWithError('../pages/profile.php', "Error connecting...");
     }
 
   }else{
-    redirectWithError('../pages/profile.php', "error connecting...");
+    redirectWithError('../pages/profile.php', "Error connecting...");
   }
   
 
@@ -76,10 +76,10 @@ if(isset($_POST['save-changes'])){
   $sql = "DELETE FROM users WHERE user_id={$user['user_id']}";
   $res = $conn->query($sql);
   if($res==TRUE){
-    redirectWithSuccess('../pages/register.php', 'Your account delete successfully');
+    redirectWithSuccess('../pages/register.php', 'Your account got deleted successfully');
     return;
   }else{
-    redirectWithError('../pages/profile.php', "could not delete your account!<br>please try again later");
+    redirectWithError('../pages/profile.php', "Could not delete your account!<br>Please try again later");
     return;
   }
 }

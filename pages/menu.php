@@ -73,7 +73,7 @@ if(checkIsLogedIn()){
             </div>
             <ul class="list-group list-group-flush" data-parent="category">
               <li class="list-group-item">All</li>
-              <li class="list-group-item">Mains</li>
+              <li class="list-group-item">Main</li>
               <li class="list-group-item">Sides</li>
               <li class="list-group-item">Dessert</li>
               <li class="list-group-item">Beverages</li>
@@ -174,5 +174,6 @@ if(checkIsLogedIn()){
   <?php include_once '../includes/footer.php'?>
   <script src="../assets/js/menu.js"></script>
  <?php include '../includes/scripts.php'?>
+ <!-- <a href="./fooditem.php">here</a> -->
 </body>
 </html>

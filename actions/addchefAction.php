@@ -44,11 +44,11 @@ if(isset($_POST['add-chef'])){
     if($stm->execute()){
       redirectWithSuccess('../dashboard/view-chef.php', 'Chef is added to the system!');
     }else{
-      redirectWithError("../dashboard/view-chef.php", "we can not add a chef");
+      redirectWithError("../dashboard/view-chef.php", "we could not add the chef");
       return;
     }
   }else{
-    redirectWithError("../dashboard/view-chef.php", "we can not add a chef");
+    redirectWithError("../dashboard/view-chef.php", "we could not add the chef");
     return;
   }
 

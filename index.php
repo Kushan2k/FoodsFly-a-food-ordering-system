@@ -74,7 +74,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           <div class="row" style="justify-content: end;">
             <div class="col-md-7 col-10 hero-container">
               <h3 class="featurette-heading fw-normal lh-1 mb-5" style='text-align: right;' >Hungry?!<p style='text-align: right;'>Good,we are here to serve you.</p> </h3>
-              <p style='text-align: right;' class="lead d-none d-sm-block" >Discover the Best-Kept Secret in Town: Our Restaurant's Exceptional Menu. we provide you with our best food made by the best chefs in the field</p>
+              <p style='text-align: right;' class="lead d-none d-sm-block" >Indulge in a culinary journey. Our menu features an array of dishes that are both sophisticated and approachable. From locally sourced ingredients to carefully curated flavors, each dish on our menu is crafted with a focus on quality and taste. So come and explore our menu, and discover what makes our dining experience truly unforgettable.</p>
               <a href="./pages/menu.php?view=all" style="float: right;margin-right: 1.7rem;" class="btn btn-outline-light">View Menu</a>
             </div>
           </div>
@@ -92,7 +92,11 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         <div class="row p-3">
           <div class="col-md-6 gx-5 mb-4 mt-3">
             <h4 class="display-4">Welcome</h4>
-            <p class='fs-4  mt-5 fw-lighter '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum quasi eos delectus odit. Possimus illum cumque vero perspiciatis? Repudiandae quam dolorum nobis quasi deserunt sequi quod velit voluptas iste suscipit!</p>
+            <p class='fs-4  mt-5 fw-lighter '>
+            Meet the culinary geniuses behind the scenes at FoodsFly. Our team of highly trained chefs have honed their skills at some of the finest restaurants around the world, and now bring their talent to your plate. Whether it's crafting a beautifully plated dish, or experimenting with new and exotic ingredients, our chefs are committed to making every bite as memorable as the last.
+            </p>
+            <br/>
+
 
             <a href="" class='btn btn-outline-danger mt-3' >
               <i class='fa fa-book me-2'>
@@ -116,9 +120,9 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         <h4 class="mb-5 text-center"><strong>Latest Menu items</strong>
         
       </h4>
-        <div class="container " style="align-items: center;justify-content:start;" >
+        <!-- <div class="container " style="align-items: center;justify-content:start;" >
           <p>View All ? <input type="checkbox" name="view" id="view" class="form-radio"></p>
-        </div>
+        </div> -->
 
         <style>
           .img-div-bottom{

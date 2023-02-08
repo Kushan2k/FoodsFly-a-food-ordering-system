@@ -47,7 +47,7 @@ if(!isAdmin()){
             <div class="card-body">
               <h5 class="card-title">View Menu Items</h5>
               <p class="card-text my-4">
-                Create/Read/Edit/Delete Menu Items
+                View/add/edit/delete Menu Items
               </p>
               <a href="./menu-items.php?view=all" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -60,7 +60,7 @@ if(!isAdmin()){
             <div class="card-body">
               <h5 class="card-title">View Chefs</h5>
               <p class="card-text my-4">
-                you can Add/Remove Chefs here.
+                Add/remove chefs here.
               </p>
               <a href="./view-chef.php" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -71,9 +71,9 @@ if(!isAdmin()){
         <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">User Summery</h5>
+              <h5 class="card-title">User Summary</h5>
               <p class="card-text my-4">
-                View User Activities on the site.
+                View user activities on the site.
               </p>
               <a href="./users.php" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -86,7 +86,7 @@ if(!isAdmin()){
             <div class="card-body">
               <h5 class="card-title">Review Orders</h5>
               <p class="card-text">
-                You can view/Approve or Decline orders from here.
+               View/approve or decline orders from here.
               </p>
               <a href="#" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>

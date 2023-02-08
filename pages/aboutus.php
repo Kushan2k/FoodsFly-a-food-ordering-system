@@ -90,7 +90,7 @@ if(checkIsLogedIn()){
         <div class="row h-100 align-items-center py-5">
           <div class="col-lg-6">
             <h1 class="display-4">Who We Are</h1>
-            <p class="lead text-muted mb-0">We are undergraduates at Sri Lanka Technological Campus</p>
+            <p class="lead text-muted mb-0">Welcome to our restaurant, where tradition meets modernity and every dish is made with love. We are a family-owned and operated establishment, passionate about bringing the authentic flavors of our cuisine to your table. Our team of talented chefs are dedicated to using the freshest ingredients, hand-picked from local markets, to create delicious and memorable dishes that you and your loved ones will cherish. We believe that food is not just sustenance, but a way to bring people together and create lasting memories. Come dine with us and taste the difference that passion and quality make.</p>
             <!-- <p class="lead text-muted">Snippet by <a href="https://bootstrapious.com/snippets" class="text-muted">  -->
                         <!-- <u>Bootstrapious</u></a> -->
             </p>
@@ -100,7 +100,7 @@ if(checkIsLogedIn()){
       </div>
     </div>
 
-    <div class="bg-white py-5">
+    <!-- <div class="bg-white py-5">
       <div class="container py-5">
         <div class="row align-items-center mb-5">
           <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
@@ -108,12 +108,12 @@ if(checkIsLogedIn()){
             <p class="font-italic text-muted mb-4">We started this restaurant to provide affordable and delicious meals to everyone our menu ranges from simple baked items upto gourmet foods such as truffle fried rice which is an in house special</p><a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
           </div>
           <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://bootstrapious.com/i/snippets/sn-about/img-2.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
-        </div>
+        </div> -->
         <div class="row align-items-center">
           <div class="col-lg-5 px-5 mx-auto"><img src="https://bootstrapious.com/i/snippets/sn-about/img-1.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
           <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
             <h2 class="font-weight-light">Our journey</h2>
-            <p class="font-italic text-muted mb-4">We started this restaurant with a small team of three people and now we have expanded upto 25 people working and we provide a wide variety of dishes ranging from traditional Sri Lankan Cuisine, Japanese Cuisine, Italian Cuisine and Chinese cuisine. We have decided to expand our buisiness further and have a website where customers can order online and enjoy their meal</p>
+            <p class="font-italic text-muted mb-4">From humble beginnings, our restaurant has grown into a beloved dining destination, known for its delicious food and warm, welcoming atmosphere. Our story began with a passion for cooking and a dream of sharing that love with others. With hard work and determination, we started small and gradually built a reputation for serving authentic, delicious food made with the freshest ingredients. Today, we are proud to say that our restaurant is a place where friends and families come together to enjoy good food and create memories that last a lifetime. We are grateful for the support of our loyal customers and look forward to continuing to serve you for many years to come.</p>
           </div>
         </div>
       </div>
@@ -210,7 +210,7 @@ if(checkIsLogedIn()){
           <div class="col-12">
             <h2 class="display-4 font-weight-light">Our team</h2>
             <p class="font-italic text-muted">
-              We have a wonderful talented full stack developer team behind the whole implementation of the product and ready to serve you 24/7
+            Meet the talented team of university students behind your new favorite food ordering system. We are a dedicated and passionate group of individuals with a love for both technology and great food. With a combined skillset in computer science, design, and culinary arts, we have set out to revolutionize the way you order food from your favorite restaurant. Our user-friendly platform makes it easy for you to discover new dishes, track your order, and enjoy your meal without any hassle. So why wait? Join us on this delicious journey and experience the future of food ordering today!
             </p>
           </div>
         </div>
@@ -220,9 +220,26 @@ if(checkIsLogedIn()){
         <div class="row text-center">
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-              <h5 class="mb-0">Tony Stark</h5>
-              <span class="small text-uppercase text-muted">CEO - Founder</span>
+              <img src="..\assets\images\inula.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Inula Chandira</h5>
+              <span class="small text-uppercase text-muted">Team lead/Developer</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="#" class="social-link">
+                  <i class="fa-brands fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link">
+                  <i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link">
+                  <i class="fa-brands fa-github"></i></a></li>
+                <li class="list-inline-item"><a href="mailto:cinula40@gmail.com" class="social-link">
+                  <i class="fa-solid fa-envelope"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="bg-white rounded shadow-sm py-5 px-4">
+              <img src="..\assets\images\kushan.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Kushan Gayantha</h5>
+              <span class="small text-uppercase text-muted">Lead developer</span>
               <ul class="social mb-0 list-inline mt-3">
                 <li class="list-inline-item"><a href="#" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
@@ -238,8 +255,8 @@ if(checkIsLogedIn()){
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-              <h5 class="mb-0">Tony Stark</h5>
-              <span class="small text-uppercase text-muted">CEO - Founder</span>
+              <h5 class="mb-0">Kalindu Indupura</h5>
+              <span class="small text-uppercase text-muted">Content manager</span>
               <ul class="social mb-0 list-inline mt-3">
                 <li class="list-inline-item"><a href="#" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
@@ -255,16 +272,16 @@ if(checkIsLogedIn()){
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-              <h5 class="mb-0">Tony Stark</h5>
-              <span class="small text-uppercase text-muted">CEO - Founder</span>
+              <h5 class="mb-0">Heshara Dananjalee</h5>
+              <span class="small text-uppercase text-muted">Lead designer</span>
               <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=100079025905295&mibextid=ZbWKwL" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/heshara-dananjanee-760247200" class="social-link">
                   <i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://github.com/heshara2000" class="social-link">
                   <i class="fa-brands fa-github"></i></a></li>
-                <li class="list-inline-item"><a href="mailto:kushangayantha001@gmail.com" class="social-link">
+                <li class="list-inline-item"><a href="mailto:hesharadananjanee@gmail.com" class="social-link">
                   <i class="fa-solid fa-envelope"></i></a></li>
               </ul>
             </div>
@@ -272,25 +289,8 @@ if(checkIsLogedIn()){
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-              <h5 class="mb-0">Tony Stark</h5>
-              <span class="small text-uppercase text-muted">CEO - Founder</span>
-              <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link">
-                  <i class="fa-brands fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
-                  <i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
-                  <i class="fa-brands fa-github"></i></a></li>
-                <li class="list-inline-item"><a href="mailto:kushangayantha001@gmail.com" class="social-link">
-                  <i class="fa-solid fa-envelope"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-5">
-            <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-              <h5 class="mb-0">Tony Stark</h5>
-              <span class="small text-uppercase text-muted">CEO - Founder</span>
+              <h5 class="mb-0">Eranga Harshani</h5>
+              <span class="small text-uppercase text-muted">Developer/Quality Assurance</span>
               <ul class="social mb-0 list-inline mt-3">
                 <li class="list-inline-item"><a href="#" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
