@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgages = [
     "./assets/images/image-8.jpg",
     "./assets/images/image-19.jpg",
-    "./assets/images/image-9.jpg",
+    "./assets/images/image-32.jpg",
     "./assets/images/image-20.jpg",
     "./assets/images/image-18.jpg",
     "./assets/images/image-10.jpg",
