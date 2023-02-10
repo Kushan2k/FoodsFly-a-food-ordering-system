@@ -69,3 +69,21 @@ function isAdmin(){
     return false;
   }
 }
+
+function isChef(){
+  if(checkIsLogedIn()){
+    $user=verifyJWT($_COOKIE['jwt-token']);
+    if($user!=null){
+      if($user['type']==1567){
+        return true;
+      }else{
+        return false;
+      }
+    }else{
+      return false;
+    }
+
+  }else{
+    return false;
+  }
+}
