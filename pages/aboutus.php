@@ -237,21 +237,22 @@ if(checkIsLogedIn()){
           </div>
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="..\assets\images\kushan.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-              <h5 class="mb-0">Kushan Gayantha</h5>
-              <span class="small text-uppercase text-muted">Lead developer</span>
+              <img src="../assets/images/eranga.jpg" alt="" width="100" height="100" class="img-thumbnail rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Eranga Harshani</h5>
+              <span class="small text-uppercase text-muted">Developer/Quality Assurance</span>
               <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://web.facebook.com/harshi.herath.716" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/eranga-harshani-023396235/" class="social-link">
                   <i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://github.com/harshani2000" class="social-link">
                   <i class="fa-brands fa-github"></i></a></li>
                 <li class="list-inline-item"><a href="mailto:kushangayantha001@gmail.com" class="social-link">
                   <i class="fa-solid fa-envelope"></i></a></li>
               </ul>
             </div>
           </div>
+          
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
               <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
@@ -288,21 +289,22 @@ if(checkIsLogedIn()){
           </div>
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-              <h5 class="mb-0">Eranga Harshani</h5>
-              <span class="small text-uppercase text-muted">Developer/Quality Assurance</span>
+              <img src="..\assets\images\kushan.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Kushan Gayantha</h5>
+              <span class="small text-uppercase text-muted">developer</span>
               <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://web.facebook.com/kushan.gayantha.14" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/kushan-gayantha-b2069b1a8" class="social-link">
                   <i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://github.com/Kushan2k" class="social-link">
                   <i class="fa-brands fa-github"></i></a></li>
                 <li class="list-inline-item"><a href="mailto:kushangayantha001@gmail.com" class="social-link">
                   <i class="fa-solid fa-envelope"></i></a></li>
               </ul>
             </div>
           </div>
+          
         </div>
         </div>
       </div>
