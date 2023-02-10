@@ -68,6 +68,17 @@ if(isset($_POST['add-order'])){
 
 }
 
+if(isset($_POST['cancel-order'])){
+  $id = $_POST['order_id'];
+
+  $sql = "DELETE FROM orders WHERE order_id={$id}";
+  if($conn->query($sql)==TRUE){
+    redirectWithSuccess($_SERVER['HTTP_REFERER'], "You order has been canceld!");
+  }else{
+    redirectWithError($_SERVER['HTTP_REFERER'], "Sorry we couldn't cancel your order!");
+  }
+}
+
 function addtoOrders($conn,$id,$total,$userId){
 
   $orderSQL = "INSERT INTO orders(order_id,total,user_id) VALUES(?,?,?)";

@@ -48,13 +48,6 @@ if(isChef()){
 
     <div class="container my-3">
       <div class="row ">
-        <?php
-
-        if ($checf==true) {
-           ?>
-
-        
-
         <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
           <div class="card">
             <div class="card-body">
@@ -95,11 +88,6 @@ if(isChef()){
             </div>
           </div>
         </div>
-
-        <?php }
-
-
-        ?>
         <div class="col-10 col-md-5 col-lg-4 mx-auto mx-lg-0  my-2">
           <div class="card">
             <div class="card-body">
