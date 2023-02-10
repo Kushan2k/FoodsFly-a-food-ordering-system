@@ -95,7 +95,7 @@ if(isChef()){
               <p class="card-text">
                View/approve or decline orders from here.
               </p>
-              <a href="#" class="btn btn-outline-primary">
+              <a href="./review-orders.php" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>

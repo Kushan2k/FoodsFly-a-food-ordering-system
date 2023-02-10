@@ -213,6 +213,10 @@ if (checkIsLogedIn()) {
                                                       <p class="title"><?=ucfirst($data['name']) ?><br>
                                                       <span class="text-muted"> RS. <?=number_format($data['price'], 2, '.', ',')?></span>
                                                     </p>
+                                                    <p>
+                                                      <span class='text-danger'>X</span>
+                                                      <span><?= $item['qty']?></span>
+                                                    </p>
                                                   </figcaption>
                                               </figure>
                                             </li>
