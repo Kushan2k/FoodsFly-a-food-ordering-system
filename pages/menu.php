@@ -65,7 +65,7 @@ if(checkIsLogedIn()){
   <section class="menu_page mt-5">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-5 col-lg-3 col-md-3">
+        <div class="col-4 col-lg-2 col-md-3">
 
           <div class="card" style="border: none;">
             <div class="card-header">
@@ -93,7 +93,7 @@ if(checkIsLogedIn()){
             </ul>
           </div>
         </div>
-        <div class="col-7 col-lg-9 col-md-9 ">
+        <div class="col-8 col-lg-10 col-md-9 ">
 
           <div class="row">
             <?php
@@ -104,10 +104,10 @@ if(checkIsLogedIn()){
 
             }else{
               for($i=0;$i<count($data);$i++){?>
-                <div class="col-sm-6 col-lg-4 col-md-6 mb-4 menu_item" data-cat="<?= ucfirst($data[$i]['category']) ?>" data-price="<?= $data[$i]['price']?> " >
+                <div class="col-sm-6 col-lg-3 col-md-4 mb-4 menu_item" data-cat="<?= ucfirst($data[$i]['category']) ?>" data-price="<?= $data[$i]['price']?> " >
                   <div class="card">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                      <img src="<?= $data[$i]['img_url']?>" class="img-fluid" />
+                      <img src="<?= $data[$i]['img_url']?>" class="img-fluid" style="width: 320px; height: 200px; object-fit: cover;"/>
                       <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                       </a>
@@ -117,15 +117,21 @@ if(checkIsLogedIn()){
                       <h6 class="card-subtitle text-muted"><?= ucfirst($data[$i]['category'])?></h6>
                       <h4 class="text-success mt-2">Rs <?= number_format($data[$i]['price'],2,'.',',') ?></h4>
                       <div class="d-flex justify-content-between align-items-center">
+                      <button class="btn btn-primary border-0 bg-transparent text-primary description-btn">View Description</button>
+                        </div>
+                        <div class="description-content" style="display: none;">
+                          <p class="card-text"><?= ucfirst($data[$i]['description'])?></p>
+                        </div>
+                      <div class="d-flex justify-content-between align-items-left">
                         <?php
 
                         if($logedin){?>
                             <button data-itemID=<?= $data[$i]['menu_id'] ?>
                              class="btn btn-primary border-0 bg-transparent fa-sharp text-dark fa-solid fa-cart-shopping"></button>
                         <?php }?>
-                        <h1 class="text-warning">
-                          <?php
-                          
+                        <h2 class="text-warning">
+                                                 
+                          <?php                          
                           $rating=$data[$i]['rating'];
                           $count=$data[$i]['rate_count'];
                           $total=(int)$rating/$count;

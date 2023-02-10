@@ -182,7 +182,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
               <div class="card" >
                 <div class="bg-image hover-overlay ripple img-div-bottom" data-mdb-ripple-color="light" >
                 <a href='./pages/menu.php?view=all' class="img-h" >  
-                  <img src="<?= $item['img_url'] ?>" class="img-fluid" />
+                  <img src="<?= $item['img_url'] ?>" class="img-fluid" style="width: 380px; height: 200px; object-fit: cover;" />
                 </a>
                   
                 </div>
