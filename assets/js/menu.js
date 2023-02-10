@@ -136,3 +136,8 @@ function displayAllItems(items){
     }
   })
 }
+$(document).ready(function() {
+  $('.description-btn').click(function() {
+    $(this).closest('.menu_item').find('.description-content').toggle();
+  });
+});

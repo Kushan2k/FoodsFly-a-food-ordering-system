@@ -4,6 +4,12 @@ include_once '../utils/jwt-auth.php';
 if(!isAdmin()){
   header("Location:../index.php",401);
 }
+$checf = false;
+
+if(isChef()){
+  $checf = true;
+}
+
 ?>
 
 <html lang="en">
@@ -42,6 +48,13 @@ if(!isAdmin()){
 
     <div class="container my-3">
       <div class="row ">
+        <?php
+
+        if ($checf==true) {
+           ?>
+
+        
+
         <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
           <div class="card">
             <div class="card-body">
@@ -52,6 +65,7 @@ if(!isAdmin()){
               <a href="./menu-items.php?view=all" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
+
             </div>
           </div>
         </div>
@@ -81,6 +95,11 @@ if(!isAdmin()){
             </div>
           </div>
         </div>
+
+        <?php }
+
+
+        ?>
         <div class="col-10 col-md-5 col-lg-4 mx-auto mx-lg-0  my-2">
           <div class="card">
             <div class="card-body">
