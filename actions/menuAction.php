@@ -72,13 +72,13 @@ if(isset($_POST['save-changes'])){
     $imgFile = $_FILES['img'];
 
     if($price==false){
-        redirectWithError('../dashboard/menu-items.php', 'Price is not valid!');
+        redirectWithError('../dashboard/menu-items.php', 'Price is  invalid!');
         return;
     }
     $price = (float) $price;
 
     if(!isValidFile($imgFile)){
-        redirectWithError('../dashboard/menu-items.php', 'Not a valid file format!');
+        redirectWithError('../dashboard/menu-items.php', 'Invalid file format!');
         return;
     }
 
@@ -91,14 +91,14 @@ if(isset($_POST['save-changes'])){
         if($stm){
             $stm->bind_param('sisss', $name, $price, $category, $description, $uploadLocation);
             if($stm->execute()){
-                redirectWithSuccess('../dashboard/menu-items.php', 'Menu Item Added!');
+                redirectWithSuccess('../dashboard/menu-items.php', 'Menu item added sucessfully!');
                 return;
             }else{
                 if(file_exists($uploadLocation)){
                     unlink($uploadLocation);
 
                 }
-                redirectWithError('../dashboard/menu-items.php', 'item adding failed!');
+                redirectWithError('../dashboard/menu-items.php', 'Failed to add item!');
                 return;
             }
         }else{
@@ -108,13 +108,13 @@ if(isset($_POST['save-changes'])){
             }
             
             // redirectWithError('../dashboard/menu-items.php', $conn->error);
-            redirectWithError('../dashboard/menu-items.php', 'item adding failed!');
+            redirectWithError('../dashboard/menu-items.php', 'Failed to add item!');
             
             return;
         }
 
     }else{
-        redirectWithError('../dashboard/menu-items.php', 'File upload failed!');
+        redirectWithError('../dashboard/menu-items.php', 'Failed to upload file!');
         return;
     }
 
@@ -148,7 +148,7 @@ if(isset($_POST['edit-item'])){
     $currentfile = $_POST['file'];
 
     if($price==false){
-        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'Item price is not valid!');
+        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'Item price is invalid!');
         return;
     }
 
@@ -168,7 +168,7 @@ if(isset($_POST['edit-item'])){
             }
         }else{
             
-            redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'invalid file type!');
+            redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'Invalid file type!');
             return;
         }
     }
@@ -177,10 +177,10 @@ if(isset($_POST['edit-item'])){
     $stm = $conn->prepare($sql);
     $stm->bind_param('sisi', $name, $price, $description,$id);
     if($stm->execute()){
-        redirectWithSuccess('../dashboard/menu-items.php?view=all', 'item updated!');
+        redirectWithSuccess('../dashboard/menu-items.php?view=all', 'Item updated!');
         return;
     }else{
-        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'update did not complete!');
+        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'Update did not complete!');
         return;
     }
     

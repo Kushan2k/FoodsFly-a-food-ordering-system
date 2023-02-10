@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const imgages = [
     "./assets/images/image-8.jpg",
-    "./assets/images/image-14.jpg",
+    "./assets/images/image-19.jpg",
     "./assets/images/image-9.jpg",
-    "./assets/images/image-12.jpg",
-    "./assets/images/bg.jpeg",
+    "./assets/images/image-20.jpg",
+    "./assets/images/image-18.jpg",
     "./assets/images/image-10.jpg",
   ]
   let img = document.querySelector(".slider-img")

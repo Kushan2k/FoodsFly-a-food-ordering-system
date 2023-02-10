@@ -19,6 +19,10 @@
   transition: 400ms linear;
 
 }
+.description-content {
+  padding: 10px;
+  background-color: rgba(211, 211, 211, 0);
+}
 .cart{
   position: fixed;
   width: 70px;
@@ -45,7 +49,7 @@
   top: -5px;
   right: -10px;
   border-radius: 50%;
-  background-color: gold;
+  background-color: rgb(255, 244, 244);
   width: auto;
   height: 30px;
   padding: 5px;

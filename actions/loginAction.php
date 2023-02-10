@@ -36,14 +36,14 @@ if(isset($_POST['login'])){
         header("Location:../index.php");
 
       }else{
-        redirectWithError('../pages/login.php','please check your password again!');
+        redirectWithError('../pages/login.php','Invalid credentials! Please try again.');
       }
 
     }else{
-      redirectWithError('../pages/login.php','no records found!');
+      redirectWithError('../pages/login.php','user does not exist! Register before logging in!');
     }
   }else{
-    redirectWithError('../pages/login.php',"couldn't connect!");
+    redirectWithError('../pages/login.php',"Couldn't connect!");
   }
 
 

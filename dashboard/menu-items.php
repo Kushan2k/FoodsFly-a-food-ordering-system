@@ -66,7 +66,7 @@ if(!isAdmin()){
     <div class="container mt-5">
       <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa-solid fa-plus"></i>
-        Add Item
+        Add Food Item
       </button>
     </div>
         <?php
@@ -95,8 +95,8 @@ if(!isAdmin()){
         ?>
 
     <div class="container my-4 h-100 item-table">
-      <h2>Filterable Table</h2>
-      <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+      <h2>Existing Menu</h2>
+      <!-- <p>Type something in the input field to search the table for first names, last names or emails:</p>   -->
       <input class="form-control" id="myInput" type="text" placeholder="Search..">
       <br>
       <table class="table table-bordered table-striped">

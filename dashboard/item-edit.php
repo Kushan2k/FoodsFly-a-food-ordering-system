@@ -13,7 +13,7 @@ $item = isset($_GET['itemid']) ? $_GET['itemid'] : header("Location:./menu-items
 $data = getMenuItemByID($conn, $item);
 
 if($data==null){
-  redirectWithError('./menu-items.php?view=all', 'item do not exists!');
+  redirectWithError('./menu-items.php?view=all', 'Item do not exist!');
   return;
 }
 
