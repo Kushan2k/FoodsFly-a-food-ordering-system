@@ -1,7 +1,13 @@
 <?php
+
+
+
 $logedin=false;
+$ischef = false;
+$isadmin = false;
 if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
   $logedin=true;
+  
 }
 
 ?>

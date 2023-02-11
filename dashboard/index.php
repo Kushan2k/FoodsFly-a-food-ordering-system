@@ -1,17 +1,17 @@
 <?php
 
 include_once '../utils/jwt-auth.php';
-if(!isAdmin()){
+if(!isAdmin() && !isChef()){
   header("Location:../index.php",401);
 }
-$checf = false;
+
+$chef = false;
 
 if(isChef()){
-  $checf = true;
+  $chef = true;
 }
 
 ?>
-
 <html lang="en">
 <head>
   <?php include_once '../includes/header.php'?>
@@ -19,6 +19,7 @@ if(isChef()){
   
 </head>
   <body>
+    
 
   <style>
     .nav_item{
@@ -45,9 +46,12 @@ if(isChef()){
 
       <button class="d-sm-none bg-transparent border-0 icon-btn d-none hide fa-solid fa-xmark text-white"></button> -->
     </nav>
-
     <div class="container my-3">
       <div class="row ">
+
+    <?php
+    if(!$chef){?>
+    
         <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
           <div class="card">
             <div class="card-body">
@@ -88,6 +92,11 @@ if(isChef()){
             </div>
           </div>
         </div>
+
+    <?php }
+
+    ?>
+    
         <div class="col-10 col-md-5 col-lg-4 mx-auto mx-lg-0  my-2">
           <div class="card">
             <div class="card-body">

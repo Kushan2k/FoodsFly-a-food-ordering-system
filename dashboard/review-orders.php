@@ -7,7 +7,7 @@ include '../utils/select_data.php';
 $logedin = false;
 $user_id = 0;
 
-if (checkIsLogedIn() && isAdmin()) {
+if (checkIsLogedIn() && isAdmin() || isChef()) {
     $logedin = true;
     $user = verifyJWT($_COOKIE['jwt-token']);
     if ($user != null) {

@@ -17,7 +17,7 @@ function createJWTLogin($email,$user_id,$type){
     'data'=>[
       'user_id'=>$user_id,
       'email'=>$email,
-      'type'=>$type==1918?1918:1290
+      'type'=>$type
     ]
   ];
 
