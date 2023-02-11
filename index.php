@@ -28,7 +28,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
 
       <?php
       if($logedin){
-        echo '<li class="nav_item"><a href="">Orders</a></li>';
+        echo '<li class="nav_item"><a href="./pages/order.php?for=my-orders">Orders</a></li>';
       }?>
       <li class="nav_item"><a href="./pages/aboutus.php"> About us</a></li>
       

@@ -121,3 +121,78 @@ function getChefData($conn){
   }
 
 }
+
+function getOrderItems($conn,$orderid){
+  $html="";
+
+  $sql = "SELECT menu_id,qty FROM order_item WHERE order_id={$orderid}";
+  $res = $conn->query($sql);
+  if($res==TRUE){
+    // number_format($data['price'], 2, '.', ',')
+
+    while($item=$res->fetch_assoc()){
+      $sql = "SELECT name,price,img_url FROM menu_item WHERE menu_id={$item['menu_id']}";
+      $result = $conn->query($sql);
+      if($result==TRUE){
+        $data = $result->fetch_assoc();
+        $html.="<li class='col-md-4'>
+          <figure class='itemside mb-3'>
+              <div class='aside'><img src='{$data['img_url']}' class='img-sm border'></div>
+              <figcaption class='info align-self-center'>
+                  <p class='title'>{$data['name'] }<br>
+                  <span class='text-muted'> RS.{$data['price']}</span>
+                </p>
+                <p>
+                  <span class='text-danger'>X</span>
+                  <span>{$item['qty']}</span>
+                </p>
+              </figcaption>
+          </figure>
+        </li>";
+      }
+    }
+  }else{
+    $html.='<li class="col-md-4">
+        <figure class="itemside mb-3">
+            <figcaption class="info align-self-center">
+                <p class="title text-danger text-center">Error </p>
+            </figcaption>
+        </figure>
+      </li>';
+ }
+
+  return $html;
+}
+
+
+function getTrackingBoc($status){
+  if($status==0){
+    return '<div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+    <div class="step "> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> In Processing</span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Completed</span> </div>';
+
+  }else if($status==1){
+    return '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+    <div class="step "> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> In Processing</span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Completed</span> </div>';
+  }else if($status==2){
+    return '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+    <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> In Processing</span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Completed</span> </div>';
+  }else if($status==3){
+    return '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+    <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> In Processing</span> </div>
+    <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Completed</span> </div>';
+  }else{
+    return '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+    <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> In Processing</span> </div>
+    <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+    <div class="step active"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Completed</span> </div>';
+   }
+
+
+}

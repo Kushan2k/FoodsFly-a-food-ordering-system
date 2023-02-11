@@ -140,12 +140,13 @@ if (checkIsLogedIn()) {
 
               <?php
 
-              $sql = "SELECT * FROM orders WHERE user_id={$user_id} ORDER BY order_id DESC";
+              $sql = "SELECT * FROM orders WHERE user_id={$user_id} ORDER BY order_date DESC";
               $res = $conn->query($sql);
               if($res==TRUE){
                 if($res->num_rows>0){
+                  echo $res->num_rows;
                   while($row=$res->fetch_assoc()){?>
-                    <tr >
+                    <tr>
                       <td class='d-none d-md-flex'><?= $row['order_id']?></td>
                       <td><?= explode(' ',$row['order_date'])[0] ?></td>
                       <td>RS. <?=number_format($row['total'], 2, '.', ',')?></td>
@@ -153,17 +154,17 @@ if (checkIsLogedIn()) {
                         <?= ($row['status']==0)? 'Pending..':'Approved' ?>
                       </td>
                       <td>
-                        <button type="button" class="btn w-100 btn-sm btn-info m-0 fa-solid fa-eye bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn w-100 btn-sm btn-info m-0 fa-solid fa-eye bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['order_id']?>">
                         </button>
                       </td>
                     </tr>
 
                     <!-- Modal -->
-                    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade modal-lg" id="exampleModal<?= $row['order_id']?>" tabindex="-1" aria-labelledby="exampleModal<?= $row['order_id']?>Label" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Order <?= $row['order_id']?></h5>
+                            <h5 class="modal-title" id="exampleModal<?= $row['order_id']?>Label">Order <?= $row['order_id']?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body m-0 p-0">
@@ -177,62 +178,21 @@ if (checkIsLogedIn()) {
                                       <div class="col"> <strong>Estimated Delivery time:</strong> <br>29 nov 2019 </div>
                                       <div class="col"> <strong>Shipping BY:</strong> <br> FoodsFly, | <i class="fa fa-phone"></i> Mr.John </div>
                                       <div class="col"> <strong>Status:</strong> <br>
-                                        <?= ($row['status']==0)? '<p class="text-danger">Waiting for review!</p>':'<p class="text-success">Oder placed<br>You will recive it soon</p>' ?>
+                                        <?= ($row['status']==0)? '<p class="text-danger">Waiting for review!</p>':'<p class="text-success">Oder placed<br>' ?>
+                                        <?= $row['status']!=4? ($row['status']!=0?'You will recive it soon':'') :'Your order is comepted!' ?></p>
                                       </div>
                                         
                                     </div>
                                   </article>
                                   <div class="track">
-                                    <div class="step <?= ($row['status']==0)?'':'active'?>"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
-                                    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-                                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Complete</span> </div>
+                                    <?= getTrackingBoc($row['status']) ?>
                                   </div>
                                   <hr>
                                   <p>Your order.</p>
 
-                                  <ul class="row " style='overflow-x:scroll;'>
+                                  <ul class="row" style='overflow-x:scroll;'>
 
-                                    <?php
-
-                                      $sql = "SELECT menu_id,qty FROM order_item WHERE order_id={$row['order_id']}";
-                                      $res = $conn->query($sql);
-                                      if($res==TRUE){
-
-                                        while($item=$res->fetch_assoc()){
-                                          $sql = "SELECT name,price,img_url FROM menu_item WHERE menu_id={$item['menu_id']}";
-                                          $result = $conn->query($sql);
-                                          if($result==TRUE){
-                                            $data = $result->fetch_assoc();
-                                            ?>
-                                            
-                                            <li class="col-md-4">
-                                              <figure class="itemside mb-3">
-                                                  <div class="aside"><img src="<?= $data['img_url']?>" class="img-sm border"></div>
-                                                  <figcaption class="info align-self-center">
-                                                      <p class="title"><?=ucfirst($data['name']) ?><br>
-                                                      <span class="text-muted"> RS. <?=number_format($data['price'], 2, '.', ',')?></span>
-                                                    </p>
-                                                    <p>
-                                                      <span class='text-danger'>X</span>
-                                                      <span><?= $item['qty']?></span>
-                                                    </p>
-                                                  </figcaption>
-                                              </figure>
-                                            </li>
-                                          <?php 
-                                          }
-                                        }
-                                      }else{?>
-                                          <li class="col-md-4">
-                                            <figure class="itemside mb-3">
-                                                <figcaption class="info align-self-center">
-                                                    <p class="title text-danger text-center">Error </p>
-                                                </figcaption>
-                                            </figure>
-                                          </li>
-                                      <?php }
-                                    ?>
+                                    <?= getOrderItems($conn,$row['order_id']) ?>
                                   </ul>
                                   <hr>
                                   <p>Options.</p>
@@ -263,14 +223,14 @@ if (checkIsLogedIn()) {
                   <?php }
 
                 }else{?>
-                <tr>
-                  <td class="text-center text-warning">No orders found!</td>
+                <tr >
+                  <td colspan='5' class="text-center text-warning">No orders found!</td>
                 </tr>
               <?php }
 
               }else{?>
-                <tr>
-                  <td class="text-center text-warning">Error</td>
+                <tr >
+                  <td colspan='5' class="text-center text-warning">Error</td>
                 </tr>
               <?php }
 
@@ -284,65 +244,6 @@ if (checkIsLogedIn()) {
         </div>
       </div>
     </div>
-
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-8 mx-auto">
-          <article class="card">
-            <header class="card-header"> My Orders / Tracking </header>
-              <div class="card-body">
-                <h6>Order ID: OD45345345435</h6>
-                <article class="card">
-                  <div class="card-body row">
-                    <div class="col"> <strong>Estimated Delivery time:</strong> <br>29 nov 2019 </div>
-                    <div class="col"> <strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i> +1598675986 </div>
-                    <div class="col"> <strong>Status:</strong> <br> Picked by the courier </div>
-                      
-                  </div>
-                </article>
-                <div class="track">
-                  <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
-                  <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
-                  <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-                  <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
-                </div>
-                <hr>
-                <ul class="row">
-                    <li class="col-md-4">
-                      <figure class="itemside mb-3">
-                          <div class="aside"><img src="https://i.imgur.com/iDwDQ4o.png" class="img-sm border"></div>
-                          <figcaption class="info align-self-center">
-                              <p class="title">Dell Laptop with 500GB HDD <br> 8GB RAM</p> <span class="text-muted">$950 </span>
-                          </figcaption>
-                      </figure>
-                    </li>
-                    <li class="col-md-4">
-                      <figure class="itemside mb-3">
-                          <div class="aside"><img src="https://i.imgur.com/tVBy5Q0.png" class="img-sm border"></div>
-                          <figcaption class="info align-self-center">
-                              <p class="title">HP Laptop with 500GB HDD <br> 8GB RAM</p> <span class="text-muted">$850 </span>
-                          </figcaption>
-                      </figure>
-                    </li>
-                    <li class="col-md-4">
-                      <figure class="itemside mb-3">
-                          <div class="aside"><img src="https://i.imgur.com/Bd56jKH.png" class="img-sm border"></div>
-                          <figcaption class="info align-self-center">
-                              <p class="title">ACER Laptop with 500GB HDD <br> 8GB RAM</p> <span class="text-muted">$650 </span>
-                          </figcaption>
-                      </figure>
-                    </li>
-                </ul>
-                <hr>
-                <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
-              </div>
-            </header>
-          </article>
-        </div>
-      </div>
-    </div> -->
-
-
     <script>
 
       document.addEventListener("DOMContentLoaded",()=>{

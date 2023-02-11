@@ -113,7 +113,30 @@ if (checkIsLogedIn() && isAdmin()) {
 
     </div>
     
-    <div class="container">
+    <div class="container " style='position:relative;'>
+        
+        <div class="container d-none" id="status-msg" style='position: absolute;left: 50%;
+          transform: translate(-50%, 0);'>
+          <div class="row">
+            <div class="col-10 col-md-6 mx-auto">
+              <p class="alert alert-success text-center">
+                Staus updated!
+              </p>
+            </div>
+          </div>
+        </div>  
+
+        <div class="container d-none" id="status-msg-error" style='position: absolute;left: 50%;
+          transform: translate(-50%, 0);'>
+          <div class="row">
+            <div class="col-10 col-md-6 mx-auto">
+              <p class="alert alert-danger text-center">
+                Staus updated faild!
+              </p>
+            </div>
+          </div>
+        </div>  
+
       <div class="row">
         <div class="col-12">
           <p class="display-6 text-center mt-3">Upcomming Orders.</p>
@@ -132,7 +155,7 @@ if (checkIsLogedIn() && isAdmin()) {
 
               <?php
 
-              $sql = "SELECT * FROM orders WHERE user_id={$user_id} ORDER BY order_id DESC";
+              $sql = "SELECT * FROM orders ORDER BY order_date DESC";
               $res = $conn->query($sql);
               if($res==TRUE){
                 if($res->num_rows>0){
@@ -142,23 +165,83 @@ if (checkIsLogedIn() && isAdmin()) {
                       <td><?= explode(' ',$row['order_date'])[0] ?></td>
                       <td>RS. <?=number_format($row['total'], 2, '.', ',')?></td>
                       <td style="opacity: 0.9;" >
-                        <button data-id="<?= $row['order_id']?>" class="text-white change-status-btn btn btn-sm fa-solid border-0 w-100 m-0  <?= ($row['status']==0)? 'fa-x bg-danger ':'bg-success  fa-check' ?>">
+                          <form class='d-flex update-form m-0'>
+                            <input type="hidden" name="orderid" value='<?= $row['order_id']?>'>
+                            <select  name="status" class=' form-control form-control-sm status-value'>
+                              <?php
+                              
+                              switch($row['status']){
+                                  case 0:
+                                    echo
+                                      '
+                                    <option value="0" selected >Not Approved</option>
+                                    <option value="1">Approved</option>
+                                    <option value="2">In Processing</option>
+                                    <option value="3">In Dilevary</option>
+                                    <option value="4">Completed</option>
+                                    ';
+                                    break;
+                                  case 1:
+                                    echo
+                                      '
+                                    <option value="0"  >Not Approved</option>
+                                    <option value="1" selected>Approved</option>
+                                    <option value="2">In Processing</option>
+                                    <option value="3">In Dilevary</option>
+                                    <option value="4">Completed</option>
+                                    ';
+                                    break;
+                                  case 2:
+                                    echo '
+                                    <option value="0">Not Approved</option>
+                                    <option value="1">Approved</option>
+                                    <option value="2" selected >In Processing</option>
+                                    <option value="3">In Dilevary</option>
+                                    <option value="4">Completed</option>';
+                                    break;
+                                  case 3:
+                                    echo '
+                                    <option value="0">Not Approved</option>
+                                    <option value="1">Approved</option>
+                                    <option value="2" >In Processing</option>
+                                    <option value="3" selected >In Dilevary</option>
+                                    <option value="4">Completed</option>';
+                                    break;
+                                  case 4:
+                                    echo '
+                                    <option value="0">Not Approced</option>
+                                    <option value="1">Approced</option>
+                                    <option value="2"  >In Processing</option>
+                                    <option value="3">In Dilevary</option>
+                                    <option value="4" selected >Completed</option>';
+                                    break;
 
-                        </button>
-                        
+
+                              }
+                              
+                              
+                              ?>
+                            </select>
+
+                            <button type="submit" name='save' class='btn btn-sm btn-success status-update-btn'>
+                              Update
+                            </button>
+
+                          </form>
+                       
                       </td>
                       <td>
-                        <button type="button" class="btn w-100 btn-sm btn-info m-0 fa-solid fa-eye bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn w-100 btn-sm btn-info m-0 fa-solid fa-eye bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row['order_id']?>">
                         </button>
                       </td>
                     </tr>
 
                     <!-- Modal -->
-                    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade modal-lg" id="exampleModal<?= $row['order_id']?>" tabindex="-1" aria-labelledby="exampleModal<?= $row['order_id']?>Label" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Order <?= $row['order_id']?></h5>
+                            <h5 class="modal-title" id="exampleModal<?= $row['order_id']?>Label">Order <?= $row['order_id']?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body m-0 p-0">
@@ -168,49 +251,8 @@ if (checkIsLogedIn() && isAdmin()) {
                                 <p>Order Content</p>
 
                                 <ul class="row " style='overflow-x:scroll;'>
-
-                                  <?php
-
-                                    $sql = "SELECT menu_id,qty FROM order_item WHERE order_id={$row['order_id']}";
-                                    $res = $conn->query($sql);
-                                    if($res==TRUE){
-
-                                      while($item=$res->fetch_assoc()){
-                                        $sql = "SELECT name,price,img_url FROM menu_item WHERE menu_id={$item['menu_id']}";
-                                        $result = $conn->query($sql);
-                                        if($result==TRUE){
-                                          $data = $result->fetch_assoc();
-                                          ?>
-                                          
-                                          <li class="col-md-4">
-                                            <figure class="itemside mb-3">
-                                                <div class="aside"><img src="<?= $data['img_url']?>" class="img-sm border"></div>
-                                                <figcaption class="info align-self-center">
-                                                    <p class="title"><?=ucfirst($data['name']) ?><br>
-                                                    <span class="text-muted"> RS. <?=number_format($data['price'], 2, '.', ',')?></span>
-
-                                                    
-                                                  </p>
-                                                  <p>
-                                                    <span class='text-danger'>X</span>
-                                                    <span><?= $item['qty']?></span>
-                                                  </p>
-                                                </figcaption>
-                                            </figure>
-                                          </li>
-                                        <?php 
-                                        }
-                                      }
-                                    }else{?>
-                                        <li class="col-md-4">
-                                          <figure class="itemside mb-3">
-                                              <figcaption class="info align-self-center">
-                                                  <p class="title text-danger text-center">Error </p>
-                                              </figcaption>
-                                          </figure>
-                                        </li>
-                                    <?php }
-                                  ?>
+                                  <?= getOrderItems($conn,$row['order_id']) ?>
+                                  
                                 </ul>
                                 <hr>
                                 <p>Options.</p>
@@ -251,64 +293,80 @@ if (checkIsLogedIn() && isAdmin()) {
         </div>
       </div>
     </div>
+    
     <script>
 
       document.addEventListener("DOMContentLoaded",()=>{
 
-        let statusbtns=document.querySelectorAll('.change-status-btn')
-        statusbtns.forEach(btn=>{
-          btn.addEventListener('click',(e)=>{
-            
-            e.target.setAttribute('disabled','')
-            let orderid=e.target.dataset.id;
-            let changeto=e.target.classList.contains('bg-success')?0:1
 
-            let req=new XMLHttpRequest()
-      
-            req.open('POST','../actions/placeOrderAction.php')
-            req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-            req.onreadystatechange = function () {
-              
-              if (this.readyState == 4 && this.status == 200) {
-                if(this.responseText==='1'){
+        let updateform=document.querySelectorAll('.update-form')
+        updateform.forEach(form=>{
 
-                  if(changeto==0){
-                    e.target.classList.remove('bg-success')
-                    e.target.classList.remove('fa-check')
-                    e.target.classList.add('fa-x')
-                    e.target.classList.add('bg-danger')
+          form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            e.target.save.setAttribute('disabled','')
+            let orderid=e.target.orderid.value;
+            let staus=e.target.status.value;
+
+
+            const xhr=new XMLHttpRequest()
+
+            xhr.open('POST',"../actions/placeOrderAction.php")
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+
+            xhr.onreadystatechange=function(){
+                if (this.readyState == 4 && this.status == 200) {
+                  if(this.responseText==='1'){
+
+                    e.target.status.selectedIndex=staus
+
+                    document.getElementById('status-msg').classList.remove('d-none')
                     
-                     
                   }else{
-                    e.target.classList.remove('fa-x')
-                    e.target.classList.remove('bg-danger')
-                    e.target.classList.add('fa-check')
-                    e.target.classList.add('bg-success' )
-                   
+                    document.getElementById('status-msg-error').classList.remove('d-none')
                   }
-                  
-                }else{
-                  alert("Status change failed!")
-                }
 
-                e.target.removeAttribute('disabled','')
+                  setInterval(()=>{
+                    removemsg()
+                  },1000)
+
+                  e.target.save.removeAttribute('disabled','')
               }
-            };
+            }
+
+            xhr.send(`order_id=${orderid}&changeStatus=true&changeTo=${staus}`)
+
             
-            req.send(`order_id=${orderid}&changeStatus=true&changeTo=${changeto}`)
 
           })
         })
 
+        
+
         setTimeout(() => {
           let error=document.querySelector('.error-div');
           if(error){
+            
             error.remove()
           }
         }, 2000);
 
       })
+
+      function removemsg(){
+
+        let msg=document.getElementById('status-msg')
+        let ermsg=document.getElementById('status-msg-error')
+        if(msg){
+          
+          msg.classList.add('d-none')
+        }
+
+        if(ermsg){
+          ermsg.classList.add('d-none')
+        }
+      }
     </script>
 
     <script src="../assets/js/cart.js"></script>

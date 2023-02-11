@@ -78,13 +78,14 @@ if(isset($_POST['cancel-order'])){
     redirectWithError($_SERVER['HTTP_REFERER'], "Sorry we couldn't cancel your order!");
   }
 }
-if($_POST['changeStatus']){
+
+if(isset($_POST['changeStatus'])){
   $orderid = $_POST['order_id'];
   $to = $_POST['changeTo'];
 
   $sql = "UPDATE orders SET status={$to} WHERE order_id={$orderid}";
 
-  // echo 1;
+  // echo 0;
 
   if($conn->query($sql)==TRUE){
     echo 1;
