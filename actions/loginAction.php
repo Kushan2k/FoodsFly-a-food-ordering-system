@@ -33,17 +33,23 @@ if(isset($_POST['login'])){
         $jwt=createJWTLogin($email,$id,$type);
         setcookie("jwt-token",$jwt,time()+3600*24*30,"/","",false,$httponly=true);
 
-        header("Location:../index.php");
+        if($type==1290 || $type==1567){
+          header("Location:../dashboard/index.php");
+        }else{
+          header("Location:../index.php");
+        }
+
+        
 
       }else{
-        redirectWithError('../pages/login.php','Invalid credentials! Please try again.');
+        redirectWithError($_SERVER['HTTP_REFERER'],'Invalid credentials! Please try again.');
       }
 
     }else{
-      redirectWithError('../pages/login.php','user does not exist! Register before logging in!');
+      redirectWithError($_SERVER['HTTP_REFERER'],'user does not exist! Register before logging in!');
     }
   }else{
-    redirectWithError('../pages/login.php',"Couldn't connect!");
+    redirectWithError($_SERVER['HTTP_REFERER'],"Couldn't connect!");
   }
 
 

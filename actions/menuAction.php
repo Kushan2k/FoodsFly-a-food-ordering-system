@@ -72,13 +72,13 @@ if(isset($_POST['save-changes'])){
     $imgFile = $_FILES['img'];
 
     if($price==false){
-        redirectWithError('../dashboard/menu-items.php', 'Price is  invalid!');
+        redirectWithError($_SERVER['HTTP_REFERER'], 'Price is  invalid!');
         return;
     }
     $price = (float) $price;
 
     if(!isValidFile($imgFile)){
-        redirectWithError('../dashboard/menu-items.php', 'Invalid file format!');
+        redirectWithError($_SERVER['HTTP_REFERER'], 'Invalid file format!');
         return;
     }
 
@@ -91,14 +91,14 @@ if(isset($_POST['save-changes'])){
         if($stm){
             $stm->bind_param('sisss', $name, $price, $category, $description, $uploadLocation);
             if($stm->execute()){
-                redirectWithSuccess('../dashboard/menu-items.php', 'Menu item added sucessfully!');
+                redirectWithSuccess($_SERVER['HTTP_REFERER'], 'Menu item added sucessfully!');
                 return;
             }else{
                 if(file_exists($uploadLocation)){
                     unlink($uploadLocation);
 
                 }
-                redirectWithError('../dashboard/menu-items.php', 'Failed to add item!');
+                redirectWithError($_SERVER['HTTP_REFERER'], 'Failed to add item!');
                 return;
             }
         }else{
@@ -108,13 +108,13 @@ if(isset($_POST['save-changes'])){
             }
             
             // redirectWithError('../dashboard/menu-items.php', $conn->error);
-            redirectWithError('../dashboard/menu-items.php', 'Failed to add item!');
+            redirectWithError($_SERVER['HTTP_REFERER'], 'Failed to add item!');
             
             return;
         }
 
     }else{
-        redirectWithError('../dashboard/menu-items.php', 'Failed to upload file!');
+        redirectWithError($_SERVER['HTTP_REFERER'], 'Failed to upload file!');
         return;
     }
 
@@ -148,7 +148,7 @@ if(isset($_POST['edit-item'])){
     $currentfile = $_POST['file'];
 
     if($price==false){
-        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'Item price is invalid!');
+        redirectWithError($_SERVER['HTTP_REFERER'], 'Item price is invalid!');
         return;
     }
 
@@ -180,7 +180,7 @@ if(isset($_POST['edit-item'])){
         redirectWithSuccess('../dashboard/menu-items.php?view=all', 'Item updated!');
         return;
     }else{
-        redirectWithError("../dashboard/item-edit.php?itemid={$id}", 'Update did not complete!');
+        redirectWithError($_SERVER['HTTP_REFERER'], 'Update did not complete!');
         return;
     }
     

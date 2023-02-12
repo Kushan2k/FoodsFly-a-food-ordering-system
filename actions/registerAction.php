@@ -29,19 +29,19 @@ if(isset($_POST['register'])){
           if($STM->execute()){
             header("Location:../pages/login.php");
           }else{
-            redirectWithError('../pages/register.php','Registration unsucessful! Please try again!');
+            redirectWithError($_SERVER['HTTP_REFERER'],'Registration unsucessful! Please try again!');
           }
         }else{
-          redirectWithError('../pages/register.php','User already exists! Try a different email');
+          redirectWithError($_SERVER['HTTP_REFERER'],'User already exists! Try a different email');
         } 
       }else{
-        redirectWithError('../pages/register.php','Mobile number is invalid! Please enter a valid phone number');
+        redirectWithError($_SERVER['HTTP_REFERER'],'Mobile number is invalid! Please enter a valid phone number');
 
       }
     }else{
-      redirectWithError('../pages/register.php','Password is not long enough! Please re-enter a longer password');
+      redirectWithError($_SERVER['HTTP_REFERER'],'Password is not long enough! Please re-enter a longer password');
     }
   }else{
-    redirectWithError('../pages/register.php','Invalid email! Please enter a valid email');
+    redirectWithError($_SERVER['HTTP_REFERER'],'Invalid email! Please enter a valid email');
   }
 }

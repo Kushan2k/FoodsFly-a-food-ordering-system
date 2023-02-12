@@ -21,16 +21,15 @@ if(isset($_POST['save-changes'])){
 
   if(!validMobile($mobile)){
 
-    redirectWithError('../pages/profile.php', 'Mobile number is invalid!');
+    redirectWithError($_SERVER['HTTP_REFERER'], 'Mobile number is invalid!');
     return ;
   }
   if(!validateEmail($email)){
 
-    redirectWithError('../pages/profile.php', 'Email is invalid!');
+    redirectWithError($_SERVER['HTTP_REFERER'], 'Email is invalid!');
     return;
   }
 
-  // TODO 
 
 }else if(isset($_POST['change-password'])){
   $currentPassword = $_POST['cpass'];
@@ -43,14 +42,14 @@ if(isset($_POST['save-changes'])){
     if($res->num_rows>0){
       $cp = $res->fetch_assoc()['password'];
       if(!password_verify($currentPassword,$cp)){
-        redirectWithError('../pages/profile.php', "Passwords don't match");
+        redirectWithError($_SERVER['HTTP_REFERER'], "Passwords don't match");
         return;
       }
     }else{
       redirectWithError('../pages/login.php', 'Please login first!');
     }
   }else{
-    redirectWithError('../pages/profile.php', "Error connecting to the database");
+    redirectWithError($_SERVER['HTTP_REFERER'], "Error connecting to the database");
   }
   $hash = password_hash($newpassword, PASSWORD_BCRYPT);
 
@@ -63,11 +62,11 @@ if(isset($_POST['save-changes'])){
       setcookie("jwt-token",null,20,"/");
       redirectWithSuccess('../pages/login.php', 'Please login again!');
     }else{
-      redirectWithError('../pages/profile.php', "Error connecting...");
+      redirectWithError($_SERVER['HTTP_REFERER'], "Error connecting...");
     }
 
   }else{
-    redirectWithError('../pages/profile.php', "Error connecting...");
+    redirectWithError($_SERVER['HTTP_REFERER'], "Error connecting...");
   }
   
 
@@ -79,7 +78,7 @@ if(isset($_POST['save-changes'])){
     redirectWithSuccess('../pages/register.php', 'Your account got deleted successfully');
     return;
   }else{
-    redirectWithError('../pages/profile.php', "Could not delete your account!<br>Please try again later");
+    redirectWithError($_SERVER['HTTP_REFERER'], "Could not delete your account!<br>Please try again later");
     return;
   }
 }

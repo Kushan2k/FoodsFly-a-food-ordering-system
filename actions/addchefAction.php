@@ -14,22 +14,22 @@ if(isset($_POST['add-chef'])){
   $cpassword = $_POST['chef-cpassword'];
 
   if(!validateEmail($email)){
-    redirectWithError("../dashboard/view-chef.php", "Email is not valid!");
+    redirectWithError($_SERVER['HTTP_REFERER'], "Email is not valid!");
     return;
   }
 
   if(!valiatePassword($password,$cpassword)){
-    redirectWithError("../dashboard/view-chef.php", "Passwords do not match!");
+    redirectWithError($_SERVER['HTTP_REFERER'], "Passwords do not match!");
     return;
   }
 
   if(!validMobile($mobile)){
-    redirectWithError("../dashboard/view-chef.php", "Mobile number is not valid!");
+    redirectWithError($_SERVER['HTTP_REFERER'], "Mobile number is not valid!");
     return;
   }
 
   if(checkRecordExistsinDatabase($conn,$email,$mobile)>0){
-     redirectWithError("../dashboard/view-chef.php", "User already exsits!");
+     redirectWithError($_SERVER['HTTP_REFERER'], "User already exsits!");
       return;
   }
 
@@ -42,13 +42,13 @@ if(isset($_POST['add-chef'])){
     $type = 1567;
     $stm->bind_param('sssssi', $name, $address, $mobile, $email, $password_hash,$type);
     if($stm->execute()){
-      redirectWithSuccess('../dashboard/view-chef.php', 'Chef is added to the system!');
+      redirectWithSuccess($_SERVER['HTTP_REFERER'], 'Chef is added to the system!');
     }else{
-      redirectWithError("../dashboard/view-chef.php", "we could not add the chef");
+      redirectWithError($_SERVER['HTTP_REFERER'], "we could not add the chef");
       return;
     }
   }else{
-    redirectWithError("../dashboard/view-chef.php", "we could not add the chef");
+    redirectWithError($_SERVER['HTTP_REFERER'], "we could not add the chef");
     return;
   }
 

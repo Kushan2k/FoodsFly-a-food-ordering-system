@@ -22,7 +22,7 @@ if(isset($_POST['add-order'])){
   $total = $_POST['total'];
 
   if($user==null){
-    redirectWithError('../pages/cart.php','User not found!');
+    redirectWithError($_SERVER['HTTP_REFERER'],'User not found!');
   }
 
   $user_id=$user['user_id'];
@@ -58,7 +58,7 @@ if(isset($_POST['add-order'])){
     }
 
   }else{
-    redirectWithError('../pages/cart.php', "Could not add your order <br> please try again");
+    redirectWithError($_SERVER['HTTP_REFERER'], "Could not add your order <br> please try again");
   }
 
 
