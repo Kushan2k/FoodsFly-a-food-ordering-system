@@ -43,7 +43,7 @@ if(checkIsLogedIn()){
       
       <?php
       if($logedin){?>
-        <li class="">
+        <li class="mt-4 mt-md-0">
           <a href="./profile.php" class="profile">
             <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
           </a>
@@ -104,7 +104,7 @@ if(checkIsLogedIn()){
 
             }else{
               for($i=0;$i<count($data);$i++){?>
-                <div class="col-sm-6 col-lg-3 col-md-4 mb-4 menu_item" data-cat="<?= ucfirst($data[$i]['category']) ?>" data-price="<?= $data[$i]['price']?> " >
+                <div class=" col-sm-6 col-lg-3 col-md-4 mb-4 menu_item" data-cat="<?= ucfirst($data[$i]['category']) ?>" data-price="<?= $data[$i]['price']?> " >
                   <div class="card">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                       <img src="<?= $data[$i]['img_url']?>" class="img-fluid" style="width: 320px; height: 200px; object-fit: cover;"/>

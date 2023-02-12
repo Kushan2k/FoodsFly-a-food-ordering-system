@@ -46,7 +46,7 @@ if (checkIsLogedIn()) {
       <li class="nav_item"><a href="./aboutus.php"> About us</a></li>
 
             
-      <li class=" d-none d-sm-flex">
+      <li class="mt-4 mt-md-0">
         <a href="./profile.php" class="profile">
           <i class="fa-solid fa-circle-user text-white" style="transform: scale(1.7);"></i>
         </a>
@@ -124,8 +124,14 @@ if (checkIsLogedIn()) {
 
         <?php }?>
           <div class="container my-4">
+            <p>Need to add more items ? <a href='./menu.php?view=all'>Here</a></p>
+          </div>
+          <div class="container my-4">
             <h5 style="text-align: right;" >Total Cost: Rs.<span class="total-price"><?=$cost?></span></h5>
             <input type="hidden" id="total" name="total" value="<?=$cost?>">
+          </div>
+          <div class="container my-2">
+            <p class='text-warning' style='text-align:end'>We currently support cash on delivery only.</p>
           </div>
           <div class="container d-flex justify-content-end mt-3">
             <button type="submit" class="btn btn-outline-success btn-lg" name='add-order'>Proceed to checkout</button>
