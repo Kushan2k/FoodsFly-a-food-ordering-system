@@ -45,6 +45,18 @@ if($data==null){
     }
   </style>
 
+  <div class='container-fluid bg-dark' style='height:55px;'>
+
+  </div>
+
+  <div class='container mt-4'>
+    <div class='row'>
+      <div class='col-10 mx-auto'>
+        <p class='display-6 text-center'>Edit Item</p>
+      </div>
+    </div>
+  </div>
+
 
 
   <div class="container my-3">
@@ -104,7 +116,7 @@ if($data==null){
           
 
           <div class="mb-3 gap-5">
-            <button class="btn btn-outline-warning">Back</button>
+            <a href="./menu-items.php?view=all" class="btn btn-outline-warning">Back</a>
             <button type="submit" name="edit-item" class="btn btn-outline-success" >
               <i class="fa-sharp fa-solid fa-floppy-disk me-2"></i>
               
@@ -130,7 +142,10 @@ if($data==null){
   </script>
 
 
-  <?php include '../includes/scripts.php' ?>
+  <?php 
+  include_once '../includes/footer.php';
+  
+  include '../includes/scripts.php' ?>
   </body>
 
 

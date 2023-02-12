@@ -142,7 +142,31 @@ if(!isAdmin()){
                 </td>
                 <td>
                   <a data-action='edit' href="./item-edit.php?itemid=<?= $data[$i]['menu_id'] ?>" class="bg-transparent border-0 fa-solid fa-pen text-success" data-id=<?= $data[$i]['menu_id'] ?>></a>
-                  <button data-action="delete" class="bg-transparent border-0 fa-solid fa-trash text-danger" data-id=<?= $data[$i]['menu_id'] ?>></button>
+                  <button type="button" class="bg-transparent border-0 fa-solid fa-trash text-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $data[$i]['menu_id'] ?>"> 
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal<?= $data[$i]['menu_id'] ?>" tabindex="-1" aria-labelledby="exampleModal<?= $data[$i]['menu_id'] ?>Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModal<?= $data[$i]['menu_id'] ?>Label">Delete Item</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>This menu item will be deleted and this is a <span class='text-danger'>permanent action<span></p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <form action='../actions/menuAction.php' method='POST'>
+                            <input type='hidden' name='item_id' value='<?= $data[$i]['menu_id'] ?>'/>
+                            <button type="submit" name='deleteMenuItem' class="btn btn-danger del-item-btn">Delete</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <button data-action="delete" class="bg-transparent border-0 fa-solid fa-trash text-danger" data-id=<?= $data[$i]['menu_id'] ?>></button> -->
                 </td>
                 
               </tr>

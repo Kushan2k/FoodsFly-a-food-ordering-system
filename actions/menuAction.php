@@ -125,7 +125,12 @@ if(isset($_POST['deleteMenuItem'])){
     $itemID = $_POST['item_id'];
 
     $sql = "SELECT img_url FROM menu_item WHERE menu_id={$itemID}";
-    $img = $conn->query($sql)->fetch_assoc()['img_url'];
+    $res = $conn->query($sql);
+    if($res!=TRUE){
+        $_SESSION['error'] = 'item delete failed!';
+        header("Location:{$_SERVER['HTTP_REFERER']}");
+    }
+    $img = $res->fetch_assoc()['img_url'];
     
 
     $sql = "DELETE FROM menu_item WHERE menu_id={$itemID}";
@@ -133,10 +138,14 @@ if(isset($_POST['deleteMenuItem'])){
         if(file_exists($img)){
             unlink($img);
         }
-        echo 1;
+        // echo 1;
+        $_SESSION['suc'] = 'item deleted!';
+        header("Location:{$_SERVER['HTTP_REFERER']}");
 
     }else{
-        echo 0;
+        // echo 0;
+        $_SESSION['error'] = 'item delete failed!';
+        header("Location:{$_SERVER['HTTP_REFERER']}");
     }
 }
 

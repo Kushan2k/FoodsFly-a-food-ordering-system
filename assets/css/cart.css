@@ -23,8 +23,8 @@ body {
 }
 
 .table-shadow {
-  -webkit-box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
-  box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
+  -webkit-box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
+  box-shadow: 5px 5px 15px -2px rgba(0, 0, 0, 0.42);
 }
 
 .type {
@@ -55,16 +55,16 @@ label.radio span {
   font-weight: 300;
 }
 
-label.radio input:checked + span {
+label.radio input:checked+span {
   border-color: #fff;
   background-color: blue;
   color: #fff;
 }
 
 .credit-inputs {
-  background: rgb(102,102,221);
+  background: rgb(102, 102, 221);
   color: #fff !important;
-  border-color: rgb(102,102,221);
+  border-color: rgb(102, 102, 221);
 }
 
 .credit-inputs::placeholder {
@@ -78,12 +78,12 @@ label.radio input:checked + span {
 }
 
 .form-control.credit-inputs:focus {
-  background: rgb(102,102,221);
-  border: rgb(102,102,221);
+  background: rgb(102, 102, 221);
+  border: rgb(102, 102, 221);
 }
 
 .line {
-  border-bottom: 1px solid rgb(102,102,221);
+  border-bottom: 1px solid rgb(102, 102, 221);
 }
 
 .information span {
@@ -96,10 +96,70 @@ label.radio input:checked + span {
 }
 
 .items {
-  -webkit-box-shadow: 5px 5px 4px -1px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.25);
   box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.08);
 }
 
 .spec {
   font-size: 11px;
+}
+
+.item-img {
+  object-fit: cover;
+  width: 175px;
+  height: 175px;
+}
+
+.spec {
+  font-size: 1.1rem;
+}
+
+.item-name {
+  font-size: 1.4rem;
+}
+
+@media (max-width:768px) {
+
+  .item-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .item-name {
+    font-size: 1rem;
+  }
+
+  .spec {
+    font-size: 0.8rem;
+  }
+
+}
+
+.hide-item {
+  animation-name: hide-item;
+  animation-timing-function: linear;
+  animation-duration: 300ms;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.card-header {
+  background-color: rgba(127, 127, 127, 0.4);
+}
+
+.fa-trash:hover {
+  cursor: pointer;
+}
+
+@keyframes hide-item {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+
+  }
+
 }
