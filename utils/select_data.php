@@ -22,6 +22,26 @@ function getMenuItemData($conn){
     return null;
   }
 }
+function getTableData($conn){
+  $SQL="SELECT * FROM tables ORDER BY table_id ASC";
+  $result=$conn->query($SQL);
+  $data=[];
+  if($result==TRUE){
+
+    if($result->num_rows>0){
+
+      while($row=$result->fetch_assoc()){
+        array_push($data,$row);
+      }
+      return $data;
+
+    }else{
+      return null;
+    }
+  }else{
+    return null;
+  }  
+}
 
 function getCartItemCount($conn,$user_id){
   $SQL="SELECT COUNT(id) AS item_count FROM user_cart WHERE user_id={$user_id}";

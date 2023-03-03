@@ -1,0 +1,75 @@
+.card-header{
+    font-weight: 700;
+  }
+  .list-group{
+    margin-left: 10px;
+  }
+  .list-group-item:hover{
+    cursor: pointer;
+    background-color: #dedede;
+  }
+  .menu_item{
+    animation-name: popup;
+    animation-timing-function: linear;
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+    transition: 400ms linear;
+  
+  }
+  .msg{
+    background-color: black;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+  
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+  
+    animation-name: slideup;
+    animation-timing-function: linear;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0;
+    
+  }
+  .msg>h4{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #62bd71;
+  }
+  
+  .card-available {
+    background-color: rgba(51, 255, 0, 0.534);
+    color: #fff;
+  }
+  
+  .card-unavailable {
+    background-color: rgba(255, 0, 0, 0.534);
+    color: #fff;
+  }
+  
+  @keyframes slideup {
+    from{
+      transform: translateY(1000px);
+    }
+    to{
+      transform: translateY(0px);
+    }
+    
+  }
+  
+  @keyframes popup {
+    from{
+      transform: scale(0);
+    }
+    to{
+      transform: scale(1);
+    }
+  }

@@ -34,6 +34,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
 
       <?php
       if($logedin){
+        echo '<li class="nav_item"><a href="./pages/tables.php">Book Table</a></li>';
         echo '<li class="nav_item"><a href="./pages/order.php?for=my-orders">Orders</a></li>';
       }?>
       <li class="nav_item"><a href="./pages/aboutus.php"> About us</a></li>
@@ -49,7 +50,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         <li class="nav_item"><a href="./pages/register.php">Register</a></li>
         <li class="nav_item"><a href="./pages/login.php">Login</a></li>
       <?php }?>
-      
+
     </ul>
 
     
@@ -80,7 +81,13 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
           <div class="row" style="justify-content: end;">
             <div class="col-md-7 col-10 hero-container">
               <h3 class="featurette-heading fw-normal lh-1 mb-5" style='text-align: right;' >Hungry?!<p style='text-align: right;'>Good,we are here to serve you.</p> </h3>
-              <p style='text-align: right;' class="lead d-none d-sm-block" >Indulge in a culinary journey. Our menu features an array of dishes that are both sophisticated and approachable. From locally sourced ingredients to carefully curated flavors, each dish on our menu is crafted with a focus on quality and taste. So come and explore our menu, and discover what makes our dining experience truly unforgettable.</p>
+              <p style='text-align: right;' class="lead d-none d-sm-block" >Indulge in a culinary journey. Our menu features an array of dishes that are both sophisticated and approachable.
+               From locally sourced ingredients to carefully curated flavors, each dish on our menu is crafted with a focus on quality and taste. So come and explore our menu, 
+               and discover what makes our dining experience truly unforgettable.</p>
+               <?php
+              if($logedin){
+                echo '<a href="./pages/tables.php?view=all" style="float: right;margin-right: 1.7rem;" class="btn btn-outline-light">Book Table</a>';
+              }?>
               <a href="./pages/menu.php?view=all" style="float: right;margin-right: 1.7rem;" class="btn btn-outline-light">View Menu</a>
             </div>
           </div>
@@ -122,7 +129,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
       <hr class="my-5" />
 
       <!--Section: Content-->
-      <section class=" container">
+      <section class=" container">   
         <h4 class="mb-5 text-center"><strong>Latest Menu items</strong>
         
       </h4>

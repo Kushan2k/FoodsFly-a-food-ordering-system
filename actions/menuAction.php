@@ -82,7 +82,7 @@ if(isset($_POST['save-changes'])){
         return;
     }
 
-    $uploadLocation = '../assets/images/uploads/'.basename($imgFile['name']);
+    $uploadLocation = '/home/user/assets/images/uploads/'.basename($imgFile['name']);
 
     if(move_uploaded_file($imgFile['tmp_name'],$uploadLocation)){
         $sql = "INSERT INTO menu_item(name,price,category,description,img_url) VALUES(?,?,?,?,?)";

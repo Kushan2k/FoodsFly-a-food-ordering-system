@@ -37,6 +37,7 @@ if(checkIsLogedIn()){
 
       <?php
       if($logedin){
+        echo '<li class="nav_item"><a href="./tables.php">Book Table</a></li>';
         echo '<li class="nav_item"><a href="./order.php">Orders</a></li>';
       }?>
       <li class="nav_item"><a href="./aboutus.php"> About us</a></li>
