@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 05:56 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Mar 16, 2023 at 11:41 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -80,9 +80,9 @@ INSERT INTO `menu_item` (`menu_id`, `name`, `price`, `category`, `rating`, `rate
 (37, 'Lemon pepper wings', 550, 'sides', 50, 10, 'Treat your taste buds to the bold and zesty flavors of our Lemon Pepper Wings. Juicy and tender chicken wings are tossed in a zesty lemon pepper seasoning, then grilled to crispy perfection, making for a snack or meal that\'s both satisfying and delicious.', 'https://www.spendwithpennies.com/wp-content/uploads/2022/02/Lemon-Pepper-Wings-SpendWithPennies-13-1024x1536.jpg'),
 (38, 'Hoppers', 250, 'main', 40, 12, '              Thin and crispy pancakes made from fermented rice flour and coconut milk are shaped into a bowl-like form, perfect for holding a variety of savory fillings such as curries, eggs, or vegetables.            ', 'https://st2.depositphotos.com/4404621/11594/i/950/depositphotos_115942104-stock-photo-sri-lankan-style-plain-hoppers.jpg'),
 (39, 'Parata', 340, 'main', 45, 10, 'Discover the flaky goodness of our Parata. A thin and delicate flatbread, made from a mixture of flour, oil, and spices, is cooked to crispy perfection, making for a delicious and versatile accompaniment to a variety of curries and other dishes.          ', 'https://i.ytimg.com/vi/nrNrrveiZjI/maxresdefault.jpg'),
-(44, 'Lamprais', 700, 'Main', 5, 1, 'Take a bite out of Sri Lankan tradition with our Lamprais. A savory combination of steamed rice, aromatic spices, and a selection of meats and vegetables, all wrapped in a banana leaf and baked to perfection.    ', '../assets/images/uploads/lamprais.jpg'),
-(45, 'Dosa', 400, 'Main', 5, 1, 'Indulge in the classic flavors of India with our Dosas. Thin and crispy crepes made from fermented rice flour and lentils are served with a variety of chutneys and sambar, making for a delicious and satisfying meal.     ', '../assets/images/uploads/dosa.png'),
-(46, 'Devilled Chicken', 500, 'Sides', 5, 1, 'Spice up your taste buds with our Devilled Chicken. Tender chunks of chicken are marinated in a blend of spices and chili peppers, then stir-fried to perfection, resulting in a dish that&#039;s both juicy and spicy.         ', '../assets/images/uploads/devilled-chicken_43_1.1.153_326X580.jpeg');
+(44, 'Lamprais', 700, 'Main', 5, 1, '              Take a bite out of Sri Lankan tradition with our Lamprais. A savory combination of steamed rice, aromatic spices, and a selection of meats and vegetables, all wrapped in a banana leaf and baked to perfection.            ', '../assets/images/uploads/Lamprais_(SL).jpg'),
+(45, 'Dosa', 400, 'Main', 5, 1, '              Indulge in the classic flavors of India with our Dosas. Thin and crispy crepes made from fermented rice flour and lentils are served with a variety of chutneys and sambar, making for a delicious and satisfying meal.            ', '../assets/images/uploads/thumb__700_0_0_0_auto.jpg'),
+(46, 'Devilled Chicken', 500, 'Sides', 5, 1, '              Spice up your taste buds with our Devilled Chicken. Tender chunks of chicken are marinated in a blend of spices and chili peppers, then stir-fried to perfection, resulting in a dish that&#039;s both juicy and spicy.            ', '../assets/images/uploads/chicken-devil.jpg');
 
 -- --------------------------------------------------------
 
@@ -98,6 +98,13 @@ CREATE TABLE `orders` (
   `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_date`, `total`, `user_id`, `status`) VALUES
+(190948777, '2023-03-16 14:54:30', 1500, 10, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +117,58 @@ CREATE TABLE `order_item` (
   `order_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_item`
+--
+
+INSERT INTO `order_item` (`id`, `menu_id`, `order_id`, `qty`) VALUES
+(30, 46, 190948777, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tables`
+--
+
+CREATE TABLE `tables` (
+  `table_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `table_number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tables`
+--
+
+INSERT INTO `tables` (`table_id`, `status`, `table_number`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 0, 4),
+(5, 1, 5),
+(6, 0, 6),
+(7, 1, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbook`
+--
+
+CREATE TABLE `tbook` (
+  `id` int(11) NOT NULL,
+  `table_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `book_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbook`
+--
+
+INSERT INTO `tbook` (`id`, `table_id`, `user_id`, `book_status`) VALUES
+(3, 1, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -132,11 +191,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `fullname`, `email`, `mobile`, `password`, `address`, `type`) VALUES
-(2, 'Kushan Gayantha', 'kushangayanthapercy@gmail.com', '0712720033', '$2y$10$5WLmN3eaRk4/qYkTuospaOQbq3UjQX7Q6d0FO.kiFpCg7CO0mauv2', '201/10 Colombo Road Kurunegala', 1918),
-(6, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0721021286', '$2y$10$KJnRIDUFs8CkORqMO6.Y7.r7Ji0EJmRYMcfHpd7L7y80Yde9kdyJu', '201/10 Colombo Road Kurunegala', 1290),
-(7, 'heshara', 'heshara@gmail.com', '1234567890', '$2y$10$jlBOy2JEpAKsBlY.A9R.tuYlQiaTh64t.IkSMGIfkXxHUDS866qcy', 'test', 1567),
-(8, 'ado ', 'ado@gmail.com', '0771234567', '$2y$10$fXLFu2poFKmNwVI/uzHSdeIEsw6JAImHEpLPgKKoXTuJA4Y1s0G1O', 'lankawe', 1918),
-(9, 'Inula Chandira', 'inula@gmail.com', '0775606777', '$2y$10$ruO5IPsN9YEyrcJ7K4e7ZudS6YgINRbqkwN4PaoCESNFP2xyO.AYW', '294,Angampitiya,Padukka', 1290);
+(10, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0712720033', '$2y$10$YX3Y2xl/ZFJkqUS7iosrr.uho3CCvBgtlH9iHlFq6MsnzEOh/oiBG', '201/10 Colombo Road Kurunegala', 1290);
 
 -- --------------------------------------------------------
 
@@ -155,8 +210,8 @@ CREATE TABLE `user_cart` (
 --
 
 INSERT INTO `user_cart` (`id`, `user_id`, `item_id`) VALUES
-(130, 9, 46),
-(132, 9, 44);
+(143, 10, 36),
+(144, 10, 35);
 
 --
 -- Indexes for dumped tables
@@ -182,6 +237,20 @@ ALTER TABLE `order_item`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_ODERID` (`order_id`),
   ADD KEY `menu_id` (`menu_id`);
+
+--
+-- Indexes for table `tables`
+--
+ALTER TABLE `tables`
+  ADD PRIMARY KEY (`table_id`);
+
+--
+-- Indexes for table `tbook`
+--
+ALTER TABLE `tbook`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `table_id` (`table_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `users`
@@ -213,19 +282,31 @@ ALTER TABLE `menu_item`
 -- AUTO_INCREMENT for table `order_item`
 --
 ALTER TABLE `order_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `tables`
+--
+ALTER TABLE `tables`
+  MODIFY `table_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbook`
+--
+ALTER TABLE `tbook`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user_cart`
 --
 ALTER TABLE `user_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- Constraints for dumped tables
@@ -243,6 +324,13 @@ ALTER TABLE `orders`
 ALTER TABLE `order_item`
   ADD CONSTRAINT `FK_ODERID` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `order_item_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu_item` (`menu_id`);
+
+--
+-- Constraints for table `tbook`
+--
+ALTER TABLE `tbook`
+  ADD CONSTRAINT `tbook_ibfk_1` FOREIGN KEY (`table_id`) REFERENCES `tables` (`table_id`),
+  ADD CONSTRAINT `tbook_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 --
 -- Constraints for table `user_cart`
