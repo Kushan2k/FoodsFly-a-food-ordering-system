@@ -78,7 +78,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         <div class="hero-text container">
           <div class="row" style="justify-content: end;">
             <div class="col-md-7 col-10 hero-container">
-              <h3 class="featurette-heading fw-normal lh-1 mb-5" style='text-align: right;' >Hungry?!<p style='text-align: right;'>Good,we are here to serve you.</p> </h3>
+              <h3 class="featurette-heading fw-normal lh-1 mb-5" style='text-align: right;' >Hungry?<p style='text-align: right;'>Good,we are here to serve you.</p> </h3>
               <p style='text-align: right;' class="lead d-none d-sm-block" >Indulge in a culinary journey. Our menu features an array of dishes that are both sophisticated and approachable.
                From locally sourced ingredients to carefully curated flavors, each dish on our menu is crafted with a focus on quality and taste. So come and explore our menu, 
                and discover what makes our dining experience truly unforgettable.</p>

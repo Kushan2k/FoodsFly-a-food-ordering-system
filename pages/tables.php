@@ -100,6 +100,7 @@ if(checkIsLogedIn()){
         <?php $_SESSION['warning'] = null; }?>
 
     </div>
+    
     <div class="container-fluid">
       <div class="row">
         <div class="col-9 col-lg-10 col-md-9 mx-auto">
