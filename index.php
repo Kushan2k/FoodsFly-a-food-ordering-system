@@ -1,7 +1,5 @@
 <?php
 
-
-
 $logedin=false;
 $ischef = false;
 $isadmin = false;

@@ -46,12 +46,12 @@
   }
   
   .card-available {
-    background-color: rgba(51, 255, 0, 0.534);
+    background-color: rgba(32, 121, 10, 0.534);
     color: #fff;
   }
   
   .card-unavailable {
-    background-color: rgba(255, 0, 0, 0.534);
+    background-color: rgba(230, 61, 61, 0.534);
     color: #fff;
   }
   
@@ -73,3 +73,37 @@
       transform: scale(1);
     }
   }
+
+  .table-card{
+    background-image: url('https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg');
+    background-size: contain;
+    background-position: center;
+    
+    background-clip: border-box;
+  }
+
+
+  .custom-alert{
+  
+  padding: 15px;
+  text-transform: capitalize;
+  
+
+  }
+  .suc-error{
+    border: 0.8px solid green;
+    background-color: rgba(32, 125, 58, 0.3);
+  }
+  .error{
+    border: 0.8px solid red;
+    background-color: rgba(255, 0, 0, 0.09);
+  }
+  .warning{
+    border: 0.8px solid yellow;
+    background-color: rgb(247, 207, 47,0.5);
+  }
+  tr.tr-head>th{
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+   

@@ -216,3 +216,19 @@ function getTrackingBoc($status){
 
 
 }
+
+
+function checkifhaveBooking($conn,$userid){
+
+  $sqk = "SELECT COUNT(id) AS c FROM tbook WHERE user_id={$userid}";
+  $res = $conn->query($sqk);
+  if($res==TRUE){
+    if($res->fetch_assoc()['c']>0){
+      return true;
+    }else{
+      return false;
+    }
+  }else{
+    return true;
+  }
+}
