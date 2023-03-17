@@ -175,8 +175,8 @@ if (checkIsLogedIn()) {
                                   <h6>Order ID: <?= $row['order_id']?></h6>
                                   <article class="card">
                                     <div class="card-body row">
-                                      <div class="col"> <strong>Estimated Delivery time:</strong> <br>29 nov 2019 </div>
-                                      <div class="col"> <strong>Shipping BY:</strong> <br> FoodsFly, | <i class="fa fa-phone"></i> Mr.John </div>
+                                      <div class="col"> <strong>Estimated Delivery time:</strong> <br>Your order will receive in 45 minutes  </div>
+                                      <div class="col"> <strong>Shipping BY:</strong> <br> FoodsFly, | <i class="fa fa-phone"></i> Mr.sameera </div>
                                       <div class="col"> <strong>Status:</strong> <br>
                                         <?= ($row['status']==0)? '<p class="text-danger">Waiting for review!</p>':'<p class="text-success">Oder placed<br>' ?>
                                         <?= $row['status']!=4? ($row['status']!=0?'You will recive it soon':'') :'Your order is comepted!' ?></p>
