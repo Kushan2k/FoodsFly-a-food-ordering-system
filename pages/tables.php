@@ -128,6 +128,8 @@ if(checkIsLogedIn()){
                       <div class="card-body table-card " style='height:200px'>
                         
                         <h5 class="card-title text-white" >Table Number <?= $table_number ?></h5>
+                        <h5 class="card-subtitle text-white">Number Of Occupants <?= $data[$i]['occupants']?></h5>
+                        <br/>
                         <h5 class="card-subtitle  <?= $status==0?'text-success':'text-warning' ?>"><?= $status_text ?></h5>
                         <br/>
                         <?php

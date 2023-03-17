@@ -82,11 +82,11 @@ if(isChef()){
         <div class="col-10 col-md-5 col-lg-4 mx-auto my-2">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">User Summary</h5>
+              <h5 class="card-title">Table Bookings</h5>
               <p class="card-text my-4">
-                View user activities on the site.
+                View status of the dining tablesw.
               </p>
-              <a href="./users.php" class="btn btn-outline-primary">
+              <a href="./table-edit.php" class="btn btn-outline-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
