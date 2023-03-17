@@ -187,7 +187,7 @@ function getOrderItems($conn,$orderid){
 
 function getTrackingBoc($status){
   if($status==0){
-    return '<div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+    return '<div class="step d-flex"> <span class="icon "> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
     <div class="step "> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> In Processing</span> </div>
     <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
     <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Completed</span> </div>';
