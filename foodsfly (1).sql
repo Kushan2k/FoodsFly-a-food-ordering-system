@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2023 at 11:41 AM
+-- Generation Time: Mar 17, 2023 at 08:45 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -134,21 +134,23 @@ INSERT INTO `order_item` (`id`, `menu_id`, `order_id`, `qty`) VALUES
 CREATE TABLE `tables` (
   `table_id` int(11) NOT NULL,
   `status` int(11) NOT NULL,
-  `table_number` int(11) NOT NULL
+  `table_number` int(11) NOT NULL,
+  `occupants` int(11) NOT NULL,
+  `img_url` varchar(255) NOT NULL DEFAULT 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tables`
 --
 
-INSERT INTO `tables` (`table_id`, `status`, `table_number`) VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 0, 4),
-(5, 1, 5),
-(6, 0, 6),
-(7, 1, 7);
+INSERT INTO `tables` (`table_id`, `status`, `table_number`, `occupants`, `img_url`) VALUES
+(1, 1, 1, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg'),
+(2, 0, 2, 6, 'https://i.pinimg.com/originals/cd/12/55/cd1255ee9305fff96afa023b5217157e.jpg'),
+(3, 0, 3, 8, 'https://www.theguild.lk/EndUserAssets/StoreManagement/Item/aero.jpg?width=600&height=380&mode=crop&scale=both&404=no_image.jpg'),
+(4, 0, 4, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg'),
+(5, 0, 5, 6, 'https://i.pinimg.com/originals/cd/12/55/cd1255ee9305fff96afa023b5217157e.jpg'),
+(6, 0, 6, 8, 'https://www.theguild.lk/EndUserAssets/StoreManagement/Item/aero.jpg?width=600&height=380&mode=crop&scale=both&404=no_image.jpg'),
+(7, 1, 7, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg');
 
 -- --------------------------------------------------------
 
@@ -159,16 +161,8 @@ INSERT INTO `tables` (`table_id`, `status`, `table_number`) VALUES
 CREATE TABLE `tbook` (
   `id` int(11) NOT NULL,
   `table_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `book_status` int(11) NOT NULL
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbook`
---
-
-INSERT INTO `tbook` (`id`, `table_id`, `user_id`, `book_status`) VALUES
-(3, 1, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -294,7 +288,7 @@ ALTER TABLE `tables`
 -- AUTO_INCREMENT for table `tbook`
 --
 ALTER TABLE `tbook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

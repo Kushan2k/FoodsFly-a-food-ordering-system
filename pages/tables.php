@@ -125,7 +125,7 @@ if(checkIsLogedIn()){
                   
                   <div class="col-sm-6 col-lg-4 col-md-4 mb-4 " >
                     <div class="card  <?= $card_class ?>">
-                      <div class="card-body table-card " style='height:200px'>
+                      <div class="card-body table-card " style="height:200px;background-image: url('<?= $data[$i]['img_url']?>')">
                         
                         <h5 class="card-title text-white" >Table Number <?= $table_number ?></h5>
                         <h5 class="card-subtitle text-white">Number Of Occupants <?= $data[$i]['occupants']?></h5>

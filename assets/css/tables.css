@@ -75,8 +75,8 @@
   }
 
   .table-card{
-    background-image: url('https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg');
-    background-size: stretch;
+    
+    background-size: contain;
     background-position: center;
     
     background-clip: border-box;

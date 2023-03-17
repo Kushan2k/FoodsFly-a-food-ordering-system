@@ -26,7 +26,7 @@ if(isset($_POST['book'])){
 
   $sql = "UPDATE tables SET status=1 WHERE table_id={$tableid}";
   if($conn->query($sql)==TRUE){
-    $sql = "INSERT INTO tbook(table_id,user_id,book_status) VALUES({$tableid},{$id},0)";
+    $sql = "INSERT INTO tbook(table_id,user_id) VALUES({$tableid},{$id})";
 
     if($conn->query($sql)==TRUE){
       redirectWithSuccess($_SERVER['HTTP_REFERER'], "Your table has been booked!");
