@@ -118,7 +118,7 @@ if(checkIsLogedIn()){
                       <h6 class="card-subtitle text-muted"><?= ucfirst($data[$i]['category'])?></h6>
                       <h4 class="text-success mt-2">Rs <?= number_format($data[$i]['price'],2,'.',',') ?></h4>
                       <div class="d-flex justify-content-between align-items-center">
-                      <button class="btn btn-primary border-0 bg-transparent text-primary description-btn">View Description</button>
+                      <button class="btn  border-0 bg-transparent text-primary description-btn">View Description</button>
                         </div>
                         <div class="description-content" style="display: none;">
                           <p class="card-text"><?= ucfirst($data[$i]['description'])?></p>
@@ -128,7 +128,7 @@ if(checkIsLogedIn()){
 
                         if($logedin){?>
                             <button data-itemID=<?= $data[$i]['menu_id'] ?>
-                             class="btn btn-primary border-0 bg-transparent fa-sharp text-dark fa-solid fa-cart-shopping"></button>
+                             class="btn  border-0 bg-transparent fa-sharp text-dark fa-solid fa-cart-shopping"></button>
                         <?php }?>
                         <h2 class="text-warning">
                                                  

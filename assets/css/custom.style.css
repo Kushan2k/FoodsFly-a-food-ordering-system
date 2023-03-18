@@ -1,0 +1,69 @@
+.form-control{
+  border-top: 0;
+  border-left: 0 ;
+  border-right: 0 ;
+  border-bottom-width: 2px;
+  border-color: brown ;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-control:focus{
+  box-shadow: none!important;
+}
+.btn-primary,.btn-danger,.btn-warning,.btn-dark,.btn-success,.btn-secondary {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: 300ms linear;
+  
+}
+.btn-outline-primary,.btn-outline-light,.btn-outline-success,.btn-outline-dark,.btn-outline-danger{
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: 300ms linear;
+}
+.btn-secondary:hover{
+  padding: 10px 40px;
+}
+.btn-outline-dark{
+  border: 2px solid black;
+}
+
+.btn-outline-success{
+  border: 1px solid green;
+}
+.btn-success:hover{
+  padding: 10px 40px;
+  background-color: rgb(5, 160, 5);
+}
+.btn-danger{
+  background-color: rgb(255, 87, 87);
+}
+.btn-danger:hover{
+  
+  background-color: rgb(230, 77, 77);
+  padding: 10px 40px;
+
+}
+.btn-primary{
+  background-color: rgb(16, 127, 196);
+}
+.btn-primary:hover{
+  padding: 10px 40px;
+}
+.btn-outline-danger{
+  border: 1px solid red;
+}
+
+.btn-outline-light:hover,.btn-outline-primary:hover,.btn-outline-dark:hover,.btn-outline-info:hover,.btn-outline-success:hover,.btn-outline-danger:hover{
+  padding: 10px 40px;
+}

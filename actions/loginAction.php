@@ -7,6 +7,7 @@ include '../utils/input_validate.php';
 if($_SERVER['REQUEST_METHOD']=='GET'){
   header("Location:../index.php");
 }
+
 header('Access-Control-Allow-Methods: POST');
 
 
@@ -40,7 +41,6 @@ if(isset($_POST['login'])){
         }
 
         
-
       }else{
         redirectWithError($_SERVER['HTTP_REFERER'],'Invalid credentials! Please try again.');
       }
