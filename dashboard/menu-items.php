@@ -31,7 +31,7 @@ if(!isAdmin()){
         <li class="nav_item " ><a href="./index.php" class="d-flex"><i class="fa-solid fa-chalkboard-user"></i></a></li>
 
         <li class="nav_item active-tab" ><a href="./menu-items.php"><i class="fa-solid fa-list "></i></a></li>
-        <li class="nav_item" ><a href="./users.php"><i class="fa-solid fa-users"></i></a></li>
+        <li class="nav_item" ><a href="./table-edit.php"><i class="fa-solid fa-users"></i></a></li>
       </ul>
 
       <!-- <button class="d-sm-none bg-transparent border-0 icon-btn popup fa-solid fa-bars text-white"></button>

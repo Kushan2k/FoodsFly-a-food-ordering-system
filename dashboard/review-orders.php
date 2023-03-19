@@ -28,6 +28,21 @@ if (checkIsLogedIn() && isAdmin() || isChef()) {
   <link rel="stylesheet" href="../assets/css/cart.css">
   <link rel="stylesheet" href="../assets/css/order.css">
   <?php include '../includes/header.php'?>
+
+  <style>
+    .form-control{
+      border:none;
+      padding: 0;
+      height: 10px;
+      padding-left: 10px;
+    }
+    .btn{
+      padding: 5px;
+    }
+    .btn:hover{
+      padding: 5px 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -160,7 +175,7 @@ if (checkIsLogedIn() && isAdmin() || isChef()) {
               if($res==TRUE){
                 if($res->num_rows>0){
                   while($row=$res->fetch_assoc()){?>
-                    <tr >
+                    <tr class=''>
                       <td class='d-none d-md-flex'><?= $row['order_id']?></td>
                       <td><?= explode(' ',$row['order_date'])[0] ?></td>
                       <td>RS. <?=number_format($row['total'], 2, '.', ',')?></td>

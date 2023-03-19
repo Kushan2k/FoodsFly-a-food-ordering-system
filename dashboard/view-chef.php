@@ -23,6 +23,15 @@ if(!isAdmin()){
       .nav_item {
         padding-bottom: 10px;
       }
+      .btn-outline-info{
+    
+        padding: 10px 20px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 0;
+        transition: 300ms linear;
+      }
     </style>
 
     <nav class="container-fluid  px-4 d-flex flex-row navbar-div justify-content-between ">

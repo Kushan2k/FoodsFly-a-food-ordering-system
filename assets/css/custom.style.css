@@ -22,7 +22,7 @@
   transition: 300ms linear;
   
 }
-.btn-outline-primary,.btn-outline-light,.btn-outline-success,.btn-outline-dark,.btn-outline-danger{
+.btn-outline-primary,.btn-outline-light,.btn-outline-success,.btn-outline-dark,.btn-outline-danger,.btn-outline-warning{
   border: none;
   padding: 10px 20px;
   text-decoration: none;
@@ -37,6 +37,15 @@
 .btn-outline-dark{
   border: 2px solid black;
 }
+.btn-outline-warning{
+  border: 1px solid rgb(208, 174, 24);
+}
+
+.btn-outline-warning:hover{
+  
+  padding: 10px 40px;
+}
+
 
 .btn-outline-success{
   border: 1px solid green;
