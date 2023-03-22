@@ -1,6 +1,8 @@
 <?php
 
 include_once '../utils/jwt-auth.php';
+include_once('../utils/select_data.php');
+include_once('../utils/conn.php');
 if(!isAdmin() && !isChef()){
   header("Location:../index.php",401);
 }
@@ -11,6 +13,7 @@ if(isChef()){
   $chef = true;
 }
 
+$message_count = getNotViewdMesages($conn);
 ?>
 <html lang="en">
 <head>
@@ -38,8 +41,12 @@ if(isChef()){
           <i class="fa-solid fa-chalkboard-user"></i>
         </a></li>
 
-        <li class="nav_item" ><a href="./menu-items.php"><i class="fa-solid fa-list "></i></a></li>
-        <li class="nav_item" ><a href="./view-chef.php?view=all"><i class="fa-solid fa-users "></i></a></li>
+        <?php
+        if(!$chef){?>
+            <li class="nav_item" ><a href="./menu-items.php"><i class="fa-solid fa-list "></i></a></li>
+          <li class="nav_item" ><a href="./view-chef.php?view=all"><i class="fa-solid fa-users "></i></a></li>
+        <?php }
+        ?>
       </ul>
 
       <!-- <button class="d-sm-none bg-transparent border-0 icon-btn popup fa-solid fa-bars text-white"></button>
@@ -47,7 +54,7 @@ if(isChef()){
       <button class="d-sm-none bg-transparent border-0 icon-btn d-none hide fa-solid fa-xmark text-white"></button> -->
     </nav>
     <div class="container my-3">
-      <div class="row ">
+      <div class="row justify-content-start ">
 
     <?php
     if(!$chef){?>
@@ -93,15 +100,45 @@ if(isChef()){
           </div>
         </div>
 
+        <style>
+          .notification{
+            position: absolute;
+            bottom: -24px;
+            right: 5px;
+            font-size: 2rem;
+            color:green;
+            font-weight: bolder;
+            background-color: white;
+          }
+        </style>
+
+        <div class="col-10 col-md-5 col-lg-4 mx-auto mx-lg-0 my-2" >
+        
+          <div class="card" style='position: relative;'>
+            <h3 class='notification <?= $message_count==0?'d-none':'' ?>'><?= $message_count?></h3>
+            <div class="card-body" >
+              
+              <h5 class="card-title">View Messages</h5>
+              <p class="card-text my-4">
+                view customer problems and messages.
+              </p>
+              <a href="./view.message.php" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+
     <?php }
 
     ?>
     
-        <div class="col-10 col-md-5 col-lg-4 mx-auto mx-lg-0  my-2">
+        <div class="col-10 col-md-5 col-lg-4 mx-auto mx-lg-0 my-2">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Review Orders</h5>
-              <p class="card-text">
+              <p class="card-text my-4">
                View/approve or decline orders from here.
               </p>
               <a href="./review-orders.php" class="btn btn-outline-primary">

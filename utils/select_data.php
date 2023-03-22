@@ -232,3 +232,23 @@ function checkifhaveBooking($conn,$userid){
     return true;
   }
 }
+
+function getNotViewdMesages($conn){
+
+  $sql = "SELECT COUNT(id) AS message_count FROM messages WHERE status=0";
+  $res = $conn->query($sql);
+  if($res==TRUE){
+    if($res->num_rows>0){
+      return $res->fetch_assoc()['message_count'];
+    }
+  }
+
+  return 0;
+}
+
+function setMessagesStatusToViewd($conn){
+
+  $sql = "UPDATE messages SET status=1";
+  $conn->query($sql);
+  
+}

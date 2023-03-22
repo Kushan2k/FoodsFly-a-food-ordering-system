@@ -151,18 +151,18 @@ if(checkIsLogedIn()){
                     <p class=" text-start">Reach Out to Us for More Information or to Request a Private Dining Experience</p>
                     
                   </div>
-                  <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                  <form method='POST' id="contactForm" action='../actions/messageAction.php' data-sb-form-api-token="API_TOKEN">
 
                     <!-- Name Input -->
                     <div class="form-floating mb-3">
-                      <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                      <input name='name' class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
                       <label for="name">Name</label>
                       
                     </div>
 
                     <!-- Email Input -->
                     <div class="form-floating mb-3">
-                      <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                      <input name='email' class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
                       <label for="emailAddress">Email Address</label>
                       
                       
@@ -170,7 +170,7 @@ if(checkIsLogedIn()){
 
                     <!-- Message Input -->
                     <div class="form-floating mb-3">
-                      <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                      <textarea name='message' class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
                       <label for="message">Message</label>
                       
                     </div>
@@ -179,7 +179,7 @@ if(checkIsLogedIn()){
 
                     <!-- Submit button -->
                     <div class="d-grid">
-                      <button class="btn btn-outline-primary btn-lg " id="submitButton" type="submit">Submit</button>
+                      <button class="btn btn-outline-primary btn-lg " name='post-msg' id="submitButton" type="submit">Submit</button>
                     </div>
                   </form>
                   <!-- End of contact form -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2023 at 08:45 AM
+-- Generation Time: Mar 22, 2023 at 11:37 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -87,6 +87,28 @@ INSERT INTO `menu_item` (`menu_id`, `name`, `price`, `category`, `rating`, `rate
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` varchar(500) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `email`, `message`, `status`) VALUES
+(1, 'kushan', 'kushan@gmail.com', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum! Provident similique accusantium nemo autem. Veritatis\r\nobcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam\r\nnihil', 1),
+(2, 'heshara', 'heshara@gmail.com', 'sdgfsd gdfgd fgdf gdf gdf gdf gdf gdf gdf gdf gd gfd ghdfgsdf fdgfdg', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orders`
 --
 
@@ -144,13 +166,13 @@ CREATE TABLE `tables` (
 --
 
 INSERT INTO `tables` (`table_id`, `status`, `table_number`, `occupants`, `img_url`) VALUES
-(1, 1, 1, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg'),
+(1, 0, 1, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg'),
 (2, 0, 2, 6, 'https://i.pinimg.com/originals/cd/12/55/cd1255ee9305fff96afa023b5217157e.jpg'),
 (3, 0, 3, 8, 'https://www.theguild.lk/EndUserAssets/StoreManagement/Item/aero.jpg?width=600&height=380&mode=crop&scale=both&404=no_image.jpg'),
 (4, 0, 4, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg'),
 (5, 0, 5, 6, 'https://i.pinimg.com/originals/cd/12/55/cd1255ee9305fff96afa023b5217157e.jpg'),
 (6, 0, 6, 8, 'https://www.theguild.lk/EndUserAssets/StoreManagement/Item/aero.jpg?width=600&height=380&mode=crop&scale=both&404=no_image.jpg'),
-(7, 1, 7, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg');
+(7, 0, 7, 4, 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg');
 
 -- --------------------------------------------------------
 
@@ -185,7 +207,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `fullname`, `email`, `mobile`, `password`, `address`, `type`) VALUES
-(10, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0712720033', '$2y$10$YX3Y2xl/ZFJkqUS7iosrr.uho3CCvBgtlH9iHlFq6MsnzEOh/oiBG', '201/10 Colombo Road Kurunegala', 1290);
+(10, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0712720033', '$2y$10$YX3Y2xl/ZFJkqUS7iosrr.uho3CCvBgtlH9iHlFq6MsnzEOh/oiBG', '201/10 Colombo Road Kurunegala', 1290),
+(11, 'eranga', 'eranga@gmail.com', '1234567890', '$2y$10$GTkEVuEUBfz9q/wbgzx15OW2KFGh.B66ZQDKzFS3.2Yi1s1uGa1bq', 'colombo', 1567);
 
 -- --------------------------------------------------------
 
@@ -204,8 +227,7 @@ CREATE TABLE `user_cart` (
 --
 
 INSERT INTO `user_cart` (`id`, `user_id`, `item_id`) VALUES
-(143, 10, 36),
-(144, 10, 35);
+(148, 10, 45);
 
 --
 -- Indexes for dumped tables
@@ -216,6 +238,12 @@ INSERT INTO `user_cart` (`id`, `user_id`, `item_id`) VALUES
 --
 ALTER TABLE `menu_item`
   ADD PRIMARY KEY (`menu_id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `orders`
@@ -273,10 +301,16 @@ ALTER TABLE `menu_item`
   MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `order_item`
 --
 ALTER TABLE `order_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tables`
@@ -288,19 +322,19 @@ ALTER TABLE `tables`
 -- AUTO_INCREMENT for table `tbook`
 --
 ALTER TABLE `tbook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_cart`
 --
 ALTER TABLE `user_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- Constraints for dumped tables
