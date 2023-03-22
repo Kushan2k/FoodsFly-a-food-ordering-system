@@ -144,7 +144,7 @@ if (checkIsLogedIn()) {
               $res = $conn->query($sql);
               if($res==TRUE){
                 if($res->num_rows>0){
-                  echo $res->num_rows;
+                  
                   while($row=$res->fetch_assoc()){?>
                     <tr>
                       <td class='d-none d-md-flex'><?= $row['order_id']?></td>

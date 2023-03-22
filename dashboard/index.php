@@ -151,7 +151,8 @@ $message_count = getNotViewdMesages($conn);
     </div>
     
     <div class="my-5 container">
-      
+      <a href='../actions/logoutAction.php?action=logout'
+       class='btn btn-outline-danger'>Logout</a>
     </div>
 
 
