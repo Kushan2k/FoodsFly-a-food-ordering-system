@@ -90,12 +90,12 @@ if(checkIsLogedIn()){
       <div class='row mt-3'>
         <div class="card">
           <div class="card-header">
-            Quote
+            can the app builder setup the menu for customer?
           </div>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
-              <p>A well-known quote, contained in a blockquote element.</p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              <p>Yes, initially our app developer will setup the complete menu as per your requirements. However, later you will have access to add, edit and delete items as per your requirements.</p>
+              
             </blockquote>
           </div>
         </div>
@@ -104,12 +104,12 @@ if(checkIsLogedIn()){
       <div class='row mt-3'>
         <div class="card">
           <div class="card-header">
-            Quote
+          What is your restaurant's cuisine?
           </div>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
-              <p>A well-known quote, contained in a blockquote element.</p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              <p>Our restaurant specializes in Italian cuisine, with a variety of pasta dishes, pizzas, and seafood options available.</p>
+              
             </blockquote>
           </div>
         </div>
@@ -118,12 +118,12 @@ if(checkIsLogedIn()){
       <div class='row mt-3'>
         <div class="card">
           <div class="card-header">
-            Quote
+          Do you offer takeout or delivery services?
           </div>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
-              <p>A well-known quote, contained in a blockquote element.</p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              <p>we offer both takeout and delivery services. You can place an order online through our website or by calling us directly</p>
+              
             </blockquote>
           </div>
         </div>
@@ -132,12 +132,42 @@ if(checkIsLogedIn()){
       <div class='row mt-3'>
         <div class="card">
           <div class="card-header">
-            Quote
+          How do I create an account on your web site?
           </div>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
-              <p>A well-known quote, contained in a blockquote element.</p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              <p>To create an account on our website, simply click the "Register" button on the top right corner of the page and fill out the registration form.</p>
+              
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+
+      <div class='row mt-3'>
+        <div class="card">
+          <div class="card-header">
+          Do you offer gluten-free, vegetarian, or vegan options?
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Yes, we offer a variety of gluten-free, vegetarian, and vegan options on our menu.you can check the menu.</p>
+              
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+
+      <div class='row mt-3'>
+        <div class="card">
+          <div class="card-header">
+          Is it necessary to create an account in order to use your website?
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Some features on our website require an account to access.However, we recommend creating an account so that you can fully enjoy all of the features and benefits of our website</p>
+              
             </blockquote>
           </div>
         </div>

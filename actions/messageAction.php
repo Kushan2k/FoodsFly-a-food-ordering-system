@@ -17,19 +17,24 @@ if(isset($_POST['post-msg'])){
   $sql="SELECT * FROM messages";
   $result=$conn->query($sql);
 
-  $sql = ("INSERT INTO messages(name,email,message) VALUES(?,?,?)");
+  $sql = ("INSERT INTO messages(name,email,message) VALUES($name,$email,$message)");
   
 
   if($result->num_rows >0){
     while($row = $result->fetch_assoc()){
 
+      echo $row["name"]."" .$row["email"]."" .$row["message"]."<br>" ;
+
     }
+
+  }else{
+    echo "0 results";
   }
 
- 
-  
+  $conn->close();
 
 
 
 
 }
+?>
