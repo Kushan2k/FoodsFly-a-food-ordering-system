@@ -3,6 +3,11 @@
 <?php
 include_once('../utils/conn.php');
 
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    header("Location:../index.php");
+}
+header('Access-Control-Allow-Methods: POST');
+
 if(isset($_POST['post-msg'])){
 
   $name=htmlspecialchars($_POST['name']);
