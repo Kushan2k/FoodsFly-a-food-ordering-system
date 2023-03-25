@@ -1,5 +1,7 @@
-<?php
 
+
+<?php
+include_once('../utils/conn.php');
 
 if(isset($_POST['post-msg'])){
 
@@ -7,33 +9,21 @@ if(isset($_POST['post-msg'])){
   $email=htmlspecialchars($_POST['email']);
   $message=htmlspecialchars($_POST['message']);
 
-  //create connection
-
-  $conn = new mysqli($name,$email,$message);
-
-  if($conn->connect_error){
-    die("connction failed: ".$conn->connect_error) ;
-  }
-  $sql="SELECT * FROM messages";
-  $result=$conn->query($sql);
-
-  $sql = ("INSERT INTO messages(name,email,message) VALUES($name,$email,$message)");
-  
-
-  if($result->num_rows >0){
-    while($row = $result->fetch_assoc()){
-
-      echo $row["name"]."" .$row["email"]."" .$row["message"]."<br>" ;
-
+  $sql = "INSERT INTO messages(name,email,message) VALUES(?,?,?)";
+  $stm = $conn->prepare($sql);
+  if($stm){
+    $stm->bind_param('sss', $name, $email, $message);
+    if($stm->execute()){
+      redirectWithSuccess('../index.php', 'Message send successfully!');
+      return;
+    }else{
+      header("Location:{$_SESSION['HTTP_REFERE']}");
     }
-
   }else{
-    echo "0 results";
+    header("Location:{$_SESSION['HTTP_REFERE']}");
   }
 
-  $conn->close();
-
-
+  
 
 
 }
