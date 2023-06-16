@@ -176,7 +176,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         <div class="row items" >
           <?php
           include_once './utils/select_data.php';
-          include_once './utils/conn.php';
+          require_once './utils/conn.php';
           $data = getMenuItemData($conn);
 
           if($data==null){?>
@@ -233,7 +233,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
     <?php include_once './includes/footer.php'?>
   </main>
 
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded',()=>{
       
       const type=document.getElementById('view')
@@ -249,7 +249,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         }
       })
     })
-  </script>
+  </script> -->
 
   <script src="./assets/js/index.js"></script>
   <script src="../assets/js/slider.js"></script>
