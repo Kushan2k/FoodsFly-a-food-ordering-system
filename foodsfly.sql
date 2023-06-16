@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 11:37 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.23
+-- Generation Time: Jun 15, 2023 at 04:28 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,7 +36,7 @@ CREATE TABLE `menu_item` (
   `rate_count` int(11) DEFAULT 1,
   `description` varchar(255) DEFAULT NULL,
   `img_url` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `menu_item`
@@ -96,7 +96,7 @@ CREATE TABLE `messages` (
   `email` varchar(255) NOT NULL,
   `message` varchar(500) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `messages`
@@ -118,14 +118,7 @@ CREATE TABLE `orders` (
   `total` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_id`, `order_date`, `total`, `user_id`, `status`) VALUES
-(190948777, '2023-03-16 14:54:30', 1500, 10, 3);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -138,14 +131,7 @@ CREATE TABLE `order_item` (
   `menu_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `order_item`
---
-
-INSERT INTO `order_item` (`id`, `menu_id`, `order_id`, `qty`) VALUES
-(30, 46, 190948777, 3);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -159,7 +145,7 @@ CREATE TABLE `tables` (
   `table_number` int(11) NOT NULL,
   `occupants` int(11) NOT NULL,
   `img_url` varchar(255) NOT NULL DEFAULT 'https://cdnimg.webstaurantstore.com/uploads/seo_category/2019/5/table-dining-sets.jpg'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tables`
@@ -184,7 +170,7 @@ CREATE TABLE `tbook` (
   `id` int(11) NOT NULL,
   `table_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -200,15 +186,15 @@ CREATE TABLE `users` (
   `password` varchar(70) NOT NULL,
   `address` varchar(255) NOT NULL,
   `type` int(10) NOT NULL DEFAULT 1918
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `fullname`, `email`, `mobile`, `password`, `address`, `type`) VALUES
-(10, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0712720033', '$2y$10$YX3Y2xl/ZFJkqUS7iosrr.uho3CCvBgtlH9iHlFq6MsnzEOh/oiBG', '201/10 Colombo Road Kurunegala', 1290),
-(11, 'eranga', 'eranga@gmail.com', '1234567890', '$2y$10$GTkEVuEUBfz9q/wbgzx15OW2KFGh.B66ZQDKzFS3.2Yi1s1uGa1bq', 'colombo', 1567);
+(11, 'eranga', 'eranga@gmail.com', '1234567890', '$2y$10$GTkEVuEUBfz9q/wbgzx15OW2KFGh.B66ZQDKzFS3.2Yi1s1uGa1bq', 'colombo', 1567),
+(12, 'Kushan Gayantha', 'kushangayantha001@gmail.com', '0712720033', '$2y$10$Wf8QIcB0SjlRyHRpLfgfdeFVtVNa4R5nv/L3OY5BpXVc4fr3jdq7G', '201/10 Colombo Road Kurunegala', 1290);
 
 -- --------------------------------------------------------
 
@@ -220,14 +206,7 @@ CREATE TABLE `user_cart` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_cart`
---
-
-INSERT INTO `user_cart` (`id`, `user_id`, `item_id`) VALUES
-(148, 10, 45);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -310,7 +289,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `order_item`
 --
 ALTER TABLE `order_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tables`
@@ -322,19 +301,19 @@ ALTER TABLE `tables`
 -- AUTO_INCREMENT for table `tbook`
 --
 ALTER TABLE `tbook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user_cart`
 --
 ALTER TABLE `user_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- Constraints for dumped tables
