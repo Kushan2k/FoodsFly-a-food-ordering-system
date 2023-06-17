@@ -2,6 +2,7 @@
 
 <?php
 include_once('../utils/conn.php');
+include_once '../utils/input_validate.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     header("Location:../index.php");

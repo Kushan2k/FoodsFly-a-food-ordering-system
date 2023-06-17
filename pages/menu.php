@@ -66,7 +66,7 @@ if(checkIsLogedIn()){
   <section class="menu_page mt-5">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-4 col-lg-2 col-md-3">
+        <div class="col-12 col-lg-2 col-md-3">
 
           <div class="card" style="border: none;">
             <div class="card-header">
@@ -94,7 +94,7 @@ if(checkIsLogedIn()){
             </ul>
           </div>
         </div>
-        <div class="col-8 col-lg-10 col-md-9 ">
+        <div class="col-12 col-lg-10 col-md-9 ">
 
           <div class="row">
             <?php
@@ -105,7 +105,7 @@ if(checkIsLogedIn()){
 
             }else{
               for($i=0;$i<count($data);$i++){?>
-                <div class=" col-sm-6 col-lg-3 col-md-4 mb-4 menu_item" data-cat="<?= ucfirst($data[$i]['category']) ?>" data-price="<?= $data[$i]['price']?> " >
+                <div class="col-6 col-sm-6 col-lg-3 col-md-4 mb-4 menu_item" data-cat="<?= ucfirst($data[$i]['category']) ?>" data-price="<?= $data[$i]['price']?> " >
                   <div class="card">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                       <img src="<?= $data[$i]['img_url']?>" class="img-fluid" style="width: 320px; height: 200px; object-fit: cover;"/>
