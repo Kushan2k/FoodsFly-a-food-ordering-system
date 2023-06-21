@@ -14,7 +14,12 @@ if(checkIsLogedIn()){
   <title>FoodsFly-About us</title>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
+  <style>
+  .team-member-image {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+  }
+</style>
 </head>
 
 <body class=" position-relative">
@@ -211,15 +216,15 @@ if(checkIsLogedIn()){
         <div class="row text-center">
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="..\assets\images\inula.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <img src="..\assets\images\inula.jpg" alt=""  class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm team-member-image">
               <h5 class="mb-0">Inula Chandira</h5>
               <span class="small text-uppercase text-muted">Team lead/Developer</span>
               <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.facebook.com/inula.chandira?mibextid=ZbWKwL" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/inula-chandira-8155a8254" class="social-link">
                   <i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://github.com/InulaC" class="social-link">
                   <i class="fa-brands fa-github"></i></a></li>
                 <li class="list-inline-item"><a href="mailto:cinula40@gmail.com" class="social-link">
                   <i class="fa-solid fa-envelope"></i></a></li>
@@ -229,7 +234,7 @@ if(checkIsLogedIn()){
 
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="..\assets\images\kushan.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <img src="..\assets\images\kushan.jpg"  class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm team-member-image">
               <h5 class="mb-0">Kushan Gayantha</h5>
               <span class="small text-uppercase text-muted">developer</span>
               <ul class="social mb-0 list-inline mt-3">
@@ -248,24 +253,24 @@ if(checkIsLogedIn()){
           
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="https://assets.puzzlefactory.com/puzzle/387/881/original.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <img src="..\assets\images\kalindu.jpg" alt="" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm team-member-image">
               <h5 class="mb-0">Kalindu Indupura</h5>
               <span class="small text-uppercase text-muted">Content manager</span>
               <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.facebook.com/kalindu.indupura?mibextid=ZbWKwL5" class="social-link">
                   <i class="fa-brands fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/kalindu-indupura-a365341ba" class="social-link">
                   <i class="fa-brands fa-linkedin-in"></i></a></li>
                 <li class="list-inline-item"><a href="#" class="social-link">
                   <i class="fa-brands fa-github"></i></a></li>
-                <li class="list-inline-item"><a href="mailto:kushangayantha001@gmail.com" class="social-link">
+                <li class="list-inline-item"><a href="mailto:kalinduindupura@gmail.com" class="social-link">
                   <i class="fa-solid fa-envelope"></i></a></li>
               </ul>
             </div>
           </div>
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="..\assets\images\heshara.jpeg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <img src="..\assets\images\heshara.jpeg" alt="" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm team-member-image">
               <h5 class="mb-0">Heshara Dananjalee</h5>
               <span class="small text-uppercase text-muted">Lead designer</span>
               <ul class="social mb-0 list-inline mt-3">
@@ -283,7 +288,7 @@ if(checkIsLogedIn()){
 
           <div class="col-xl-3 col-sm-6 mb-5">
             <div class="bg-white rounded shadow-sm py-5 px-4">
-              <img src="../assets/images/eranga.jpg" alt="" width="100" height="100" class="img-thumbnail rounded-circle mb-3 img-thumbnail shadow-sm">
+              <img src="../assets/images/eranga.jpg" alt="" class="img-thumbnail rounded-circle mb-3 img-thumbnail shadow-sm team-member-image">
               <h5 class="mb-0">Eranga Harshani</h5>
               <span class="small text-uppercase text-muted">Developer/Quality Assurance</span>
               <ul class="social mb-0 list-inline mt-3">
