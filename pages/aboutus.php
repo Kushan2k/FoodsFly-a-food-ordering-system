@@ -261,7 +261,7 @@ if(checkIsLogedIn()){
                   <i class="fa-brands fa-facebook-f"></i></a></li>
                 <li class="list-inline-item"><a href="https://www.linkedin.com/in/kalindu-indupura-a365341ba" class="social-link">
                   <i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link">
+                <li class="list-inline-item"><a href="https://github.com/Kalindu00" class="social-link">
                   <i class="fa-brands fa-github"></i></a></li>
                 <li class="list-inline-item"><a href="mailto:kalinduindupura@gmail.com" class="social-link">
                   <i class="fa-solid fa-envelope"></i></a></li>
