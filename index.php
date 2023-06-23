@@ -3,9 +3,9 @@
 $logedin=false;
 $ischef = false;
 $isadmin = false;
+
 if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
-  $logedin=true;
-  
+  $logedin=true; 
 }
 
 ?>
@@ -84,9 +84,9 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
                and discover what makes our dining experience truly unforgettable.</p>
                <?php
               if($logedin){
-                echo '<a href="./pages/tables.php?view=all" style="float: right;margin-right: 1.7rem;" class="btn btn-outline-light">Book Table</a>';
+                echo '<a href="./pages/tables.php?view=all" style="float: right;margin-right: 1.7rem;border-radius: 5px;" class="btn btn-outline-light border border-2">Book Table</a>';
               }?>
-              <a href="./pages/menu.php?view=all" style="float: right;margin-right: 1.7rem;" class="btn btn-outline-light">View Menu</a>
+              <a href="./pages/menu.php?view=all" style="float: right;margin-right: 1.7rem;border-radius: 5px;" class="btn btn-outline-light border border-2">View Menu</a>
             </div>
           </div>
 
