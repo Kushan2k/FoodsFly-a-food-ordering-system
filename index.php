@@ -109,9 +109,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
             <br/>
 
 
-            <a href="" class='btn btn-outline-danger mt-3' >
-              <i class='fa fa-book me-2'>
-                </i>View Chefs</a>
+           
           </div>
 
           <div class="d-none d-md-flex col-md-6 gx-5 mb-4">
