@@ -226,7 +226,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['jwt-token'])){
         </div>
       </section>
       
-    </div>
+    </div> 
   
     <?php include_once './includes/footer.php'?>
   </main>
