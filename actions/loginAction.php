@@ -1,5 +1,7 @@
 <?php
+//starting the session
 session_start();
+//including neccesary files and libraries
 include_once '../utils/conn.php';
 include_once '../utils/jwt-auth.php';
 include '../utils/input_validate.php';
@@ -8,10 +10,12 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
   header("Location:../index.php");
 }
 
+//limiting access method only to POST
 header('Access-Control-Allow-Methods: POST');
 
 
 if(isset($_POST['login'])){
+  //get the user email and password from  user
   $email=htmlspecialchars($_POST['email']);
   $passwrod=htmlspecialchars($_POST['password']);
 
@@ -29,6 +33,8 @@ if(isset($_POST['login'])){
       $type=$user['type'];
 
       if(password_verify($passwrod,$passHash)){
+
+        //for presistant login process create cookies and JWT tokens
         $_SESSION['msg']='login successful';
         setcookie("login",true,time()+3600*24*30,"/","",false,$httponly=true);
         $jwt=createJWTLogin($email,$id,$type);

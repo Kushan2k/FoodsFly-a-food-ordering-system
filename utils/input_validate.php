@@ -33,6 +33,8 @@ function validMobile($mobile){
   
 }
 
+
+
 function checkRecordExistsinDatabase($conn,$testEmail,$testMobile){
 
   $SQL=$conn->prepare("SELECT user_id FROM users WHERE email=? OR mobile=? LIMIT 1");

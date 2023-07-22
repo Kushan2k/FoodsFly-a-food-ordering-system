@@ -1,21 +1,30 @@
 <?php
 
+//function for geting menu items from the database 
+//this function take cdatabse connection as the input parameter
 function getMenuItemData($conn){
 
+  //sql query for selecting the data from the database ordred by menu id deacending
   $SQL="SELECT * FROM menu_item ORDER BY menu_id DESC";
   $result=$conn->query($SQL);
+
+  //create an empty array to store results
   $data=[];
 
+  //if query is successfully ran
   if($result==TRUE){
 
     if($result->num_rows>0){
 
+      //loop thorugh each row and add them to the resuts arrya
       while($row=$result->fetch_assoc()){
         array_push($data,$row);
       }
+      //after looping return the array 
       return $data;
 
     }else{
+      //return null if no results or error occurd
       return null;
     }
   }else{

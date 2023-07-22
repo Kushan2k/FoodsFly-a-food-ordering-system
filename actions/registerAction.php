@@ -5,12 +5,15 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
   header("Location:../index.php");
 }
 
+//including revent files and libraries
 include_once '../utils/conn.php';
 include_once '../utils/input_validate.php';
+//allw acces only via POST HTTP method
 header('Access-Control-Allow-Methods: POST');
 
-
 if(isset($_POST['register'])){
+
+  //getting the user inputs
   $name=$_POST['fullname'];
   $email=htmlspecialchars($_POST['email']);
   $mobile=htmlspecialchars($_POST['mobile']);
@@ -18,6 +21,8 @@ if(isset($_POST['register'])){
   $cpass=htmlspecialchars($_POST['cpassword']);
 
   $address=htmlspecialchars($_POST['address']);
+
+  //perform serverside validations
 
   if(validateEmail($email)){
     if(valiatePassword($password,$cpass)){
@@ -27,6 +32,7 @@ if(isset($_POST['register'])){
           $STM=$conn->prepare("INSERT INTO users(fullname,email,mobile,password,address) VALUES(?,?,?,?,?)");
           $STM->bind_param("sssss",$name,$email,$mobile,$hash,$address);
           if($STM->execute()){
+            //if all successfull sends user to login page
             header("Location:../pages/login.php");
           }else{
             redirectWithError($_SERVER['HTTP_REFERER'],'Registration unsucessful! Please try again!');

@@ -1,0 +1,722 @@
+commit 308e25329295b0789fe6ab2262507e37f562baff
+Merge: d0001ba 54fb3ad
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Jun 23 12:37:49 2023 +0530
+
+    Merge branch 'master' of https://github.com/Kushan2k/FoodsFly-a-food-ordering-system
+
+commit d0001ba3edb191090cc91b1e433291cf2524bb88
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Jun 23 12:37:42 2023 +0530
+
+    updated project code/files
+
+commit 54fb3ad74bd8841c4ed5baeba29bc4081dd65d6c
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Fri Jun 23 12:34:49 2023 +0530
+
+    remove chef btn
+
+commit f3b53553a60163346274d2a1d7f6cc4e9c1bb4c2
+Author: InulaC <cinula40@gmail.com>
+Date:   Wed Jun 21 16:43:37 2023 +0530
+
+    about us page edited
+
+commit 97a80ef9e6afac265bcd74300adc9ad502b5dda8
+Author: InulaC <cinula40@gmail.com>
+Date:   Wed Jun 21 16:35:31 2023 +0530
+
+    Edited contact us page
+
+commit 81b9f51e47e723caade47ff544fc040502833a3a
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Mon Jun 19 23:26:14 2023 +0530
+
+    change members
+
+commit 991d6c9cc6c4c5498e906e6462df45a68fa964b0
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Jun 17 15:31:49 2023 +0530
+
+    menu mobile view changed
+
+commit 6adaed673421049c97ecb729b73e7083cb41cd19
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Jun 16 11:18:45 2023 +0530
+
+    latast updated included
+
+commit 84d9c756d7936cbf43609fbb1aa965e0e55629d9
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Jun 16 10:50:39 2023 +0530
+
+    comented index.php javascript
+
+commit 0e13ee9b8e637c9a3696105fcfeae57d7ecb71aa
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Mar 25 19:28:50 2023 +0530
+
+    check added
+
+commit 393a8ee1bd30d230a437d565f9458594d77f816d
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Mar 25 19:27:57 2023 +0530
+
+    mesage addphp done ..
+
+commit 82fd974c4d0a9ba7aff275378f0de5d6a0309d95
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Thu Mar 23 22:18:14 2023 +0530
+
+    create FAQ
+
+commit d90c44e52b2e607b8630e73541faac099d4f718d
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Wed Mar 22 23:38:26 2023 +0530
+
+    update messageACtion
+
+commit 0c8cf37631efbf1022e1f3fda2a0eb8f62b70028
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Mar 22 16:21:45 2023 +0530
+
+    faq page added
+
+commit 78b3feec682def19fd887803c57d60595ab802ac
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Mar 22 16:08:39 2023 +0530
+
+    contact form completed
+
+commit f6707f3288cf601c10ead48bebd2cd542cf48d24
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Mar 19 13:03:18 2023 +0530
+
+    slight bug fixes
+
+commit 514351e84d5cfb3cc43713a796479c5a92619720
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Mar 18 14:27:15 2023 +0530
+
+    style changed
+
+commit efa482b3751abfec77778666b413423ad69b1155
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Fri Mar 17 19:35:02 2023 +0530
+
+    change the deliver
+
+commit 8facd1ad3aade139b554b2343468e2c7acc8c34e
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Mar 17 13:21:08 2023 +0530
+
+    changed
+
+commit 30322f6b7e47f9470e55d90985e002c65701296e
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Mar 17 13:16:21 2023 +0530
+
+    new db added
+
+commit e6248e06ee8087021ff6193d190ddf9eda8142e9
+Author: InulaC <cinula40@gmail.com>
+Date:   Fri Mar 17 12:19:37 2023 +0530
+
+    Added Tables to admin dashboard
+
+commit c9d46cc520f62b58fb5a4b270ab65e9fd895a0df
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Mar 16 16:22:02 2023 +0530
+
+    index
+
+commit 48264bb931bdd48143a0b3d10e4c3803c2e6699a
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Mar 16 16:12:19 2023 +0530
+
+    ad added
+
+commit 3a9f90cc857dee4d2e6854163869f687f7a1868f
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Mar 16 16:11:09 2023 +0530
+
+    booking table is done
+
+commit 016cccd93b34a5b257fd6399130b146543acc1df
+Author: InulaC <cinula40@gmail.com>
+Date:   Fri Mar 3 10:22:29 2023 +0530
+
+    added book table section , db updated
+
+commit d5cac320e71164356582b1b31336c53a16661533
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Feb 12 11:43:32 2023 +0530
+
+    cart page edited
+
+commit 96023ef882e1f93888fd29bd16942cd515322abb
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Feb 12 11:30:48 2023 +0530
+
+    cart delete button fixed
+
+commit 80ba5411b32039e95cf79d4e2b72ce183876585e
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Feb 12 10:46:51 2023 +0530
+
+    http refere header added
+
+commit d6143d882469afee566c17a3294cb9cd293318e4
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Feb 11 14:23:33 2023 +0530
+
+    chefs order view page created!
+
+commit 6fde267cf400a3b4405ad6f36d3854471a6d0c10
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Feb 11 13:24:33 2023 +0530
+
+    order review process is done
+
+commit af51a2fe80e570a76fbb6c55c22bf45237eeb8be
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Feb 10 19:44:37 2023 +0530
+
+    order review page completed partially
+
+commit 504e660f0cd5a4fdc86346df7b59b9db047f31e0
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Feb 10 18:37:19 2023 +0530
+
+    social links added
+
+commit 05a36bd671a9f1c777f99771584af207d4d42f4c
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Feb 10 18:28:08 2023 +0530
+
+    order view page almost completed
+
+commit cabd4c3fec4a54f301f3f4232299e0f0403cf77f
+Merge: b88c565 81289ca
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Fri Feb 10 11:02:25 2023 +0530
+
+    Merge branch 'master' of https://github.com/Kushan2k/FoodsFly-a-food-ordering-system
+
+commit b88c5651ae45c168d4533b006af3fc1a3d704b4e
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Fri Feb 10 10:59:41 2023 +0530
+
+    add images for home and about us pages
+
+commit 81289ca14be40f62cc640c2e77acaeb5e6ef86e8
+Merge: b871446 149b5da
+Author: InulaC <cinula40@gmail.com>
+Date:   Fri Feb 10 10:27:55 2023 +0530
+
+    Merge branch 'master' of https://github.com/Kushan2k/FoodsFly-a-food-ordering-system
+
+commit b8714464914ed14266a39040c89ae56cc154ec69
+Author: InulaC <cinula40@gmail.com>
+Date:   Fri Feb 10 10:27:50 2023 +0530
+
+    database update
+
+commit 149b5daf33092091cd6319879ddde157d4479c1c
+Merge: 630435d 22a0703
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Feb 10 10:23:17 2023 +0530
+
+    Merge branch 'master' of https://github.com/Kushan2k/FoodsFly-a-food-ordering-system
+
+commit 630435d8cbec7bbe6b83e6fc0af694bb9f6836fb
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Feb 10 10:22:37 2023 +0530
+
+    pulled
+
+commit 22a0703e592f9f084f3f0dce0845a7abe15dd7c8
+Author: InulaC <cinula40@gmail.com>
+Date:   Fri Feb 10 10:21:25 2023 +0530
+
+    added view descrition for menu
+
+commit d1cdfad8c331503a372433d1ac8c5ca84207b53e
+Author: InulaC <cinula40@gmail.com>
+Date:   Wed Feb 8 13:28:30 2023 +0530
+
+    corrected spelling erros, rewrote menu descritions
+
+commit c6acd408878e163e4ff8cafe368c9c35a781557d
+Author: InulaC <cinula40@gmail.com>
+Date:   Wed Feb 8 13:25:25 2023 +0530
+
+    Added new items, corrected some spelling erros , rewrote all menu item descriptions, made sample page for view item
+
+commit 9cf8f5e6e7de0faacc8e857ca2bf7471d87fb011
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Tue Jan 24 23:55:22 2023 +0530
+
+    add images
+
+commit 36723b905cd18370f84f079cd89784ff15549dda
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Jan 24 13:04:43 2023 +0530
+
+    new home design added
+
+commit 00be9a8339ac4f17323ac1d19abc27e8f95b4974
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Tue Jan 24 10:21:51 2023 +0530
+
+    add home page images
+
+commit 1fbfe5cd754c22b63fb1e22483f7ed0dd0d436a3
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Jan 21 12:55:11 2023 +0530
+
+    db added
+
+commit 4e836af30aaed4c75bc1f74c3f970539151dd430
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Jan 21 12:54:14 2023 +0530
+
+    order ading part complete 100%
+
+commit c53143a64c9e36cb41a4988d1020232e41ebfbac
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Jan 18 13:38:23 2023 +0530
+
+    total cost calculation is working
+
+commit e2a18872ced3bad95d5fb4754ae8c3832364e1f1
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Jan 18 13:26:29 2023 +0530
+
+    chef add page done
+
+commit 1ee146a55e43e438fe7f9140144a0984407a29f7
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Jan 14 11:46:50 2023 +0530
+
+    last comit
+
+commit d3831444d067dc8ca36d3bdeb587199d1c78dda5
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Jan 14 11:38:21 2023 +0530
+
+    backd up
+
+commit c3692d2276d9b4e53c94a58a25285e54041d3445
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Jan 14 11:31:16 2023 +0530
+
+    cmd
+
+commit 410b5aa4246bf66aeea7175cd9e8cf9c7bd5c679
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 27 14:09:38 2022 +0530
+
+    item edit page navbar added
+
+commit a04cb5d1f78e8334af390d1750aeeca78e73d3c8
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 27 11:16:56 2022 +0530
+
+    menu item edit done admin
+
+commit 5b1f374a18ff7af61b99dda707ae8570c1368749
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 27 11:16:30 2022 +0530
+
+    item edit admin done
+
+commit 08ba056c868901d40d4e77b0df38e38afc43af8f
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 26 14:31:51 2022 +0530
+
+    admin dashboard added
+
+commit d52061a5abdd196ca640436a498e5a66e442a2b3
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 26 12:44:57 2022 +0530
+
+    admin item add/delete done
+
+commit 0a5c72bbd81a1ca7ed7890c6ede7738379bec3c1
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 23 17:03:59 2022 +0530
+
+    password change.account delete done
+
+commit bb4bc6ac995fad26b488162442d3545e55c3cd15
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Dec 21 13:43:41 2022 +0530
+
+    security improved
+
+commit a7e6c047f1f32da38d524e4b117b6abd0b903577
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 19 13:42:41 2022 +0530
+
+    401 error fixed
+
+commit 1d7eefd3e66301b66682df1648b1d20a8489ad7c
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 19 13:38:06 2022 +0530
+
+    increasing cart item count fixed
+
+commit a46936b228fb07894e2c9e4ceea346ad7a0fa24e
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 19 12:41:00 2022 +0530
+
+    view cart page redesigned and total calculation done
+
+commit c5c7f50b54c84b30b90a6d571d72b1cd6c6000fd
+Author: InulaC <cinula40@gmail.com>
+Date:   Wed Dec 14 00:55:41 2022 +0530
+
+    minor adjustments in index page
+
+commit dcac85affcb5d7481292eaeb226780c224c3d101
+Author: InulaC <cinula40@gmail.com>
+Date:   Wed Dec 14 00:52:06 2022 +0530
+
+    index page edited
+
+commit cacb998875426f66185584825f5a1583b91213a0
+Author: InulaC <cinula40@gmail.com>
+Date:   Wed Dec 14 00:32:08 2022 +0530
+
+    Added Items for menu, changed filters
+
+commit fd3d98182467f2f354656a6dc9ad220ca4e8dc30
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 13 17:53:28 2022 +0530
+
+    editing users cart fixed
+
+commit 2fe88d67aa92d9ca527e2e671732ae52d49ba7ef
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 13 11:55:27 2022 +0530
+
+    new cart design added
+
+commit fdfc8166ca4eb2aec72889e0e022ddb73f2e229f
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 12 19:26:57 2022 +0530
+
+    url icons added
+
+commit 81b48ae5ac432a333a9d80d76278e369f47a9f5f
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 12 18:58:00 2022 +0530
+
+    customer view done
+
+commit 8956d043fe3f6e7fcf1b67a56ae7b6d893bec775
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 12 18:54:50 2022 +0530
+
+    some style fixes has been done
+
+commit 4acd46f7a8c3a898cfe67a7e859a120b07d4b402
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 12 12:58:44 2022 +0530
+
+    dashboard creating started
+
+commit 21f6f780c06fde386c9633aaf54004b411e06a35
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Dec 12 11:01:19 2022 +0530
+
+    login/register bug fixes
+
+commit 0482d5d8187a154f5f8feafcbe69da539d26f69a
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Dec 11 15:21:34 2022 +0530
+
+    cart link added
+
+commit cc56f588983dda9d582ca1d3b4d06a55d2a5c11f
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Dec 11 14:52:11 2022 +0530
+
+    add to cartd message added
+
+commit efb69021bc3a78a0ddce53f8251c34de74fd597c
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Dec 11 13:20:22 2022 +0530
+
+    slight fixes
+
+commit 25e27c821de4b51067597582cb04fb30b3e8c5b0
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Dec 11 12:30:44 2022 +0530
+
+    add to cart/logout completed
+
+commit e0c5824628bb555914d9f711bc0ebf4d01807909
+Merge: 3bc7c21 ea41cff
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Dec 11 11:48:22 2022 +0530
+
+    Merge branch 'master' of https://github.com/Kushan2k/FoodsFly-a-food-ordering-system
+
+commit 3bc7c213305c6dc52897085cbd05459b98d1e97a
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sun Dec 11 11:47:45 2022 +0530
+
+    add to cart almost created
+
+commit ea41cff44cfe0aec1877e475a1efe32aaed70fe0
+Author: heshara2000 <hesharadananjanee@gmail.com>
+Date:   Sun Dec 11 11:47:00 2022 +0530
+
+    add items to meun
+
+commit 475349a40069eaee817ccdd2cfc97547a114071b
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Dec 10 17:00:06 2022 +0530
+
+    cart button created in the bottom of menu page
+
+commit 98ef2c5669c0323ee032e5c21e3623458d530292
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Dec 10 16:41:23 2022 +0530
+
+    menu item popup animation added
+
+commit 15dd0b3d02c5721199b83c13a7a329ee0c893922
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Dec 10 13:19:21 2022 +0530
+
+    update database file added
+
+commit f2bc2a49ed27a68f7433b56950ea168f264ae0e6
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Dec 10 13:18:26 2022 +0530
+
+    sort by price is almost completed with one error
+
+commit a835ba68d5350219a62d4013895d5200de764fb3
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Sat Dec 10 12:40:29 2022 +0530
+
+    sorting by category done
+
+commit be6633d9c1e7c99647ec505a316d92c1fd234399
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 9 19:39:50 2022 +0530
+
+    database file added
+
+commit a495cbcf8f4c4f0761f8798daba5f4f2be33112e
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 9 16:58:14 2022 +0530
+
+    menu page created
+
+commit 0b8d345a9eaa77bc08bc31e9cc792368ff167f07
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 9 16:02:14 2022 +0530
+
+    filter menu and item menu created
+
+commit 1f7aeefafcf291d6843a8a4e9fce9b66c4a57908
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 9 14:56:54 2022 +0530
+
+    menu page creating...
+
+commit 87e38874ec4133cae1f8b0721b2b00381a9bdd14
+Author: Inula Chandira <102781424+InulaC@users.noreply.github.com>
+Date:   Thu Dec 8 12:48:27 2022 +0530
+
+    Create db intructions
+    
+    instruction for installing database
+
+commit 82a1edeb0c0dbfecee6a349b3a10ad33cd4e2370
+Author: InulaC <cinula40@gmail.com>
+Date:   Thu Dec 8 12:45:27 2022 +0530
+
+    database added
+
+commit bcafb502fe578f1b600f7b7307f5e6115c6aaf88
+Author: InulaC <cinula40@gmail.com>
+Date:   Thu Dec 8 12:41:17 2022 +0530
+
+    minor changes in register ,login and home pages
+
+commit b72fac5e1dd6ee3ded4cbdf69dbfb5e3ec108159
+Author: InulaC <cinula40@gmail.com>
+Date:   Thu Dec 8 12:26:54 2022 +0530
+
+    about us cards  addedd
+
+commit 45077dc523614314a5f5ae196c49c49bf32a6b83
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Dec 7 12:44:17 2022 +0530
+
+    login done/slider back & forward btn added
+
+commit 32375d8ef7053affa2c52393729eb089d9d529e3
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 6 17:17:06 2022 +0530
+
+    login jwt created
+
+commit bdb9f02e3899a8d4c0f7ea9b9b3abaa6a9106c16
+Merge: 6661697 69c9fae
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 6 12:40:56 2022 +0530
+
+    Merge branch 'master' of https://github.com/Kushan2k/FoodsFly-a-food-ordering-system
+
+commit 6661697090d4a542480aad47945e7c1da7f99109
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Dec 6 12:39:44 2022 +0530
+
+    register page controler done
+
+commit 69c9fae7b83f935df7d7057b02637b7d74a4dcb5
+Author: Kushan Gayantha <64627160+Kushan2k@users.noreply.github.com>
+Date:   Fri Dec 2 16:09:50 2022 +0530
+
+    Update navbar.html
+
+commit b961af92df5f9257ced16895edc30267e98bdf0d
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 2 15:46:22 2022 +0530
+
+    register page edited/data validated
+
+commit a3bd443a1f3990aaa174a847e5b1e8fd3afcb3e0
+Author: InulaC <cinula40@gmail.com>
+Date:   Fri Dec 2 13:44:33 2022 +0530
+
+    about us ,home page edit
+
+commit d19204f1e8bb8e362590073a0d205b859fd2b6f8
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 2 10:42:05 2022 +0530
+
+    login navbar edited
+
+commit 794af3a5245de36442b9422598b308aa80ae18cb
+Merge: bbbb814 ea9d1ad
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 2 10:37:15 2022 +0530
+
+    Merge branch 'master' of https://github.com/Kushan2k/FoodsFly-a-food-ordering-system
+
+commit bbbb8141ae3dc4cd94214df3a2e761b0804b7071
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Fri Dec 2 10:36:10 2022 +0530
+
+    slight style changes register page
+
+commit ea9d1ad711509259980e10f48a4dc7ca0f19ded7
+Author: InulaC <cinula40@gmail.com>
+Date:   Thu Dec 1 23:18:18 2022 +0530
+
+    Login page created and register page edited
+
+commit eb6300c3d92775d2b1b1f85e1a47a7722e39674c
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Dec 1 16:33:53 2022 +0530
+
+    register page image animation added
+
+commit 8ca738b7d3e4c6150db963063f147f9f5caf58df
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Dec 1 16:27:53 2022 +0530
+
+    some styles added
+
+commit 1d3893705250cf2261c58b956e69129369c9c6bd
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Dec 1 16:18:16 2022 +0530
+
+    slight padding chaged
+
+commit 0add42458e12519323dbf5b64abd784eb63f084b
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Dec 1 16:14:56 2022 +0530
+
+    footer added
+
+commit 528a118dfeef5aa62efe4b11d7f71c255365d54e
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Dec 1 16:05:27 2022 +0530
+
+    register form/page created
+
+commit 7f7cb4ca3c054b21d5270c0385b4be6b21ec9c44
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Dec 1 11:47:17 2022 +0530
+
+    slight fixed for slider texts
+
+commit cc93ced8020958ef45589c05d7277722c581fd2c
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Thu Dec 1 11:36:53 2022 +0530
+
+    text added to slider
+
+commit 001b8bc07f4b92b9dc56dc9a278db427b9c2087b
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Nov 30 18:44:57 2022 +0530
+
+    about us page layout created
+
+commit 7904d1ae5a4812e1f83571758fcccee26ce7fa5f
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Nov 30 13:32:24 2022 +0530
+
+    navigation links connected!
+
+commit c7ff8486ff4d07f426ee87b84871eb23a71146fd
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Wed Nov 30 10:10:19 2022 +0530
+
+    dummy changes
+
+commit f5be52524d011064b38f8144ce38b0a0f360245e
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Nov 29 19:37:27 2022 +0530
+
+    navbar icon added
+
+commit 710bd2a5f69e98b600584a4e692a76087bbeae23
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Nov 29 17:16:26 2022 +0530
+
+    custom slider created for testing
+
+commit bffa03622862428bd2209da9b77efac3af97a4a5
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Tue Nov 29 12:04:41 2022 +0530
+
+    navbar created/fully functional
+
+commit 2a40b607e79573bc6e94d87025685365c753ce78
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Nov 28 14:22:08 2022 +0530
+
+    custom navabar created
+
+commit eaa49092d96bae820b1ed429b788ee6c74afd407
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Nov 28 13:32:38 2022 +0530
+
+    readme file added
+
+commit c2bf29880ef33b86efdfab03642efd54bbaca795
+Author: kushan2k <kushangayantha001@gmail.com>
+Date:   Mon Nov 28 13:31:24 2022 +0530
+
+    first commit/files sturcture created
